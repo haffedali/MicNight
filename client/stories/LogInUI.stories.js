@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import firebase from 'firebase'
 
 
-import LogInUI from './LogInUI';
+import LogInUI from '../src/components/LogInUI';
 
 
 // Setting up and linking firebase
@@ -25,6 +25,7 @@ let firebaseConfig = {
 
 
 storiesOf('LogInUI', module)
+    .addDecorator(story => <div style={{ padding: '3rem' }}>{story()}</div>)
     .add('default', () => {
         return <LogInUI firebase={firebase}/>
     })
