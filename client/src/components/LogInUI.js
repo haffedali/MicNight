@@ -27,6 +27,8 @@ class LogInUI extends Component {
     this.props.firebase.auth().onAuthStateChanged(user => {
       this.setState({ isSignedIn: !!user })
     })
+
+    console.log(this.props.firebase.auth().currentUser)
   }
 
   render(){

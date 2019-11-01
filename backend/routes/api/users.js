@@ -13,7 +13,7 @@ router.get('/', (req,res)=>{
         
 })
 
-router.post('/', function(req,res){
+router.post('/signup', function(req,res){
     
     const user = new User(req.body)
     user.save((err) => {
