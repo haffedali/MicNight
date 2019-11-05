@@ -1,53 +1,65 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import AuthenticationContext from './AuthenticationContext';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import Button from '@material-ui/core/Button'
 
 class LogInUI extends Component {
-    constructor(props){
-        super(props)
-        this.state = {isSignedIn: false}
-    }
+  constructor(props) {
+    super(props)
+    this.state = { isSignedIn: false }
+  }
 
-      // Configure FirebaseUI.
   uiConfig = {
     // Popup signin flow rather than redirect flow.
     signInFlow: 'popup',
     // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
-    signInSuccessUrl: '/signedIn',
-    // We will display Google and Facebook as auth providers.
+    // signInSuccessUrl: '/signedIn',
+
     signInOptions: [
       this.props.firebase.auth.EmailAuthProvider.PROVIDER_ID,
       this.props.firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       this.props.firebase.auth.FacebookAuthProvider.PROVIDER_ID,
       this.props.firebase.auth.TwitterAuthProvider.PROVIDER_ID
-    ]
-  };
+    ],
+    callbacks: {
+    }
+  }
 
   componentDidMount() {
     this.props.firebase.auth().onAuthStateChanged(user => {
       this.setState({ isSignedIn: !!user })
     })
-
-    console.log(this.props.firebase.auth().currentUser)
   }
 
-  render(){
-      return(
+  componentDidUpdate(){
+
+  }
+
+  render() {
+    return (
+      <AuthenticationContext.Consumer>
+        {({ isAuthenticated, userInfo, authenticateUser, deAuthenticateUser }) => (
           <div className="login-container">
-              {this.state.isSignedIn ? (
+            {/* Super questionable attachment of my authentication method here, gets a red warning */}
+            {this.uiConfig.callbacks.signInSuccessWithAuthResult = authenticateUser}
+            {isAuthenticated ? (
+              <div>
+                <div>Signed In as {userInfo.displayName}!</div>
+                <Button variant="contained" color="primary" onClick={() => deAuthenticateUser()}>Sign Out!</Button>
+              </div>
+            ) : (
                 <div>
-                  <div>Signed In!</div>
-                  <Button variant="contained" color="primary" onClick={() => this.props.firebase.auth().signOut()}>Sign Out!</Button>
-                  <h1>Welcome {this.props.firebase.auth().currentUser.displayName}</h1>
+                  <StyledFirebaseAuth
+                    uiConfig={this.uiConfig}
+                    firebaseAuth={this.props.firebase.auth()}
+                  />
                 </div>
-              ) : (
-                <StyledFirebaseAuth
-                  uiConfig={this.uiConfig}
-                  firebaseAuth={this.props.firebase.auth()}
-                />
               )}
           </div>
-      )
+        )}
+      </AuthenticationContext.Consumer>
+
+    )
   }
 }
 
