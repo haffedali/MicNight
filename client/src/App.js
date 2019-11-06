@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Link } from '@reach/router';
+import { Router } from '@reach/router';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AuthenticationContext from './components/AuthenticationContext'
@@ -8,11 +8,8 @@ import LandingPage from './pages/LandingPage';
 import "./App.css";
 
 
-
-
-import RadioButtons from './components/RadioButtons'
 import FooterNavigation from './components/FooterNavigation';
-import Footer from './components/FooterClass';
+
 
 class App extends Component {
   constructor(props) {
