@@ -1,6 +1,6 @@
 import React from 'react';
 import MuiAvatar from '@material-ui/core/Avatar';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 const ProfileAvatar = ({ photoUrl }) => {
     const useStyles = makeStyles({

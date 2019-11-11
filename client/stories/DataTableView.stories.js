@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { artistList, eventList, userList } from './ProfileAvatar.stories';
 
 
-import DataTableView from '../src/composite-components/DataTableView';
+import DataTableView from '../src/components/DataTableView';
 
 
 storiesOf('User saved entries', module)
