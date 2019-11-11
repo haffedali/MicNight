@@ -3,12 +3,13 @@ import List from '@material-ui/core/List'
 import DataTableItem from '../../components/DataTableItem'
 
 
-const DataTableView = ({entries}) => {
+const DataTableView = ({ entries }) => {
     return (
         <List>
-            {entries}.map(entry => (
+            {entries.map(entry => (
                 <DataTableItem entry={entry} />
             ))
+            }
         </List>
     )
 }
