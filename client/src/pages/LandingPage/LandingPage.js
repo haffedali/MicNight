@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './landing-page.scss';
-import FirebaseAuthUI from '../../components/LogInUI'
+import FirebaseAuthUI from '../../components/LogInUI/'
 
 
 const LandingPage = (props) => {

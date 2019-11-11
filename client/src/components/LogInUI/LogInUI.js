@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AuthenticationContext from './AuthenticationContext';
+import AuthenticationContext from '../AuthenticationContext';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import Button from '@material-ui/core/Button'
 
