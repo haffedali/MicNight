@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react';
 import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper'
 import Box from '@material-ui/core/Box'
 import ProfileDataTable from '../../composite-components/ProfileDataTable';
 import MainProfileAvatar from '../../components/MainProfileAvatar';
@@ -20,9 +21,12 @@ const ProfilePage = (props) => {
 
     },
     container: {
+      width: '100vw',
+      minHeight: '92vh',
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'center'
+      justifyContent: 'space-between',
+      backgroundColor: '#f1f7f3'
     }
   })
 
@@ -31,15 +35,15 @@ const ProfilePage = (props) => {
   return (
     <AuthenticationContext.Consumer>
       {({ isAuthenticated, userInfo }) => (
-        <Box className={classes.container}>
-          <Box m={1} className={classes.avatar}>
+        <Paper square className={classes.container}>
+          <Box m={5} className={classes.avatar}>
             <MainProfileAvatar photoUrl={props.user.photoUrl} />
           </Box>
-          <Box className={classes.dataTable} >
+          <Box mb={1} className={classes.dataTable} >
             <ProfileDataTable entries={props.entries} />
 
           </Box>
-        </Box>
+        </Paper>
       )}
     </AuthenticationContext.Consumer>
   );

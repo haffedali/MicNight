@@ -15,7 +15,15 @@ import FooterNavigation from './components/FooterNavigation';
 
 //dummy data for testing (must pass down to props where we would
 //be getting data from our database... ugly prop drilling here)
+import { artistList, eventList, userList } from './dummyData';
 
+// Simulate a logged in user w/ relevant data
+const user = {
+  name: "Haffed Ali",
+  tagLine: "Maker Mover Producer",
+  photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Haffed.svg',
+  uid: '1234'
+}
 
 
 class App extends Component {
@@ -57,7 +65,7 @@ class App extends Component {
           <CssBaseline />
           <Router>
             <LandingPage path='/' firebase={this.props.firebase} />
-            <ProfilePage path='/user'/>
+            <ProfilePage path='/user' user={user}/>
           </Router>
           <FooterNavigation />
         </MuiThemeProvider>

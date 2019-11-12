@@ -47,25 +47,25 @@ export const eventList = [
     {
         name: 'Pokemon Tournament',
         tagLine: 'Be the very best',
-        photoUrl: '',
+        photoUrl: 'https://www.serebii.net/vgc/vgcs.png',
         uid: '1347'
     },
     {
         name: 'Iron Lungs',
         tagLine: 'Screamers Welcome',
-        photoUrl: '',
+        photoUrl: 'https://assets3.thrillist.com/v1/image/2778568/size/tmg-article_default_mobile.jpg',
         uid: '1348'
     },
     {
         name: 'Rodeo',
         tagLine: 'Ride the bull',
-        photoUrl: '',
+        photoUrl: 'https://d38trduahtodj3.cloudfront.net/images.ashx?t=ig&rid=StPaulRodeo&i=sb_tyler_corrington_87_on_korkow_rodeos_paint_chip_resized(2).jpg&w=330&h=330&cropbox=1&cropboxhpos=center&stf=1',
         uid: '1349'
     },
     {
         name: 'Netflix Chillin',
         tagLine: "It's cold out",
-        photoUrl: '',
+        photoUrl: 'https://www.sayitwithacondom.com//media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/n/e/netflix-and-chill-condom-foil_2.jpg',
         uid: '1350'
     },
     {

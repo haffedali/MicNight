@@ -7,18 +7,22 @@ import ButtonBase from '@material-ui/core/ButtonBase'
 const ProfileAvatar = ({ photoUrl }) => {
     const useStyles = makeStyles({
         avatar: {
-            width: '25vw',
-            height: '25vw',
+            width: '35vw',
+            height: '35vw',
+        },
+        avatarBacker: {
+            margin: ''
         },
         container: {
-            maxWidth: '25vw'
+            height: '35vw',
+            maxWidth: '50%'
         }
     })
 
     const classes = useStyles()
 
     return (
-        <ButtonBase>
+        <ButtonBase className={classes.container}>
             <Box
                 border={3}
                 bgcolor="secondary.main"
@@ -26,7 +30,8 @@ const ProfileAvatar = ({ photoUrl }) => {
                 borderRadius="50%"
                 display="flex"
                 justifyContent="center"
-                className={classes.container}>
+                className={classes.avatarBacker}
+            >
                 <MuiAvatar
                     className={classes.avatar}
                     src={

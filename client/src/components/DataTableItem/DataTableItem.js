@@ -10,23 +10,41 @@ import IconButton from '@material-ui/core/IconButton';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import FacebookIcon from '@material-ui/icons/Facebook';
+import RedditIcon from '@material-ui/icons/Reddit';
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/styles'
+
+
 import ProfileAvatar from '../ProfileAvatar'
 
 
 const DataTableItem = ({ entry }) => {
     const useStyles = makeStyles({
         root: {
-            padding: '1vw',
-            margin: '1vw'
+            paddingLeft: '3vw',
+            margin: '.5vw'
         },
         buttonBox: {
-            display: 'flex',
-            flexWrap: 'wrap'
+            height: '12%',
+            width: '15vw'
         },
         detailBox: {
 
+        },
+        socialLink: {
+            padding: '.1vw',
+            margin: '.1vw'
+        },
+        listItem: {
+
+        },
+        avatar: {
+            margin: '2%',
+            minWidth: '1vw'
+        },
+        gutters: {
+            paddingLeft: '2.5vw',
+            paddingRIght: '.5vw'
         }
     });
 
@@ -34,8 +52,8 @@ const DataTableItem = ({ entry }) => {
 
     return (
         <Paper textOverFlow='ellipsis' className={classes.root}>
-            <ListItem key={entry.uid}>
-                <ListItemAvatar>
+            <ListItem mb={1} disableGutters divider className={classes.listItem} key={entry.uid}>
+                <ListItemAvatar className={classes.avatar}>
                     <ProfileAvatar photoUrl={entry.photoUrl} />
                 </ListItemAvatar>
                 <Box textOverFlow="ellipsis" className={classes.detailBox}>
@@ -45,16 +63,23 @@ const DataTableItem = ({ entry }) => {
                     />
                 </Box>
 
-                <ListItemSecondaryAction>
-                    <Box className={classes.buttonBox}>
-                        <IconButton edge="end" aria-label="delete">
+                <ListItemSecondaryAction className={classes.gutter}>
+                    <Box 
+                    className={classes.buttonBox}
+                    display='flex'
+                    flexWrap='wrap'
+                    justifyContent='center'>
+                        <IconButton edge="end" className={classes.socialLink} aria-label="delete">
                             <FacebookIcon />
                         </IconButton>
-                        <IconButton edge="end" aria-label="delete">
+                        <IconButton edge="end" className={classes.socialLink} aria-label="delete">
                             <TwitterIcon />
                         </IconButton>
-                        <IconButton edge="end" aria-label="delete">
+                        <IconButton edge="end" className={classes.socialLink} aria-label="delete">
                             <InstagramIcon />
+                        </IconButton>
+                        <IconButton edge="end" className={classes.socialLink} aria-label="delete">
+                            <RedditIcon />
                         </IconButton>
                     </Box>
                 </ListItemSecondaryAction>

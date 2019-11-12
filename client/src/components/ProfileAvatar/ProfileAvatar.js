@@ -6,8 +6,8 @@ import ButtonBase from '@material-ui/core/ButtonBase'
 const ProfileAvatar = ({ photoUrl }) => {
     const useStyles = makeStyles({
         avatar: {
-            width: '6vw',
-            height: '6vw'
+            width: '10vw',
+            height: '10vw'
         }
     })
 
