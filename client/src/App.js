@@ -5,10 +5,17 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import AuthenticationContext from './components/AuthenticationContext'
 
 import LandingPage from './pages/LandingPage';
+import ProfilePage from './pages/ProfilePage';
 import "./App.css";
 
 
 import FooterNavigation from './components/FooterNavigation';
+
+
+
+//dummy data for testing (must pass down to props where we would
+//be getting data from our database... ugly prop drilling here)
+
 
 
 class App extends Component {
@@ -50,6 +57,7 @@ class App extends Component {
           <CssBaseline />
           <Router>
             <LandingPage path='/' firebase={this.props.firebase} />
+            <ProfilePage path='/user'/>
           </Router>
           <FooterNavigation />
         </MuiThemeProvider>

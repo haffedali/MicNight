@@ -1,8 +1,3 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import ProfileAvatar from '../src/components/ProfileAvatar';
-import MainProfileAvatar from '../src/components/MainProfileAvatar';
-
 export const artistList = [
     {
         name: "Haffed Ali",
@@ -92,10 +87,3 @@ export const userList = [{
     tagLine: 'Boss bitch',
     uid: '1236'
 }]
-
-storiesOf('Profile Avatars', module)
-    .addDecorator(story => <div style={{ padding: '3rem' }}>{story()}</div>)
-    .add('Entry without image', () => <ProfileAvatar photoUrl={userList[0].photoUrl} />)
-    .add('Entry with image', () => <ProfileAvatar photoUrl={artistList[0].photoUrl} />)
-    .add('Event with image', () => <ProfileAvatar photoUrl={eventList[0].photoUrl} />)
-    .add('Main Avatar', () => <MainProfileAvatar photoUrl={artistList[0].photoUrl} />)

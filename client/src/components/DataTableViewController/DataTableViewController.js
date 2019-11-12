@@ -16,16 +16,20 @@ const DataTableViewController = (props) => {
             display: 'flex',
             justifyContent: 'center',
             padding:'1vw',
-            maxWidth:'sm'
+            maxWidth:'lg'
         },
         artistButton: {
- 
+            padding:'2vw'
         },
         eventsButton: {
 
         },
         micMatesButton: {
 
+        },
+        button: {
+            paddingLeft:'3vw',
+            paddingRight:'3vw'
         }
 
     })
@@ -41,13 +45,13 @@ const DataTableViewController = (props) => {
                 color="secondary"
                 size="large"
             >
-                <Button value='events' onClick={props.handleFocusChange} className={classes.artistButton} color="secondary">
+                <Button value='events' onClick={props.handleFocusChange} className={classes.button} color="secondary">
                     Events
             </Button>
-                <Button value='artists' onClick={props.handleFocusChange} className={classes.eventsButton} color="secondary">
+                <Button value='artists' onClick={props.handleFocusChange} className={classes.button} color="secondary">
                     Artists
             </Button>
-                <Button value='micmates' onClick={props.handleFocusChange} className={classes.micMatesButton} color="secondary">
+                <Button value='micmates' onClick={props.handleFocusChange} className={classes.button} color="secondary">
                     MicMates
             </Button>
             </ButtonGroup>
