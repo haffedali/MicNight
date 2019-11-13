@@ -51,12 +51,12 @@ const DataTableItem = ({ entry }) => {
     const classes = useStyles();
 
     return (
-        <Paper textOverFlow='ellipsis' className={classes.root}>
+        <Paper className={classes.root}>
             <ListItem mb={1} disableGutters divider className={classes.listItem} key={entry.uid}>
                 <ListItemAvatar className={classes.avatar}>
                     <ProfileAvatar photoUrl={entry.photoUrl} />
                 </ListItemAvatar>
-                <Box textOverFlow="ellipsis" className={classes.detailBox}>
+                <Box className={classes.detailBox}>
                     <ListItemText
                         primary={entry.name}
                         secondary={entry.tagLine}

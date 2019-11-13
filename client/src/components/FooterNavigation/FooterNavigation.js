@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from '@reach/router'
 import SearchIcon from '@material-ui/icons/Search';
 import PersonIcon from '@material-ui/icons/Person';
 import MyLocationIcon from '@material-ui/icons/MyLocation';
@@ -27,7 +28,7 @@ export default function FooterNavigation() {
 
   const classes = useStyles();
 
-  const [value, setValue] = useState('event')
+  const [value, setValue] = useState('/')
 
   const handleChange = (event) => {
     setValue(event)                     
@@ -44,9 +45,9 @@ export default function FooterNavigation() {
           showLabels
           className={classes.bar}
         >
-          <BottomNavigationAction value="nearby" label="Nearby" icon={<SearchIcon />} />
-          <BottomNavigationAction value="event" label="Mic" icon={<MyLocationIcon />} />
-          <BottomNavigationAction value="me" label="Me" icon={<PersonIcon />} />
+          <BottomNavigationAction component={Link} to='/' value="nearby" label="Nearby" icon={<SearchIcon />} />
+          <BottomNavigationAction component={Link} to='/'value="/" label="Mic" icon={<MyLocationIcon />} />
+          <BottomNavigationAction component={Link} to='user'value="user" label="Me" icon={<PersonIcon />} />
         </BottomNavigation>
       </div>
     </div>

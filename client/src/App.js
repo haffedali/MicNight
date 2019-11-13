@@ -65,7 +65,7 @@ class App extends Component {
           <CssBaseline />
           <Router>
             <LandingPage path='/' firebase={this.props.firebase} />
-            <ProfilePage path='/user' user={user}/>
+            <ProfilePage path='user' user={user}/>
           </Router>
           <FooterNavigation />
         </MuiThemeProvider>

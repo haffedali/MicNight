@@ -68,9 +68,9 @@ class ProfileDataTable extends React.Component {
         const { classes } = this.props;
         return (
             <Container>
-                <Box border={2} borderRadius={16} borderColor='#90a4ae' style={{ maxHeight: "65vh", height: "65vh", backgroundColor: 'pink' }}>
+                <Box border={2} borderRadius={16} borderColor='#90a4ae' style={{ maxHeight: "60vh", height: "60vh", backgroundColor: 'pink', padding:'1vw' }}>
                     <DataTableViewController handleFocusChange={this.handleFocusChange} />
-                    <DataTableView entries={this.entries} focus={this.state.focus} />
+                    <DataTableView entries={this.entries} focus={this.state.focus} style={{maxHeight: '50vh'}}/>
                 </Box>
             </Container>
 

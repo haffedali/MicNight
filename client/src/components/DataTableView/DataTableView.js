@@ -19,11 +19,12 @@ const DataTableView = ({ entries }) => {
 
         },
         list: {
-            maxHeight: '55vh',
+            maxHeight: '50vh',
             overflow: 'auto',
         },
         paper: {
-            maxHeight: '100%',
+            height: '88%',
+            maxHeight: '88%',
             padding: '1vw'
         }
     })
@@ -32,15 +33,12 @@ const DataTableView = ({ entries }) => {
 
     return (
         <Paper className={classes.paper}>
-
                 <List className={classes.list}>
                     {entries.map(entry => (
                         <DataTableItem key={entry.uid} entry={entry} />
                     ))
                     }
                 </List>
-
-
         </Paper>
 
     )
