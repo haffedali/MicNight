@@ -3,11 +3,18 @@ import MuiAvatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase'
 
-const ProfileAvatar = ({ photoUrl }) => {
+const ProfileAvatar = ({ photoUrl, height, width }) => {
+    
+    
+    if (!height && !width){
+        const height = '10vw';
+        const width = '10vw';
+    }
+    
     const useStyles = makeStyles({
         avatar: {
-            width: '10vw',
-            height: '10vw'
+            width: width,
+            height: height
         }
     })
 

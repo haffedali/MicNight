@@ -15,7 +15,8 @@ import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/styles'
 
 
-import ProfileAvatar from '../ProfileAvatar'
+import ProfileAvatar from '../ProfileAvatar';
+import SocialLinks from '../SocialLinks';
 
 
 const DataTableItem = ({ entry }) => {
@@ -45,7 +46,7 @@ const DataTableItem = ({ entry }) => {
         gutters: {
             paddingLeft: '2.5vw',
             paddingRIght: '.5vw'
-        }
+        },
     });
 
     const classes = useStyles();
@@ -64,11 +65,20 @@ const DataTableItem = ({ entry }) => {
                 </Box>
 
                 <ListItemSecondaryAction className={classes.gutter}>
-                    <Box 
-                    className={classes.buttonBox}
-                    display='flex'
-                    flexWrap='wrap'
-                    justifyContent='center'>
+                    {/* Refractor into 'SocialLinks' component */}
+
+                    <SocialLinks />
+
+
+                    {/* <Box className={classes.testParentHeight}>
+                      <SocialLinks />
+                    </Box> */}
+                    
+                    {/* <Box
+                        className={classes.buttonBox}
+                        display='flex'
+                        flexWrap='wrap'
+                        justifyContent='center'>
                         <IconButton edge="end" className={classes.socialLink} aria-label="delete">
                             <FacebookIcon />
                         </IconButton>
@@ -81,7 +91,13 @@ const DataTableItem = ({ entry }) => {
                         <IconButton edge="end" className={classes.socialLink} aria-label="delete">
                             <RedditIcon />
                         </IconButton>
-                    </Box>
+                    </Box> */}
+
+
+
+
+                    {/* Refractor into 'SocialLinks' component */}
+
                 </ListItemSecondaryAction>
 
             </ListItem>
