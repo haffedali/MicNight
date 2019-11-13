@@ -70,32 +70,6 @@ const DataTableItem = ({ entry }) => {
                     <SocialLinks />
 
 
-                    {/* <Box className={classes.testParentHeight}>
-                      <SocialLinks />
-                    </Box> */}
-                    
-                    {/* <Box
-                        className={classes.buttonBox}
-                        display='flex'
-                        flexWrap='wrap'
-                        justifyContent='center'>
-                        <IconButton edge="end" className={classes.socialLink} aria-label="delete">
-                            <FacebookIcon />
-                        </IconButton>
-                        <IconButton edge="end" className={classes.socialLink} aria-label="delete">
-                            <TwitterIcon />
-                        </IconButton>
-                        <IconButton edge="end" className={classes.socialLink} aria-label="delete">
-                            <InstagramIcon />
-                        </IconButton>
-                        <IconButton edge="end" className={classes.socialLink} aria-label="delete">
-                            <RedditIcon />
-                        </IconButton>
-                    </Box> */}
-
-
-
-
                     {/* Refractor into 'SocialLinks' component */}
 
                 </ListItemSecondaryAction>
