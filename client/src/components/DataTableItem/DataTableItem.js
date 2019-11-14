@@ -43,9 +43,10 @@ const DataTableItem = ({ entry }) => {
             margin: '2%',
             minWidth: '1vw'
         },
-        gutters: {
-            paddingLeft: '2.5vw',
-            paddingRIght: '.5vw'
+        listSecondaryAction: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
         },
     });
 
@@ -64,7 +65,7 @@ const DataTableItem = ({ entry }) => {
                     />
                 </Box>
 
-                <ListItemSecondaryAction className={classes.gutter}>
+                <ListItemSecondaryAction className={classes.listSecondaryAction} style={{height:'100%', width:'20%'}}>
                     {/* Refractor into 'SocialLinks' component */}
 
                     <SocialLinks />
