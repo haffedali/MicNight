@@ -1,5 +1,6 @@
 import React from 'react';
 import Box from '@material-ui/core/Box'
+import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
@@ -17,36 +18,54 @@ import { makeStyles } from '@material-ui/styles'
 const SocialLinks = () => {
     const useStyles = makeStyles({
         iconButton: {
-
+            
         },
         container: {
+            height: '85%',
             maxHeight: '85%',
-            width: '10vw',
+            width: '100%',
+        },
+        socialIcon: {
+            padding:'1vw',
+        },
+        gridContainer: {
+            maxHeight:'100%',
+
         }
     });
 
     const classes = useStyles();
 
     return (
-        <Box
-        border={1}
-            className={classes.container}
-            display='flex'
-            flexWrap='wrap'
-            justifyContent='center'>
-            <IconButton edge="end" className={classes.iconButton} aria-label="delete">
-                <FacebookIcon />
-            </IconButton>
-            <IconButton edge="end" className={classes.iconButton} aria-label="delete">
-                <TwitterIcon />
-            </IconButton>
-            <IconButton edge="end" className={classes.iconButton} aria-label="delete">
-                <InstagramIcon />
-            </IconButton>
-            <IconButton edge="end" className={classes.iconButton} aria-label="delete">
-                <RedditIcon />
-            </IconButton>
-        </Box>
+
+        <Grid
+            container
+            justify='space-around'
+            alignItems='center'
+            className={classes.gridContainer}
+            py={2}
+        >
+            <Grid item xs={6}>
+                <IconButton  classes={{root: classes.socialIcon}} aria-label="delete">
+                    <FacebookIcon  />
+                </IconButton>
+            </Grid>
+            <Grid item xs={6}>
+                <IconButton  classes={{root: classes.socialIcon}} aria-label="delete">
+                    <TwitterIcon  />
+                </IconButton>
+            </Grid>
+            <Grid item xs={6}>
+                <IconButton  classes={{root: classes.socialIcon}} aria-label="delete">
+                    <InstagramIcon  />
+                </IconButton>
+            </Grid>
+            <Grid item xs={6}>
+                <IconButton  classes={{root: classes.socialIcon}} aria-label="delete">
+                    <RedditIcon  />
+                </IconButton>
+            </Grid>
+        </Grid>
 
     )
 
