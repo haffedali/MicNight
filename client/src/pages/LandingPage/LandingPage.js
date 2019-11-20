@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid'
 import './landing-page.scss';
 import FirebaseAuthUI from '../../components/LogInUI/';
 import LogoAvatar from '../../components/LogoAvatar';
@@ -43,14 +44,17 @@ const LandingPage = (props) => {
   const classes = useStyles()
 
   return (
+
     <Paper className={classes.container}>
-      <Typography className={classes.logoText}>Mic Night</Typography>
-      <Box flexGrow={2}display={'flex'} justifyContent={'center'} flexWrap={'wrap'} flexDirection={'column'}>
-        <Box display={'flex'} justifyContent={'center'} className={classes.logoBox}>
-          <LogoAvatar mx={'auto'} />
+      <Grid container>
+        <Typography className={classes.logoText}>Mic Night</Typography>
+        <Box flexGrow={2} display={'flex'} justifyContent={'center'} flexWrap={'wrap'} flexDirection={'column'}>
+          <Box display={'flex'} justifyContent={'center'} className={classes.logoBox}>
+            <LogoAvatar mx={'auto'} />
+          </Box>
+          <FirebaseAuthUI firebase={props.firebase} />
         </Box>
-        <FirebaseAuthUI firebase={props.firebase} />
-      </Box>
+      </Grid>
     </Paper>
   )
 };
