@@ -21,11 +21,13 @@ const DataTableView = ({ entries }) => {
         list: {
             maxHeight: '50vh',
             overflow: 'auto',
+            
         },
         paper: {
             height: '88%',
             maxHeight: '88%',
-            padding: '1vw'
+            padding: '1vw',
+            overflow: 'hidden'
         }
     })
 
@@ -33,12 +35,16 @@ const DataTableView = ({ entries }) => {
 
     return (
         <Paper className={classes.paper}>
+            {/* <Grid container> */}
+                
                 <List className={classes.list}>
                     {entries.map(entry => (
                         <DataTableItem key={entry.uid} entry={entry} />
                     ))
                     }
                 </List>
+            {/* </Grid> */}
+
         </Paper>
 
     )
