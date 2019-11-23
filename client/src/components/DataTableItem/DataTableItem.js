@@ -54,7 +54,7 @@ const DataTableItem = ({ entry }) => {
 
     return (
         <Paper className={classes.root}>
-            <ListItem mb={1} disableGutters divider className={classes.listItem} key={entry.uid}>
+            <ListItem mb={1} disableGutters divider className={classes.listItem} key={`ListItem: ${entry.uid}`}>
                 <ListItemAvatar className={classes.avatar}>
                     <ProfileAvatar photoUrl={entry.photoUrl} />
                 </ListItemAvatar>
