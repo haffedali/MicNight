@@ -67,7 +67,9 @@ class App extends Component {
           <Router>
             <LandingPage path='/' firebase={this.props.firebase} />
             <ProfilePage path='user' user={user}/>
-            <EventPage path='event' user={user}/>
+
+            <EventPage path='event' user={user} />
+
           </Router>
           <FooterNavigation />
         </MuiThemeProvider>
