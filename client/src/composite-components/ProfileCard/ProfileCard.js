@@ -10,30 +10,41 @@ import { makeStyles } from '@material-ui/styles';
 import ProfileAvatar from '../../components/ProfileAvatar';
 // import SocialLinks from '../../components/SocialLinks';
 
-const ProfileCard = ({user}) => {
+const ProfileCard = ({ user }) => {
 
     const useStyles = makeStyles({
-        paper:{
-            width: '30%',
-            height: '20%',
+        paper: {
+            width: '100%',
+            height: '100%',
             display: 'flex',
             flexDirection: 'column',
-            textAlign: 'center'
+            textAlign: 'center',
+            justifyContent: 'space-between'
         },
-        avatar:{},
+        avatar: {
+            maxHeight: '20vh',
+
+        },
+        userInfoContainer: {
+
+        }
     });
 
     const classes = useStyles();
 
     return (
         <Paper className={classes.paper}>
-            <ProfileAvatar photoUrl={user.photoUrl} height={'40%'} width={'40%'}/>
-            <Typography variant='subtitle1'>
-                {user.name}
-            </Typography>
-            <Typography variant='subtitle2'>
-                {user.tagLine}
-            </Typography>
+            <ProfileAvatar className={classes.avatar} photoUrl={user.photoUrl} height={'15vh'} width={'15vh'} />
+            <Container className={classes.userInfoContainer}>
+                <Typography variant='subtitle1'>
+                    {user.name}
+                </Typography>
+                <Typography variant='subtitle2'>
+                    {user.tagLine}
+                </Typography>
+            </Container>
+
+
         </Paper>
     )
 }

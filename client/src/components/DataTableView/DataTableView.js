@@ -34,13 +34,18 @@ const DataTableView = ({ entries }) => {
 
     const classes = useStyles();
 
+
+    // Unsure why I need to user count... my entries id isn't "unique" according to my error log
+    let count = 0
+
     return (
         <Paper className={classes.paper}>
             {/* <Grid container> */}
                 
                 <List className={classes.list}>
                     {entries.map(entry => (
-                        <DataTableItem key={entry.uid} entry={entry} />
+                        
+                        <DataTableItem  key={count++} entry={entry} />
                     ))
                     }
                 </List>
