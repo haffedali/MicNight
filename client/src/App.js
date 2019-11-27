@@ -6,6 +6,7 @@ import AuthenticationContext from './components/AuthenticationContext'
 
 import LandingPage from './pages/LandingPage';
 import ProfilePage from './pages/ProfilePage';
+import EventPage from './pages/EventPage';
 import "./App.css";
 
 
@@ -66,6 +67,7 @@ class App extends Component {
           <Router>
             <LandingPage path='/' firebase={this.props.firebase} />
             <ProfilePage path='user' user={user}/>
+            <EventPage path='event' user={user}/>
           </Router>
           <FooterNavigation />
         </MuiThemeProvider>
