@@ -1,22 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
-
-import ProfileAvatar from '../../components/ProfileAvatar';
-import ProfileCard from '../ProfileCard';
-import SocialLinks from '../../components/SocialLinks';
-
-const CurrentArtistDisplay = () => (
-   <Paper>
-       <ProfileCard />
-       <SocialLinks />
-   </Paper>
-)
-
-export default CurrentArtistDisplay
-=======
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
@@ -37,6 +19,9 @@ const CurrentArtistDisplay = ({ user }) => {
         },
         gridItem: {
             height: '28vh'
+        },
+        profileCard: {
+            width: '35%'
         }
     })
 
@@ -48,7 +33,7 @@ const CurrentArtistDisplay = ({ user }) => {
                 justify="space-between"
                 alignItems="center"
                 className={classes.paper}>
-                <Grid className={classes.gridItem} item xs={4}>
+                <Grid className={classes.gridItem} item xs={6}>
                     <ProfileCard user={user}></ProfileCard>
                 </Grid>
                 <Grid item xs={2}>
@@ -60,4 +45,3 @@ const CurrentArtistDisplay = ({ user }) => {
 }
 
 export default CurrentArtistDisplay;
->>>>>>> b0aa4201f9db18ecd0267069b52bb757183831ea

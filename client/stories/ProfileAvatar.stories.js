@@ -2,12 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ProfileAvatar from '../src/components/ProfileAvatar';
 import MainProfileAvatar from '../src/components/MainProfileAvatar';
-import CurrentArtistDisplay from '../src/components/CurrentArtistDisplay';
 
 export const artistList = [
     {
         name: "Haffed Ali",
-        tagLine: "Maker Mover Producer",
+        tagLine: "Maker Mover",
         photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Haffed.svg',
         uid: '1234'
     },
@@ -100,4 +99,3 @@ storiesOf('Profile Avatars', module)
     .add('Entry with image', () => <ProfileAvatar photoUrl={artistList[0].photoUrl} />)
     .add('Event with image', () => <ProfileAvatar photoUrl={eventList[0].photoUrl} />)
     .add('Main Avatar', () => <MainProfileAvatar photoUrl={artistList[0].photoUrl} />)
-    .add('Avatar for CurrentArtistDisplay', () => <CurrentArtistDisplay />)
