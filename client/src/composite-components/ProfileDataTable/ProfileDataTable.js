@@ -70,7 +70,7 @@ class ProfileDataTable extends React.Component {
         return (
             <Container>
                 <Box border={2} borderRadius={16} borderColor='#90a4ae' display='flex' flexDirection='column' style={{ maxHeight: "60vh", height: "60vh", backgroundColor: 'pink', padding: '1vw' }}>
-                        <DataTableViewController handleFocusChange={this.handleFocusChange} />
+                        <DataTableViewController buttons={['Events','Artists','MicMates']} handleFocusChange={this.handleFocusChange} />
                         <DataTableView entries={this.entries} focus={this.state.focus} style={{ maxHeight: '50vh' }} />
                 </Box>
             </Container>
