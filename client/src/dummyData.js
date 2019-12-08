@@ -1,7 +1,7 @@
 export const artistList = [
     {
         name: "Haffed Ali",
-        tagLine: "Maker Mover Producer",
+        tagLine: "Maker Mover",
         photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Haffed.svg',
         uid: 1234
     },

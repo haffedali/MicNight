@@ -19,6 +19,9 @@ const CurrentArtistDisplay = ({ user }) => {
         },
         gridItem: {
             height: '28vh'
+        },
+        profileCard: {
+            width: '35%'
         }
     })
 
@@ -30,7 +33,7 @@ const CurrentArtistDisplay = ({ user }) => {
                 justify="space-between"
                 alignItems="center"
                 className={classes.paper}>
-                <Grid className={classes.gridItem} item xs={4}>
+                <Grid className={classes.gridItem} item xs={6}>
                     <ProfileCard user={user}></ProfileCard>
                 </Grid>
                 <Grid item xs={2}>
