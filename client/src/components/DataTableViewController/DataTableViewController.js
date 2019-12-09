@@ -45,9 +45,9 @@ const DataTableViewController = (props) => {
                 color="secondary"
                 size="large"
             >
-                {props.buttons.map(button => {
+                {props.buttons.map((button, x) => {
                     return (
-                        <Button value={button} onClick={props.handleFocusChange} className={classes.button}>
+                        <Button value={button} onClick={props.handleFocusChange} className={classes.button} value={`DataTableController ${x}`}>
                             {button}
                         </Button>
                     )

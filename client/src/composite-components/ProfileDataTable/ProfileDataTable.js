@@ -40,7 +40,6 @@ class ProfileDataTable extends React.Component {
     }
 
     handleFocusChange(event) {
-        console.log(event.target.innerHTML);
         let text = event.target.innerHTML;
 
         // Temporary switch case to make use of dummy data for testing
