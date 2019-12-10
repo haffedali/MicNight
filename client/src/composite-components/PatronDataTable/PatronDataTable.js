@@ -10,12 +10,6 @@ import { withStyles } from '@material-ui/styles';
 import { artistList, userList, eventList } from '../../dummyData'
 
 
-const styles = theme => ({
-    container: {
-
-    }
-})
-
 class PatronDataTable extends React.Component {
     constructor(props) {
         super(props)
@@ -61,12 +55,11 @@ class PatronDataTable extends React.Component {
     }
 
     render() {
-        const { classes } = this.props;
         return (
             <Container>
-                <Box border={2} borderRadius={16} borderColor='#90a4ae' display='flex' flexDirection='column' style={{ maxHeight: "60vh", height: "60vh", backgroundColor: 'pink', padding: '1vw' }}>
+                <Box border={2} borderRadius={16} borderColor='#90a4ae' display='flex' flexDirection='column' style={{ maxHeight: "100%", height: "100%", backgroundColor: 'pink', padding: '1vw' }}>
                         <DataTableViewController buttons={['Upcoming','Guest List']} handleFocusChange={this.handleFocusChange} />
-                        <DataTableView entries={this.entries} focus={this.state.focus} style={{ maxHeight: '50vh' }} />
+                        <DataTableView entries={this.entries} focus={this.state.focus} style={{ maxHeight: '100%' }} />
                 </Box>
             </Container>
 
@@ -75,4 +68,4 @@ class PatronDataTable extends React.Component {
     }
 }
 
-export default withStyles(styles)(PatronDataTable);
+export default (PatronDataTable);
