@@ -18,13 +18,7 @@ const DataTableViewController = (props) => {
             padding:'1vw',
             maxWidth:'lg'
         },
-        artistButton: {
-            padding:'2vw'
-        },
-        eventsButton: {
-
-        },
-        micMatesButton: {
+        viewControls: {
 
         },
         button: {
@@ -41,13 +35,14 @@ const DataTableViewController = (props) => {
     return (
         <Container className={classes.container}>
             <ButtonGroup
+                className={classes.viewControls}
                 variant="text"
                 color="secondary"
-                size="large"
+                size="medium"
             >
-                {props.buttons.map(button => {
+                {props.buttons.map((button, x) => {
                     return (
-                        <Button value={button} onClick={props.handleFocusChange} className={classes.button}>
+                        <Button value={button} onClick={props.handleFocusChange} className={classes.button} value={`DataTableController ${x}`}>
                             {button}
                         </Button>
                     )

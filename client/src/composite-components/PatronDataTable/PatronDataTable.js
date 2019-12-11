@@ -1,25 +1,14 @@
 import React from 'react';
-import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
 import DataTableView from '../../components/DataTableView';
 import DataTableViewController from '../../components/DataTableViewController';
 import { withStyles } from '@material-ui/styles';
-
 
 //dummy dataload
 import { artistList, userList, eventList } from '../../dummyData'
 
 
-const styles = theme => ({
-    container: {
-
-    }
-})
-
-
-
-class ProfileDataTable extends React.Component {
+class PatronDataTable extends React.Component {
     constructor(props) {
         super(props)
 
@@ -34,24 +23,23 @@ class ProfileDataTable extends React.Component {
         this.handleFocusChange = this.handleFocusChange.bind(this)
 
         this.state = {
-            focus: 'Artists'
+            focus: 'Upcoming'
         }
 
     }
 
     handleFocusChange(event) {
+        console.log(event.target.innerHTML);
         let text = event.target.innerHTML;
 
         // Temporary switch case to make use of dummy data for testing
         switch (text) {
-            case "Artists":
+            case "Upcoming":
                 this.entries = artistList;
                 break;
-            case "MicMates":
+            case "Guest List":
                 this.entries = userList;
                 break;
-            case "Events":
-                this.entries = eventList;
         }
 
         this.setState({
@@ -65,18 +53,13 @@ class ProfileDataTable extends React.Component {
     }
 
     render() {
-        const { classes } = this.props;
         return (
-            <Container>
-                <Box border={2} borderRadius={16} borderColor='#90a4ae' display='flex' flexDirection='column' style={{ maxHeight: "60vh", height: "60vh", backgroundColor: 'pink', padding: '1vw' }}>
-                        <DataTableViewController buttons={['Events','Artists','MicMates']} handleFocusChange={this.handleFocusChange} />
-                        <DataTableView entries={this.entries} focus={this.state.focus} style={{ maxHeight: '50vh' }} />
+                <Box border={2} borderRadius={16} borderColor='#90a4ae' display='flex' flexDirection='column' style={{ maxHeight: "100%", height: "100%", backgroundColor: 'pink', padding: '1vw' }}>
+                        <DataTableViewController buttons={['Upcoming','Guest List']} handleFocusChange={this.handleFocusChange} />
+                        <DataTableView entries={this.entries} focus={this.state.focus} style={{ maxHeight: '100%' }} />
                 </Box>
-            </Container>
-
-
         )
     }
 }
 
-export default withStyles(styles)(ProfileDataTable);
+export default (PatronDataTable);

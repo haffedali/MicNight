@@ -10,15 +10,15 @@ import { makeStyles } from '@material-ui/styles';
 const CurrentArtistDisplay = ({ user }) => {
     const useStyles = makeStyles({
         paper: {
-            height: '30vh',
+            height: '100%',
             padding: '.5vw'
 
         },
         grid: {
-            height: '30vh'
+            height: '100%'
         },
         gridItem: {
-            height: '28vh'
+            height: '96%'
         },
         profileCard: {
             width: '35%'
