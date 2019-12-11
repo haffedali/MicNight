@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import { Container, Grid } from '@material-ui/core';
 
@@ -6,7 +6,7 @@ import { Container, Grid } from '@material-ui/core';
 import CurrentArtistDisplay from '../../composite-components/CurrentArtistDisplay';
 import PatronDataTable from '../../composite-components/PatronDataTable';
 import ProfileDataTable from '../../composite-components/ProfileDataTable';
-
+import ViewSwitch from '../../components/ViewSwitch';
 
 
 //Dummy Data
@@ -43,23 +43,51 @@ const EventPage = () => {
       height: '50vh',
       outline: 'solid',
       outlineColor: 'green',
+    },
+
+    buttonRow: {
+      width: '100%',
+      outline: 'solid',
+      outlineColor: 'green'
     }
 
 
   })
+  
 
+  const [view,setView] = useState('Upcoming')
   const classes = useStyles();
+  
+  const viewSwitchOnClick = () => {
+    console.log('testtesttest')
+    if (view === 'Upcoming'){
+      setView('Guests')
+    }else {
+      setView('Upcoming')
+    }
+  }
 
   return(
     <Container className={classes.container}>
-        <Grid className={classes.currentArtist} item container direction='row' justifyContent='center'>
+        <Grid className={classes.currentArtist} item container direction='row' justify='center'>
           <Grid item xs={12}>
             <CurrentArtistDisplay user={artistList[0]} />
           </Grid>
         </Grid>
 
+        <Grid item>
+          <Grid  container direction='row' justify='center'>
+            <Grid item xs={6}>
+              <ViewSwitch 
+                viewState={view}
+                clickHandler={viewSwitchOnClick}
+              />
+            </Grid>
+          </Grid>
+        </Grid>
+
         <Grid className={classes.dataTableAndChat} item container direction='row'>
-          <Grid item xs={12}>
+          <Grid style={{height:'100%'}} item xs={12}>
             <PatronDataTable />
           </Grid>
         </Grid>

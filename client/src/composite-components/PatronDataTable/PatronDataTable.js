@@ -1,7 +1,5 @@
 import React from 'react';
-import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
 import DataTableView from '../../components/DataTableView';
 import DataTableViewController from '../../components/DataTableViewController';
 import { withStyles } from '@material-ui/styles';
@@ -56,14 +54,10 @@ class PatronDataTable extends React.Component {
 
     render() {
         return (
-            <Container>
                 <Box border={2} borderRadius={16} borderColor='#90a4ae' display='flex' flexDirection='column' style={{ maxHeight: "100%", height: "100%", backgroundColor: 'pink', padding: '1vw' }}>
                         <DataTableViewController buttons={['Upcoming','Guest List']} handleFocusChange={this.handleFocusChange} />
                         <DataTableView entries={this.entries} focus={this.state.focus} style={{ maxHeight: '100%' }} />
                 </Box>
-            </Container>
-
-
         )
     }
 }
