@@ -9,10 +9,12 @@
     "@material-ui/system": "^4.5.2",
     "firebase": "^7.2.1",
     "firebaseui": "^4.2.0",
+    "leaflet": "^1.6.0",
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-firebaseui": "^4.0.0",
+    "react-primitives-mapquest-static-map": "^1.0.3",
     "react-scripts": "3.2.0"
   },
   "scripts": {
