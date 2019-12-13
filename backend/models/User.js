@@ -23,6 +23,10 @@ const UserSchema = new Schema({
         }
     },
 
+    bio: String,
+
+    image: String,
+
     socialLinks: {
         google: {
             type: Boolean
@@ -41,8 +45,11 @@ const UserSchema = new Schema({
     Organizes: {
         type: Schema.Types.ObjectId,
         ref: "Events"
-    }
-})
+    },
+
+    followingArtists: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+    followingEvents: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Event' }]
+}, {timestamps: true});
 
 
 
