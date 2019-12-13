@@ -45,7 +45,7 @@ export default function FooterNavigation() {
           showLabels
           className={classes.bar}
         >
-          <BottomNavigationAction component={Link} to='/' value="nearby" label="Nearby" icon={<SearchIcon />} />
+          <BottomNavigationAction component={Link} to='/discover' value="nearby" label="Nearby" icon={<SearchIcon />} />
           <BottomNavigationAction component={Link} to='/'value="/" label="Mic" icon={<MyLocationIcon />} />
           <BottomNavigationAction component={Link} to='user'value="user" label="Me" icon={<PersonIcon />} />
         </BottomNavigation>

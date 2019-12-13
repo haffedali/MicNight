@@ -5,20 +5,27 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true,
+        index: true,
+        lowercase: true
     },
+    username: {type: String, lowercase: true, unique: true, required: [true, "can't be blank"], match: [/^[a-zA-Z0-9]+$/, 'is invalid'], index: true},
 
     name: {
         firstName: {
             type: String,
             trim: true,
-            required: true,
         },
         lastName: {
             type: String,
-            trim: true
+            trim: true,
         }
     },
+
+    bio: String,
+
+    image: String,
 
     socialLinks: {
         google: {
@@ -38,8 +45,11 @@ const UserSchema = new Schema({
     Organizes: {
         type: Schema.Types.ObjectId,
         ref: "Events"
-    }
-})
+    },
+
+    followingArtists: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+    followingEvents: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Event' }]
+}, {timestamps: true});
 
 
 
