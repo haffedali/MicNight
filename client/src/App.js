@@ -66,10 +66,13 @@ class App extends Component {
         <MuiThemeProvider theme={this.theme}>
           <CssBaseline />
           <Router>
-            <LandingPage path='/' firebase={this.props.firebase} />
+            {this.state.isAuthenticated ?
+                        <DiscoverPage path='/' user={user} />
+                        :
+                        <LandingPage path='/' firebase={this.props.firebase} />
+                      }
             <ProfilePage path='user' user={user}/>
             <EventPage path='event' user={user} />
-            <DiscoverPage path='discover' user={user} />
           </Router>
           <FooterNavigation />
         </MuiThemeProvider>
