@@ -53,7 +53,8 @@ class App extends Component {
       isAuthenticated: false,
       authenticateUser: this.authenticateUser,
       deAuthenticateUser: this.deAuthenticateUser,
-      userInfo: null
+      userInfo: null,
+      firebase: this.props.firebase
     }
 
     this.theme = createMuiTheme();
@@ -67,12 +68,13 @@ class App extends Component {
           <CssBaseline />
           <Router>
             {this.state.isAuthenticated ?
-                        <DiscoverPage path='/' user={user} />
+                        <EventPage path='/' user={user} />
                         :
                         <LandingPage path='/' firebase={this.props.firebase} />
                       }
             <ProfilePage path='user' user={user}/>
-            <EventPage path='event' user={user} />
+            <DiscoverPage path='/discover' user={user} />
+
           </Router>
           <FooterNavigation />
         </MuiThemeProvider>
