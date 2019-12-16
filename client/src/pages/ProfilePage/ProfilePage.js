@@ -41,7 +41,6 @@ const ProfilePage = (props) => {
           </Box>
           <Box mb={1} className={classes.dataTable} >
             <ProfileDataTable entries={props.entries} />
-
           </Box>
         </Paper>
       )}
