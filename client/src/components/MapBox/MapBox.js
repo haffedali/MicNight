@@ -1,46 +1,44 @@
-import React, { Component } from 'react';
-import mapboxgl from 'mapbox-gl';
-import Container from '@material-ui/core/Container';
+import React,{ useState } from 'react'
+import MapGL, {GeolocateControl } from 'react-map-gl'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiaGFmZmVkYWxpIiwiYSI6ImNrNDIxeGlsNTA3a2ozcG9leWhkb3JtYjAifQ.w0tZyJr3syy3zTK8yh3bnA';
+const accessToken = 'pk.eyJ1IjoiaGFmZmVkYWxpIiwiYSI6ImNrNDIxeGlsNTA3a2ozcG9leWhkb3JtYjAifQ.w0tZyJr3syy3zTK8yh3bnA';
+const geolocateStyle = {
+  float: 'left',
+  margin: '50px',
+  padding: '10px'
+};
 
-class MapBox extends React.Component {
-  constructor(props) {
-  super(props);
-    this.state = {
-      lng: 5,
-      lat: 34,
-      zoom: 2
-    };
-  }
+const MapBox = () => {
 
-  componentDidMount() {
-    const map = new mapboxgl.Map({
-      container: this.mapContainer,
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [this.state.lng, this.state.lat],
-      zoom: this.state.zoom
-    });
+  const [viewport, setViewPort ] = useState({
+    width: "100%",
+    height: 900,
+    latitude: 0,
+    longitude: 0,
+    zoom: 2
+  })
 
-    map.on('move', () => {
-      this.setState({
-        lng: map.getCenter().lng.toFixed(4),
-        lat: map.getCenter().lat.toFixed(4),
-        zoom: map.getZoom().toFixed(2)
-      });
-    });
-  }
-
-  render() {
-    return (
-      <Container>
-        <div className='sidebarStyle'>
-          <div>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}</div>
-        </div>
-        <div ref={el => this.mapContainer = el} className='mapContainer' />
-      </Container>
-    )
-  }
+  const _onViewportChange = viewport => setViewPort({...viewport, transitionDuration: 3000 })
+  
+  
+  return (
+    <div style={{ margin: '0 auto'}}>
+      <h1 style={{textAlign: 'center', fontSize: '25px', fontWeight: 'bolder' }}>GeoLocator: Click To Find Your Location or click <a href="/search">here</a> to search for a location</h1>
+      <MapGL
+        {...viewport}
+        mapboxApiAccessToken={accessToken}
+        mapStyle="mapbox://styles/mapbox/dark-v8"
+        onViewportChange={_onViewportChange}
+      >
+        <GeolocateControl
+          style={geolocateStyle}
+          positionOptions={{enableHighAccuracy: true}}
+          trackUserLocation={true}
+        />
+      </MapGL>
+    </div>
+  )
 }
 
 export default MapBox;
