@@ -6,6 +6,7 @@ import ProfileDataTable from '../../composite-components/ProfileDataTable';
 import MainProfileAvatar from '../../components/MainProfileAvatar';
 import { makeStyles } from '@material-ui/styles';
 import AuthenticationContext from '../../components/AuthenticationContext';
+import { Typography } from '@material-ui/core';
 
 
 
@@ -37,11 +38,10 @@ const ProfilePage = (props) => {
       {({ isAuthenticated, userInfo }) => (
         <Paper square className={classes.container}>
           <Box m={5} className={classes.avatar}>
-            <MainProfileAvatar photoUrl={props.user.photoUrl} />
+            <MainProfileAvatar photoUrl={userInfo.photoURL} />
           </Box>
           <Box mb={1} className={classes.dataTable} >
             <ProfileDataTable entries={props.entries} />
-
           </Box>
         </Paper>
       )}
