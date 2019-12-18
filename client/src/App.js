@@ -12,6 +12,7 @@ import "./App.css";
 
 
 import FooterNavigation from './components/FooterNavigation';
+import firebase from './components/firebase';
 
 
 
@@ -34,15 +35,59 @@ class App extends Component {
 
 
     this.authenticateUser = () => {
-      let user = this.props.firebase.auth().currentUser;
+      let user = firebase.auth().currentUser.providerData[0];
       this.setState({
         isAuthenticated: true,
         userInfo: user
       })
+
+      // CREATE USER IN FIRESTORE HERE IF NOT ALREADY CREATED
+      this.createUser(user)
     }
 
+
+
+
+    this.createUser = (user) => {
+      console.log('-------------------------------------------------------------------------------------------')
+      const userRef = firebase.firestore().collection('users').doc(user.uid)
+      let name = user.displayName.split(' ');
+
+      const userObj = {
+        firstName: name[0],
+        lastName: name[1],
+        socialLinks : {
+          facebook: null,
+          google: null,
+          twitter: null,
+          tumblr: null,
+          instagram: null,
+          soundcloud: null
+        },
+        email: user.email,
+        photoURL: user.photoURL,
+        isArtist: false,
+        isOrganizer: false
+      }
+
+      userRef.get()
+        .then(function(docSnapshot) {
+          console.log('-------------------------------------------------------------------------------------------')
+
+         if(docSnapshot.exists) {
+          // do nothing
+         } else {
+          userRef.set({...userObj})
+         }
+        })
+    }
+
+
+
+
+
     this.deAuthenticateUser = () => {
-      this.props.firebase.auth().signOut()
+      firebase.auth().signOut()
       this.setState({
         isAuthenticated: false,
         userInfo: null
@@ -53,7 +98,9 @@ class App extends Component {
       isAuthenticated: false,
       authenticateUser: this.authenticateUser,
       deAuthenticateUser: this.deAuthenticateUser,
-      userInfo: null
+      userInfo: null,
+      firebase: firebase,
+      test: null
     }
 
     this.theme = createMuiTheme();
@@ -66,10 +113,14 @@ class App extends Component {
         <MuiThemeProvider theme={this.theme}>
           <CssBaseline />
           <Router>
-            <LandingPage path='/' firebase={this.props.firebase} />
+            {this.state.isAuthenticated ?
+              <EventPage path='/' user={user} />
+              :
+              <LandingPage path='/' firebase={firebase} />
+            }
             <ProfilePage path='user' user={user}/>
-            <EventPage path='event' user={user} />
-            <DiscoverPage path='discover' user={user} />
+            <DiscoverPage path='/discover' user={user} />
+
           </Router>
           <FooterNavigation />
         </MuiThemeProvider>

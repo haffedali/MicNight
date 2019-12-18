@@ -40,19 +40,13 @@ class LogInUI extends Component {
           <div className="login-container">
             {/* Super questionable attachment of my authentication method here, gets a red warning */}
             {this.uiConfig.callbacks.signInSuccessWithAuthResult = authenticateUser}
-            {isAuthenticated ? (
-              <div>
-                <div>Signed In as {userInfo.displayName}!</div>
-                <Button variant="contained" color="primary" onClick={() => deAuthenticateUser()}>Sign Out!</Button>
-              </div>
-            ) : (
+
                 <div>
                   <StyledFirebaseAuth
                     uiConfig={this.uiConfig}
                     firebaseAuth={this.props.firebase.auth()}
                   />
                 </div>
-              )}
           </div>
         )}
       </AuthenticationContext.Consumer>

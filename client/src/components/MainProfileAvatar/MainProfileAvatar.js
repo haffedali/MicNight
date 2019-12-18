@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import MuiAvatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box'
 import ButtonBase from '@material-ui/core/ButtonBase'
+
+import AuthenticationContext from '../AuthenticationContext';
+
+
 
 const ProfileAvatar = ({ photoUrl }) => {
     const useStyles = makeStyles({
@@ -19,7 +23,9 @@ const ProfileAvatar = ({ photoUrl }) => {
         }
     })
 
-    const classes = useStyles()
+    const classes = useStyles();
+
+    const auth = useContext(AuthenticationContext);
 
     return (
         <ButtonBase className={classes.container}>
@@ -35,9 +41,9 @@ const ProfileAvatar = ({ photoUrl }) => {
                 <MuiAvatar
                     className={classes.avatar}
                     src={
-                        !photoUrl
+                        !auth.userInfo.photoURL
                             ? `https://avatars.dicebear.com/v2/bottts/bot.svg`
-                            : photoUrl
+                            : auth.userInfo.photoURL
                     }
                 />
             </Box>
