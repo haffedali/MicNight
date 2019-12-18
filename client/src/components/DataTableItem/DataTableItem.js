@@ -6,11 +6,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
-import IconButton from '@material-ui/core/IconButton';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import RedditIcon from '@material-ui/icons/Reddit';
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/styles'
 
