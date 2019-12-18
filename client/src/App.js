@@ -1,18 +1,22 @@
+// Dependencies
 import React, { Component } from 'react';
 import { Router } from '@reach/router';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AuthenticationContext from './components/AuthenticationContext'
+import "./App.css";
 
+
+
+// Components
 import LandingPage from './pages/LandingPage';
 import ProfilePage from './pages/ProfilePage';
 import EventPage from './pages/EventPage';
 import DiscoverPage from './pages/DiscoverPage';
-import "./App.css";
-
-
 import FooterNavigation from './components/FooterNavigation';
 import firebase from './components/firebase';
+
+//Util functions
 
 
 
@@ -27,6 +31,7 @@ const user = {
   photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Haffed.svg',
   uid: '1234'
 }
+
 
 
 class App extends Component {
