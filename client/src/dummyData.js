@@ -1,3 +1,28 @@
+import generate from './utils/gernerate'
+
+
+
+const testUser = {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const artistList = [
     {
         name: "Haffed Ali",
@@ -87,3 +112,5 @@ export const userList = [{
     tagLine: 'Boss bitch',
     uid: '1236'
 }]
+
+

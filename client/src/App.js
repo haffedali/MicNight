@@ -17,12 +17,15 @@ import FooterNavigation from './components/FooterNavigation';
 import firebase from './components/firebase';
 
 //Util functions
+import firebaseUtils from './utils/firebaseUtils';
 
 
+//Quick and dirty function test
+firebaseUtils.getSingleUser('106258930564522942122')
 
 //dummy data for testing (must pass down to props where we would
 //be getting data from our database... ugly prop drilling here)
-import { artistList, eventList, userList } from './dummyData';
+// import { artistList, eventList, userList } from './dummyData';
 
 // Simulate a logged in user w/ relevant data
 const user = {
