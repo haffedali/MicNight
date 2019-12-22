@@ -34,13 +34,6 @@ const user = {
 
 
 
-// for (let i=0;i<dummyUsers.length;i++){
-//   users.create(dummyUsers[i])
-// }
-
-// users.create(dummyUsers[5])
-
-// users.getAll()
 
 class App extends Component {
   constructor(props) {
@@ -49,20 +42,24 @@ class App extends Component {
 
     this.authenticateUser = () => {
       let user = firebase.auth().currentUser.providerData[0];
+      let name = user.displayName.split(' ');
+      user.firstName = name[0];
+      user.lastname = name[1];
+
+
       this.setState({
         isAuthenticated: true,
         userInfo: user
-      })
+      });
 
       // CREATE USER IN FIRESTORE HERE IF NOT ALREADY CREATED
-      this.createUser(user)
+      this.createUser(user);
     }
 
 
 
 
     this.createUser = (user) => {
-      console.log('-------------------------------------------------------------------------------------------')
       const userRef = firebase.firestore().collection('users').doc(user.uid)
       let name = user.displayName.split(' ');
 
@@ -85,8 +82,6 @@ class App extends Component {
 
       userRef.get()
         .then(function (docSnapshot) {
-          console.log('-------------------------------------------------------------------------------------------')
-
           if (docSnapshot.exists) {
             // do nothing
           } else {
@@ -123,14 +118,22 @@ class App extends Component {
 
   //Literally here just for seeding the db
   componentDidMount() {
+
+//    SEEDING DB
     // setTimeout(() => {
     //   for (let i = 0; i < dummyUsers.length; i++) {
     //     users.create(dummyUsers[i])
     //   }
     // }, 5000)
 
-  }
+    //FOLLOW USER
+    //User ref should show up in haffed ali's relationships/micMates
+    setTimeout(()=> {
+      let followArtistRef = firebase.firestore().collection('users').doc('3221dBKExAN8dbaponez');
 
+      users.followUser('106258930564522942122', followArtistRef)
+    },5000)
+  }
 
 
 

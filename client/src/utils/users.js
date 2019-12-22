@@ -42,6 +42,12 @@ const users = {
             isOrganizer: false
         })
         .catch(err=>console.log(err))
+
+        userRef.collection('relationships').doc('favorites').set({
+            artists: [],
+            events: [],
+            micMates: []
+        })
     },
 
     update: (uid, updateObj) => {
@@ -56,20 +62,36 @@ const users = {
         })
     },
 
+
+
+
     followUser: (uid,followUserRef) => {
-        firebase.firestore().collection('users').doc(uid)
-        .collection('relationships').doc('micMates').arrayUnion(followUserRef);
+        let userRef = firebase.firestore().collection('users').doc(uid)
+
+        userRef.collection('relationships').doc('favorites').update({
+            micMates: firebase.firestore.FieldValue.arrayUnion(followUserRef)
+        })
     },
 
     followEvent: (uid,followEventRef) => {
-        firebase.firestore().collection('users').doc(uid)
-        .collection('relationships').doc('events').arrayUnion(followEventRef);
+        let userRef = firebase.firestore().collection('users').doc(uid)
+        
+        userRef.collection('relationships').doc('favorites').update({
+            events: firebase.firestore.FieldValie.arrayUnion(followEventRef)
+        })
     },
 
-    followEvent: (uid,followArtistRef) => {
-        firebase.firestore().collection('users').doc(uid)
-        .collection('relationships').doc('artists').arrayUnion(followArtistRef);
+
+    followArtist: (uid,followArtistRef) => {
+        let userRef = firebase.firestore().collection('users').doc(uid);
+        
+        userRef.collection('relationships').doc('favorites').update({
+            artists: firebase.firestore.FieldValue.arrayUnion(followArtistRef)
+        });
     },
+
+
+
     
     joinEvent: (userRef, eventUid) => {
         firebase.firestore().collection('events').doc(eventUid)
