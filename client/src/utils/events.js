@@ -2,8 +2,8 @@ import firebase from 'firebase';
 
 
 const events = {
-    create: (uid, eventObj) => {
-        firebase.firestore().collection('events').doc(uid).set({
+    create: (eventObj) => {
+        firebase.firestore().collection('events').add({
             geodcode: eventObj.geocode,
             location: eventObj.location,
             name: eventObj.name,

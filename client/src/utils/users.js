@@ -21,10 +21,13 @@ const users = {
             });
     },
 
-    create: (uid, userObj) => {
-        firebase.firestore().collection('users').doc(uid).set({
-            firstName: userObj.name[0],
-            lastName: userObj.name[1],
+    create: (userObj) => {
+        console.log(userObj)
+        const userRef = firebase.firestore().collection('users').doc();
+
+        userRef.set({
+            firstName: userObj.firstName,
+            lastName: userObj.lastName,
             socialLinks : {
               facebook: null,
               google: null,
@@ -38,6 +41,7 @@ const users = {
             isArtist: false,
             isOrganizer: false
         })
+        .catch(err=>console.log(err))
     },
 
     update: (uid, updateObj) => {
@@ -57,19 +61,23 @@ const users = {
         .collection('relationships').doc('micMates').arrayUnion(followUserRef);
     },
 
-    followEvent: (uid,followUserRef) => {
+    followEvent: (uid,followEventRef) => {
         firebase.firestore().collection('users').doc(uid)
-        .collection('relationships').doc('micMates').arrayUnion(followUserRef);
+        .collection('relationships').doc('events').arrayUnion(followEventRef);
     },
 
+    followEvent: (uid,followArtistRef) => {
+        firebase.firestore().collection('users').doc(uid)
+        .collection('relationships').doc('artists').arrayUnion(followArtistRef);
+    },
     
     joinEvent: (userRef, eventUid) => {
         firebase.firestore().collection('events').doc(eventUid)
         .collection('liveData').doc('live')
-        .update("guests",FieldArray.arrayUnion(userRef))
+        .update("guests", firebase.firestore().FieldValue.arrayUnion(userRef))
     }
-
-    
 }
+
+
 
 export default users;

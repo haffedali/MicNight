@@ -4,6 +4,9 @@ import firebase from '../components/firebase';
 import users from '../utils/users';
 import events from '../utils/events';
 
+import dummyUsers from '../dummyData';
+
+
 
 
 
@@ -17,9 +20,12 @@ test("Returns undefined when trying to read a nonexistant user", () => {
     })
 })
 
-// test("Should update a user with the id of 10, in this case changing user's name to Paul", () => {
-    
-// })
+test('Should result in a seeded firestore db. Testing creating new users', () => {
+    for (let i = 0;i<dummyUsers.length;i++){
+        users.create(dummyUsers[i])   
+    }
+    expect(2+2===4).toBeTruthy();
+})
 
 
 
