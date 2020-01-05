@@ -9,6 +9,7 @@
     "@material-ui/system": "^4.5.2",
     "firebase": "^7.2.1",
     "firebaseui": "^4.2.0",
+    "jest": "^24.9.0",
     "leaflet": "^1.6.0",
     "mapbox-gl": "^1.6.0",
     "node-sass": "^4.13.0",
