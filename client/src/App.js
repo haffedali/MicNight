@@ -126,13 +126,15 @@ class App extends Component {
     //   }
     // }, 5000)
 
-    //FOLLOW USER
-    //User ref should show up in haffed ali's relationships/micMates
-    setTimeout(()=> {
-      let followArtistRef = firebase.firestore().collection('users').doc('3221dBKExAN8dbaponez');
 
-      users.followUser('106258930564522942122', followArtistRef)
-    },5000)
+    
+//    FOLLOW USER
+    //User ref should show up in haffed ali's relationships/micMates
+    // setTimeout(()=> {
+    //   let followArtistRef = firebase.firestore().collection('users').doc('3221dBKExAN8dbaponez');
+
+    //   users.followUser('106258930564522942122', followArtistRef)
+    // },5000)
   }
 
 
