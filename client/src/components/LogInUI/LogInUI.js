@@ -12,9 +12,6 @@ class LogInUI extends Component {
   uiConfig = {
     // Popup signin flow rather than redirect flow.
     signInFlow: 'popup',
-    // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
-    // signInSuccessUrl: '/signedIn',
-
     signInOptions: [
       this.props.firebase.auth.EmailAuthProvider.PROVIDER_ID,
       this.props.firebase.auth.GoogleAuthProvider.PROVIDER_ID,

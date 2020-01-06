@@ -43,8 +43,6 @@ const ProfileCard = ({ user }) => {
                     {user.tagLine}
                 </Typography>
             </Container>
-
-
         </Paper>
     )
 }
