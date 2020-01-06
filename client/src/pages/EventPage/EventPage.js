@@ -59,9 +59,8 @@ const EventPage = () => {
   const classes = useStyles();
   
   const viewSwitchOnClick = () => {
-    console.log('testtesttest')
     if (view === 'Upcoming'){
-      setView('Guests')
+      setView('Chat')
     }else {
       setView('Upcoming')
     }

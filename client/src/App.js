@@ -39,7 +39,6 @@ class App extends Component {
   constructor(props) {
     super(props)
 
-
     this.authenticateUser = () => {
       let user = firebase.auth().currentUser.providerData[0];
       let name = user.displayName.split(' ');
@@ -55,9 +54,6 @@ class App extends Component {
       // CREATE USER IN FIRESTORE HERE IF NOT ALREADY CREATED
       this.createUser(user);
     }
-
-
-
 
     this.createUser = (user) => {
       const userRef = firebase.firestore().collection('users').doc(user.uid)
@@ -90,10 +86,6 @@ class App extends Component {
         })
     }
 
-
-
-
-
     this.deAuthenticateUser = () => {
       firebase.auth().signOut()
       this.setState({
@@ -119,7 +111,7 @@ class App extends Component {
   //Literally here just for seeding the db
   componentDidMount() {
 
-//    SEEDING DB
+    //SEEDING DB
     // setTimeout(() => {
     //   for (let i = 0; i < dummyUsers.length; i++) {
     //     users.create(dummyUsers[i])
@@ -128,7 +120,7 @@ class App extends Component {
 
 
     
-//    FOLLOW USER
+    //FOLLOW USER
     //User ref should show up in haffed ali's relationships/micMates
     // setTimeout(()=> {
     //   let followArtistRef = firebase.firestore().collection('users').doc('3221dBKExAN8dbaponez');
@@ -150,7 +142,7 @@ class App extends Component {
               :
               <LandingPage path='/' firebase={firebase} />
             }
-            <ProfilePage path='user' user={user} />
+            <ProfilePage path='/user' user={user} />
             <DiscoverPage path='/discover' user={user} />
 
           </Router>
