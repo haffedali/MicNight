@@ -47,3 +47,6 @@ import dummyUsers from '../dummyData';
 //     let eventUpdate = await events.addGuest('XLhTCLyg9mNB6maPMt3v',uid)
 // })
 
+test('Sends join request from an artist to the oranizer of an event', async () => {
+    
+})
