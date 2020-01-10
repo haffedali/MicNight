@@ -85,6 +85,7 @@ const EventPage = () => {
           </Grid>
         </Grid>
 
+        
         <Grid className={classes.dataTableAndChat} item container direction='row'>
           <Grid style={{height:'100%'}} item xs={12}>
             <PatronDataTable />
