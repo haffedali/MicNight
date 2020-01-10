@@ -13,7 +13,7 @@ const events = {
     },
 
     get: (uid) => {
-        firebase.firestore().collection('events').doc(uid).get()
+        return firebase.firestore().collection('events').doc(uid).get()
         .then( (doc) => {
             return doc.data();
         }).catch(function(error) {
@@ -22,9 +22,15 @@ const events = {
     },
 
     update: (uid, updateObj) => {
-        firebase.firestore().collection('events').doc(uid)
+        return firebase.firestore().collection('events').doc(uid)
         .update({
-            updateObj
+            ...updateObj
+        })
+        .then( (data) => {
+            console.log("Successfully updated")
+        })
+        .catch( (err) => {
+            console.log(err)
         })
     },
 
@@ -36,12 +42,42 @@ const events = {
 
     goLive: (uid) => {
         firebase.firestore().collection('events').doc(uid)
-        .collection('live').add({
+        .collection('liveData').doc('live').set({
             artists: [],
             chat: [],
             guests: []
         })
-    }
+    },
+
+    getLiveData: (uid) => {
+        return firebase.firestore().collection('events').doc(uid)
+        .collection('liveData').doc('live').get()
+        .then( (doc) => {
+            return doc.data()
+        })
+    },
+
+    addArtist: (eventUid, artistUid) => {
+        return firebase.firestore().collection('events').doc(eventUid)
+        .collection('liveData').doc('live')
+        .update({
+            "artists": firebase.firestore.FieldValue.arrayUnion(artistUid)
+        })
+        .catch( (err) => {
+            console.log(err)
+        })
+    },
+
+    addGuest: (eventUid, guestUid) => {
+        return firebase.firestore().collection('events').doc(eventUid)
+        .collection('liveData').doc('live')
+        .update({
+            "guests": firebase.firestore.FieldValue.arrayUnion(guestUid)
+        })
+        .catch( (err) => {
+            console.log(err)
+        })
+    },
 }
 
 export default events

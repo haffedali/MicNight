@@ -14,7 +14,7 @@ const ProfileAvatar = ({ photoUrl, height, width }) => {
     const useStyles = makeStyles({
         avatar: {
             width: width,
-            height: height
+            height: height,
         }
     })
 
