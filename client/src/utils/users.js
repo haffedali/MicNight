@@ -28,20 +28,20 @@ const users = {
         userRef.set({
             firstName: userObj.firstName,
             lastName: userObj.lastName,
-            socialLinks : {
-              facebook: null,
-              google: null,
-              twitter: null,
-              tumblr: null,
-              instagram: null,
-              soundcloud: null
+            socialLinks: {
+                facebook: null,
+                google: null,
+                twitter: null,
+                tumblr: null,
+                instagram: null,
+                soundcloud: null
             },
             email: userObj.email,
             photoURL: userObj.photoURL,
             isArtist: false,
             isOrganizer: false
         })
-        .catch(err=>console.log(err))
+            .catch(err => console.log(err))
 
         userRef.collection('relationships').doc('favorites').set({
             artists: [],
@@ -57,7 +57,7 @@ const users = {
     },
 
     delete: (uid) => {
-        firebase.firestore().collection('users').doc(uid).delete().then(()=>{
+        firebase.firestore().collection('users').doc(uid).delete().then(() => {
             console.log('Document successfully removed!')
         })
     },
@@ -65,7 +65,7 @@ const users = {
 
 
 
-    followUser: (uid,followUserRef) => {
+    followUser: (uid, followUserRef) => {
         let userRef = firebase.firestore().collection('users').doc(uid)
 
         userRef.collection('relationships').doc('favorites').update({
@@ -73,18 +73,18 @@ const users = {
         })
     },
 
-    followEvent: (uid,followEventRef) => {
+    followEvent: (uid, followEventRef) => {
         let userRef = firebase.firestore().collection('users').doc(uid)
-        
+
         userRef.collection('relationships').doc('favorites').update({
-            events: firebase.firestore.FieldValie.arrayUnion(followEventRef)
+            events: firebase.firestore.FieldValue.arrayUnion(followEventRef)
         })
     },
 
 
-    followArtist: (uid,followArtistRef) => {
+    followArtist: (uid, followArtistRef) => {
         let userRef = firebase.firestore().collection('users').doc(uid);
-        
+
         userRef.collection('relationships').doc('favorites').update({
             artists: firebase.firestore.FieldValue.arrayUnion(followArtistRef)
         });
@@ -92,11 +92,36 @@ const users = {
 
 
 
-    
+
     joinEvent: (userRef, eventUid) => {
         firebase.firestore().collection('events').doc(eventUid)
-        .collection('liveData').doc('live')
-        .update("guests", firebase.firestore().FieldValue.arrayUnion(userRef))
+            .collection('liveData').doc('live')
+            .update("guests", firebase.firestore().FieldValue.arrayUnion(userRef))
+    },
+
+    requestToJoinEventAsArtist: async (artistUid, eventUid) => {
+        let organizerUid;
+
+        // Here we are grabbing the uid of the event's organizer
+        // We'll need it to populate the organizer's request field with the user
+        // that wants to join
+        await firebase.firestore().collection('events').doc(eventUid).get()
+            .then((doc) => {
+                organizerUid = doc.data().organizer
+            }).catch((err) => {
+                console.log('error getting document:', error)
+            })
+
+
+        // ALEC HELP PLOX!!! Why does this only work when i return the function? 
+        return firebase.firestore().collection('users').doc(organizerUid)
+        .collection('requests').doc('requests')
+        .update({
+            "toJoinAsArtist": firebase.firestore.FieldValue.arrayUnion(artistUid)
+        })
+        .catch((err)=> {
+            console.log(err)
+        })
     }
 }
 
