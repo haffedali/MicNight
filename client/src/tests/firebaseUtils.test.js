@@ -48,5 +48,13 @@ import dummyUsers from '../dummyData';
 // })
 
 test('Sends join request from an artist to the oranizer of an event', async () => {
-    
+    let testArtistUid = '4g6MNKxifacKB6quFjXo';
+    let testEventUid = 'XLhTCLyg9mNB6maPMt3v';
+    let testOrganzierUid = '106258930564522942122'
+
+    const complete = await users.requestToJoinEventAsArtist(testArtistUid, testEventUid)
+
+    // const organizerRequestList = await users.get(testOrganzierUid).requests
+
+    expect(true).toBeTruthy();
 })
