@@ -40,12 +40,25 @@ const events = {
         })
     },
 
-    goLive: (uid) => {
-        firebase.firestore().collection('events').doc(uid)
+    goLive: (eventUid) => {
+        firebase.firestore().collection('events').doc(eventUid)
         .collection('liveData').doc('live').set({
             artists: [],
             chat: [],
             guests: []
+        })
+        
+        firebase.firestore().collection('events').doc(eventUid)
+        .collection('liveData').doc('requests').set({
+            toJoinAsArtist: []
+        })
+    },
+
+    getRequests: async (eventUid) => {
+        return firebase.firestore().collection('events').doc(eventUid)
+        .collection('liveData').doc('requests').get()
+        .then( (doc) => {
+            return doc.data()
         })
     },
 

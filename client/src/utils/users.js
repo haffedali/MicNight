@@ -1,6 +1,16 @@
 import firebase from 'firebase';
 
 
+// Note for me and any other dev working on this.
+// I am thinking I should break this file up into users, artists, and organizers
+// As I'm building there are so many different functions that are specific to a single type
+// of user; so I've began to add comments over a function signifying if it is a user specific function
+// If there are enough user specific functions, I'll break this up into three seperate files
+
+
+
+
+
 const users = {
 
     getAll: () => {
@@ -63,8 +73,6 @@ const users = {
     },
 
 
-
-
     followUser: (uid, followUserRef) => {
         let userRef = firebase.firestore().collection('users').doc(uid)
 
@@ -91,38 +99,62 @@ const users = {
     },
 
 
-
-
     joinEvent: (userRef, eventUid) => {
         firebase.firestore().collection('events').doc(eventUid)
-            .collection('liveData').doc('live')
-            .update("guests", firebase.firestore().FieldValue.arrayUnion(userRef))
+            .collection('liveData').doc('live').update({
+                "guests": firebase.firestore().FieldValue.arrayUnion(userRef)
+            })
     },
 
+
+    // ARTIST SPECIFIC
     requestToJoinEventAsArtist: async (artistUid, eventUid) => {
         let organizerUid;
 
+        // ALEC HELP PLOX!!! Why does this only work when i return the function? 
+        return firebase.firestore().collection('events').doc(eventUid)
+            .collection('liveData').doc('requests').update({
+                "toJoinAsArtist": firebase.firestore.FieldValue.arrayUnion(artistUid)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+
+    },
+
+    // ORGANIZER SPECIFIC
+    proccessRequestToJoinEvent: async (artistUid, eventUid) => {
+        await firebase.firestore().collection('events').doc(eventUid)
+        .collection('liveData').doc('requests').update({
+            "toJoinAsArtist": firebase.firestore.FieldValue.arrayRemove(artistUid)
+        })
+
+       await firebase.firestore().collection('events').doc(eventUid)
+        .collection('liveData').doc('live').update({
+            "artists": firebase.firestore.FieldValue.arrayUnion(artistUid)
+        })
+        
         // Here we are grabbing the uid of the event's organizer
         // We'll need it to populate the organizer's request field with the user
         // that wants to join
-        await firebase.firestore().collection('events').doc(eventUid).get()
+
+        
+    },
+
+    getOrganizerOfEvent: async (eventUid) => {
+        return firebase.firestore().collection('events').doc(eventUid).get()
             .then((doc) => {
-                organizerUid = doc.data().organizer
-            }).catch((err) => {
-                console.log('error getting document:', error)
+                return doc.data().organizer
             })
+    },
 
-
-        // ALEC HELP PLOX!!! Why does this only work when i return the function? 
-        return firebase.firestore().collection('users').doc(organizerUid)
-        .collection('requests').doc('requests')
-        .update({
-            "toJoinAsArtist": firebase.firestore.FieldValue.arrayUnion(artistUid)
-        })
-        .catch((err)=> {
-            console.log(err)
-        })
+    removeArtistFromEvent: async (artistUid,eventUid) => {
+        await firebase.firestore().collection('events').doc(eventUid)
+            .collection('liveData').doc('live').update({
+                "artists": firebase.firestore.FieldValue.arrayRemove(artistUid)
+            })
     }
+
 }
 
 

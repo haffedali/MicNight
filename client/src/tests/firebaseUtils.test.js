@@ -8,6 +8,12 @@ import dummyUsers from '../dummyData';
 
 
 
+// test uids
+const testArtistUid = '4g6MNKxifacKB6quFjXo';
+const testEventUid = 'XLhTCLyg9mNB6maPMt3v';
+const testOrganizerUid = '106258930564522942122';
+
+
 
 
 // test('Grabs and console logs Haffed Ali as the single user', () => {
@@ -48,9 +54,7 @@ import dummyUsers from '../dummyData';
 // })
 
 test('Sends join request from an artist to the oranizer of an event', async () => {
-    let testArtistUid = '4g6MNKxifacKB6quFjXo';
-    let testEventUid = 'XLhTCLyg9mNB6maPMt3v';
-    let testOrganzierUid = '106258930564522942122'
+
 
     const complete = await users.requestToJoinEventAsArtist(testArtistUid, testEventUid)
 
@@ -58,3 +62,32 @@ test('Sends join request from an artist to the oranizer of an event', async () =
 
     expect(true).toBeTruthy();
 })
+
+test('Returns the organizerUid of the head organizer of event', async () => {
+   
+
+    const organizerUid = await users.getOrganizerOfEvent(testEventUid)
+    console.log(organizerUid)
+    expect(organizerUid === testOrganizerUid).toBeTruthy();
+})
+
+test(`Returns list of artist request uid's from a specific event`, async() => {
+
+
+    const requestList = await events.getRequests(testEventUid)
+
+    expect(requestList.toJoinAsArtist).toBeTruthy();
+})
+
+test('Organizer can admit artist to event', async() => {
+    await users.proccessRequestToJoinEvent(testArtistUid, testEventUid);
+
+    expect(true).toBeTruthy();
+})
+
+test('Removes an artist from a specific event', async () => {
+    await users.removeArtistFromEvent(testArtistUid, testEventUid);
+
+    
+})
+
