@@ -1,0 +1,13 @@
+{
+    "extends": "airbnb",
+    "rules": {
+        "import/no-unresolved": [
+           2, 
+           { "caseSensitive": false }
+        ],
+        "no-console": [
+            0,
+            {"allow": ["warn, error"]}
+        ]
+     }
+}
