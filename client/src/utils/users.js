@@ -140,6 +140,7 @@ const users = {
     // that wants to join
   },
 
+  ///// BROKEN
   getOrganizerOfEvent: async (eventUid) => firebase.firestore().collection('events').doc(eventUid).get()
     .then((doc) => doc.data().organizer),
 
