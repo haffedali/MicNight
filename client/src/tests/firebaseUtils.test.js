@@ -3,13 +3,16 @@ import firebase from '../components/firebase';
 
 import users from '../utils/users';
 import events from '../utils/events';
+import organizer from '../utils/organizer'
 
 import dummyUsers from '../dummyData';
 
 
 
 // test uids
+const testGuidUid = 'ImjustHereTolistenNVibe';
 const testArtistUid = '4g6MNKxifacKB6quFjXo';
+const testArtistUid2 = 'xXDragnoSlayyerXx'
 const testEventUid = 'XLhTCLyg9mNB6maPMt3v';
 const testOrganizerUid = '106258930564522942122';
 
@@ -38,7 +41,7 @@ const testOrganizerUid = '106258930564522942122';
 // })
 
 // test('Adds live collection to event document', async () => {
-//     let complete = await events.goLive('XLhTCLyg9mNB6maPMt3v');
+//     let complete = await events.goLiveTEST('XLhTCLyg9mNB6maPMt3v');
 //     const liveEventData = await events.getLiveData('XLhTCLyg9mNB6maPMt3v')
 //     expect(liveEventData).toBeTruthy();
 // })
@@ -91,5 +94,11 @@ const testOrganizerUid = '106258930564522942122';
     
 // })
 
-// test('')
+test('Switches current artist', async () => {
+    await organizer.nextActiveArtist(testEventUid)
+})
+
+// test('Closes live event', async () => {
+//     await organizer.closeEvent(testEventUid)
+// })
 
