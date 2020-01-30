@@ -140,7 +140,25 @@ const users = {
     // that wants to join
   },
 
-  ///// BROKEN
+  setActiveArtist: async (eventUid) => {
+
+  },
+
+  enqueueArtist: async (eventUid, artistUid) => {
+
+  },
+
+  nextActiveArtist: async (eventUid) => {
+    let artistArray = [];
+    await firebase.firestore().collection('events').doc(eventUid)
+      .collection('liveData')
+      .doc('live')
+      .get().then((doc) => {
+        console.log(doc.data())
+      })
+  },
+
+  ///// only implicit return here... scared me for a sec.
   getOrganizerOfEvent: async (eventUid) => firebase.firestore().collection('events').doc(eventUid).get()
     .then((doc) => doc.data().organizer),
 

@@ -53,41 +53,43 @@ const testOrganizerUid = '106258930564522942122';
 //     let eventUpdate = await events.addGuest('XLhTCLyg9mNB6maPMt3v',uid)
 // })
 
-test('Sends join request from an artist to the oranizer of an event', async () => {
+// test('Sends join request from an artist to the oranizer of an event', async () => {
 
 
-    const complete = await users.requestToJoinEventAsArtist(testArtistUid, testEventUid)
+//     const complete = await users.requestToJoinEventAsArtist(testArtistUid, testEventUid)
 
-    // const organizerRequestList = await users.get(testOrganzierUid).requests
+//     // const organizerRequestList = await users.get(testOrganzierUid).requests
 
-    expect(true).toBeTruthy();
-})
+//     expect(true).toBeTruthy();
+// })
 
-test('Returns the organizerUid of the head organizer of event', async () => {
+// test('Returns the organizerUid of the head organizer of event', async () => {
    
 
-    const organizerUid = await users.getOrganizerOfEvent(testEventUid)
-    console.log(organizerUid)
-    expect(organizerUid === testOrganizerUid).toBeTruthy();
-})
+//     const organizerUid = await users.getOrganizerOfEvent(testEventUid)
+//     console.log(organizerUid)
+//     expect(organizerUid === testOrganizerUid).toBeTruthy();
+// })
 
-test(`Returns list of artist request uid's from a specific event`, async() => {
+// test(`Returns list of artist request uid's from a specific event`, async() => {
 
 
-    const requestList = await events.getRequests(testEventUid)
+//     const requestList = await events.getRequests(testEventUid)
 
-    expect(requestList.toJoinAsArtist).toBeTruthy();
-})
+//     expect(requestList.toJoinAsArtist).toBeTruthy();
+// })
 
-test('Organizer can admit artist to event', async() => {
-    await users.proccessRequestToJoinEvent(testArtistUid, testEventUid);
+// test('Organizer can admit artist to event', async() => {
+//     await users.proccessRequestToJoinEvent(testArtistUid, testEventUid);
 
-    expect(true).toBeTruthy();
-})
+//     expect(true).toBeTruthy();
+// })
 
-test('Removes an artist from a specific event', async () => {
-    await users.removeArtistFromEvent(testArtistUid, testEventUid);
+// test('Removes an artist from a specific event', async () => {
+//     await users.removeArtistFromEvent(testArtistUid, testEventUid);
 
     
-})
+// })
+
+// test('')
 
