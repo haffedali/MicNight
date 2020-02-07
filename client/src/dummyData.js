@@ -110,7 +110,7 @@ export const eventList = [
 export const userList = [{
     name: "Vivian Tran",
     tagLine: 'Boss bitch',
-    uid: '1236'
+    uid: 55462
 }]
 
 

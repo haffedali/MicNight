@@ -94,9 +94,9 @@ const testOrganizerUid = '106258930564522942122';
     
 // })
 
-test('Switches current artist', async () => {
-    await organizer.nextActiveArtist(testEventUid)
-})
+// test('Switches current artist', async () => {
+//     await organizer.nextActiveArtist(testEventUid)
+// })
 
 // test('Closes live event', async () => {
 //     await organizer.closeEvent(testEventUid)

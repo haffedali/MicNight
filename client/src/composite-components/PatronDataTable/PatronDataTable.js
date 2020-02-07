@@ -1,5 +1,6 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Container';
 import DataTableView from '../../components/DataTableView';
 import DataTableViewController from '../../components/DataTableViewController';
 import { withStyles } from '@material-ui/styles';
@@ -29,7 +30,6 @@ class PatronDataTable extends React.Component {
     }
 
     handleFocusChange(event) {
-        console.log(event.target.innerHTML);
         let text = event.target.innerHTML;
 
         // Temporary switch case to make use of dummy data for testing
@@ -54,10 +54,11 @@ class PatronDataTable extends React.Component {
 
     render() {
         return (
-                <Box border={2} borderRadius={16} borderColor='#90a4ae' display='flex' flexDirection='column' style={{ maxHeight: "100%", height: "100%", backgroundColor: 'pink', padding: '1vw' }}>
-                        <DataTableViewController buttons={['Upcoming','Guest List']} handleFocusChange={this.handleFocusChange} />
-                        <DataTableView entries={this.entries} focus={this.state.focus} style={{ maxHeight: '100%' }} />
-                </Box>
+            <Box border={2} borderRadius={16} borderColor='#90a4ae' display='flex' flexDirection='column' style={{ maxHeight: "100%", height: "100%", backgroundColor: 'pink', padding: '1vw' }}>
+                <DataTableViewController buttons={['Upcoming', 'Guest List']} handleFocusChange={this.handleFocusChange} />
+                <DataTableView entries={this.entries} focus={this.state.focus} style={{ maxHeight: '100%' }} />
+            </Box>
+
         )
     }
 }

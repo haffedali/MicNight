@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import List from '@material-ui/core/List';
 import Box from '@material-ui/core/Box';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
@@ -79,7 +78,7 @@ const DataTableItem = ({ entry }) => {
 
 DataTableItem.propTypes = {
   entry: PropTypes.shape({
-    uid: PropTypes.string,
+    uid: PropTypes.number,
     photoUrl: PropTypes.string,
     name: PropTypes.string,
     tagLine: PropTypes.string,

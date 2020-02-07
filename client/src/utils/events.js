@@ -54,10 +54,12 @@ const events = {
             })
     },
 
+    //////////////////////////////////////////////////////////////////
+
     goLiveTEST: async (eventUid) => {
         await firebase.firestore().collection('events').doc(eventUid)
             .collection('liveData').doc('live').set({
-                artists: ['4g6MNKxifacKB6quFjXo','xXDragnoSlayyerXx'],
+                artists: ['4g6MNKxifacKB6quFjXo', 'xXDragnoSlayyerXx'],
                 chat: [],
                 guests: ['ImjustHereTolistenNVibe']
             })
@@ -67,6 +69,9 @@ const events = {
                 toJoinAsArtist: []
             })
     },
+
+    //////////////////////////////////////////////////////////////////
+
 
     getRequests: async (eventUid) => {
         return firebase.firestore().collection('events').doc(eventUid)

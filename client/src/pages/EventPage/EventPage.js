@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { Container, Grid } from '@material-ui/core';
+import Box from '@material-ui/core/Box'
 
 
 import CurrentArtistDisplay from '../../composite-components/CurrentArtistDisplay';
@@ -10,7 +11,7 @@ import ViewSwitch from '../../components/ViewSwitch';
 
 
 //Dummy Data
-import {artistList, eventList, userList } from '../../dummyData';
+import { artistList, eventList, userList } from '../../dummyData';
 
 
 const EventPage = () => {
@@ -38,9 +39,11 @@ const EventPage = () => {
       outlineColor: 'red',
 
     },
-    
+
     dataTableAndChat: {
-      height: '50vh',
+      minHeight: '50vh',
+      maxHeight: '50vh',
+      width: '100%',
       outline: 'solid',
       outlineColor: 'green',
     },
@@ -53,49 +56,54 @@ const EventPage = () => {
 
 
   })
-  
 
-  const [view,setView] = useState('Upcoming')
+
+  const [view, setView] = useState('Upcoming')
   const classes = useStyles();
-  
+
   const viewSwitchOnClick = () => {
-    if (view === 'Upcoming'){
+    if (view === 'Upcoming') {
       setView('Chat')
-    }else {
+    } else {
       setView('Upcoming')
     }
   }
 
-  return(
+  return (
     <Container className={classes.container}>
-        <Grid className={classes.currentArtist} item container direction='row' justify='center'>
-          <Grid item xs={12}>
-            <CurrentArtistDisplay user={artistList[0]} />
+      <Grid className={classes.currentArtist} item container direction='row' justify='center'>
+        <Grid item xs={12}>
+          <CurrentArtistDisplay user={artistList[0]} />
+        </Grid>
+      </Grid>
+
+      {/* <Grid item>
+        <Grid container direction='row' justify='center'>
+          <Grid item xs={6}>
+            <ViewSwitch
+              viewState={view}
+              clickHandler={viewSwitchOnClick}
+            />
           </Grid>
         </Grid>
+      </Grid> */}
 
-        <Grid item>
-          <Grid  container direction='row' justify='center'>
-            <Grid item xs={6}>
-              <ViewSwitch 
-                viewState={view}
-                clickHandler={viewSwitchOnClick}
-              />
-            </Grid>
-          </Grid>
-        </Grid>
 
-        
-        <Grid className={classes.dataTableAndChat} item container direction='row'>
-          <Grid style={{height:'100%'}} item xs={12}>
+      <Grid  item container direction='row'>
+        {/* <Grid style={{height:'100%'}} item xs={12}>
             <PatronDataTable />
-          </Grid>
-        </Grid>
+          </Grid> */}
+        <Box mb={1} className={classes.dataTableAndChat} >
+          <PatronDataTable />
+        </Box>
+      </Grid>
+
+
 
 
     </Container>
-  ) 
-;
+  )
+    ;
 };
 
 export default EventPage;
