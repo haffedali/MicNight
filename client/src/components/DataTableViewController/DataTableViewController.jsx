@@ -39,7 +39,7 @@ const DataTableViewController = ({ buttons, handleFocusChange }) => {
         size="medium"
       >
         {buttons.map((button, x) => (
-          <Button onClick={handleFocusChange} className={classes.button} value={`DataTableController ${x}`}>
+          <Button onClick={handleFocusChange} className={classes.button} key={`DataTableController ${x}`}>
             {button}
           </Button>
         ))}

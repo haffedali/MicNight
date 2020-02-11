@@ -1,55 +1,53 @@
 import React, { Component } from 'react';
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import AuthenticationContext from '../AuthenticationContext';
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 class LogInUI extends Component {
-  constructor({ firebase }) {
-    super(firebase);
-    console.log(firebase)
-    this.uiConfig = {
-      // Popup signin flow rather than redirect flow.
-      signInFlow: 'popup',
-      signInOptions: [
-        firebase.auth.EmailAuthProvider.PROVIDER_ID,
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      ],
-      callbacks: {
-      },
-    };
+  constructor(props) {
+    super(props)
+    this.state = { isSignedIn: false }
   }
 
+  uiConfig = {
+    // Popup signin flow rather than redirect flow.
+    signInFlow: 'popup',
+    signInOptions: [
+      this.props.firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      this.props.firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    ],
+    callbacks: {
+    }
+  }
 
   componentDidMount() {
-    this.firebase.auth().onAuthStateChanged((user) => {
-      this.setState({ isSignedIn: !!user });
-    });
+    this.props.firebase.auth().onAuthStateChanged(user => {
+      this.setState({ isSignedIn: !!user })
+    })
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(){
 
   }
 
   render() {
     return (
       <AuthenticationContext.Consumer>
-        {({
-          isAuthenticated, userInfo, authenticateUser, deAuthenticateUser,
-        }) => (
+        {({ isAuthenticated, userInfo, authenticateUser, deAuthenticateUser }) => (
           <div className="login-container">
             {/* Super questionable attachment of my authentication method here, gets a red warning */}
             {this.uiConfig.callbacks.signInSuccessWithAuthResult = authenticateUser}
 
-            <div>
-              <StyledFirebaseAuth
-                uiConfig={this.uiConfig}
-                firebaseAuth={this.firebase.auth()}
-              />
-            </div>
+                <div>
+                  <StyledFirebaseAuth
+                    uiConfig={this.uiConfig}
+                    firebaseAuth={this.props.firebase.auth()}
+                  />
+                </div>
           </div>
         )}
       </AuthenticationContext.Consumer>
 
-    );
+    )
   }
 }
 

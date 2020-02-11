@@ -94,13 +94,22 @@ const users = {
   },
 
 
-  joinEvent: (userRef, eventUid) => {
-    firebase.firestore().collection('events').doc(eventUid)
+  joinEvent: async (userRef, eventUid) => {
+    await firebase.firestore().collection('events').doc(eventUid)
       .collection('liveData')
       .doc('live')
       .update({
-        guests: firebase.firestore().FieldValue.arrayUnion(userRef),
+        guests: firebase.firestore.FieldValue.arrayUnion(userRef),
       });
+  },
+
+  leaveEvent: async (userUid, eventUid) => {
+    await firebase.firestore().collection('events').doc(eventUid)
+      .collection('liveData')
+      .doc('live')
+      .update({
+        guests: firebase.firestore.FieldValue.arrayRemove(userUid)
+      })
   },
 
 
@@ -140,18 +149,12 @@ const users = {
     // that wants to join
   },
 
-  ///// BROKEN
+
+
+
+  ///// only implicit return here... scared me for a sec.
   getOrganizerOfEvent: async (eventUid) => firebase.firestore().collection('events').doc(eventUid).get()
     .then((doc) => doc.data().organizer),
-
-  removeArtistFromEvent: async (artistUid, eventUid) => {
-    await firebase.firestore().collection('events').doc(eventUid)
-      .collection('liveData')
-      .doc('live')
-      .update({
-        artists: firebase.firestore.FieldValue.arrayRemove(artistUid),
-      });
-  },
 
 
 };
