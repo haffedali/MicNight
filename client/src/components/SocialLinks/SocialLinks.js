@@ -1,9 +1,5 @@
 import React from 'react';
-import Box from '@material-ui/core/Box'
 import Grid from '@material-ui/core/Grid'
-import Card from '@material-ui/core/Card';
-import Container from '@material-ui/core/Container';
-import Paper from '@material-ui/core/Paper';
 import IconButton from '@material-ui/core/IconButton';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -13,13 +9,8 @@ import { makeStyles } from '@material-ui/styles'
 
 
 
-
-
 const SocialLinks = () => {
     const useStyles = makeStyles({
-        iconButton: {
-            
-        },
         container: {
             height: '85%',
             maxHeight: '85%',
@@ -30,7 +21,6 @@ const SocialLinks = () => {
         },
         gridContainer: {
             maxHeight:'100%',
-
         }
     });
 

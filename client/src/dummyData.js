@@ -1,4 +1,3 @@
-import generate from './utils/gernerate'
 
 
 

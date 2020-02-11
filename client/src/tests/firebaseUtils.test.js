@@ -102,3 +102,11 @@ const testOrganizerUid = '106258930564522942122';
 //     await organizer.closeEvent(testEventUid)
 // })
 
+// test('Leave event!', async () => {
+//     await users.leaveEvent('ImjustHereTolistenNVibe', testEventUid)
+// })
+
+
+test('kick up test environment', async () => {
+    await events.goLiveTEST(testEventUid);
+})

@@ -94,13 +94,22 @@ const users = {
   },
 
 
-  joinEvent: (userRef, eventUid) => {
-    firebase.firestore().collection('events').doc(eventUid)
+  joinEvent: async (userRef, eventUid) => {
+    await firebase.firestore().collection('events').doc(eventUid)
       .collection('liveData')
       .doc('live')
       .update({
-        guests: firebase.firestore().FieldValue.arrayUnion(userRef),
+        guests: firebase.firestore.FieldValue.arrayUnion(userRef),
       });
+  },
+
+  leaveEvent: async (userUid, eventUid) => {
+    await firebase.firestore().collection('events').doc(eventUid)
+      .collection('liveData')
+      .doc('live')
+      .update({
+        guests: firebase.firestore.FieldValue.arrayRemove(userUid)
+      })
   },
 
 
