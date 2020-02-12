@@ -34,7 +34,21 @@ const DataTableView = ({ entries }) => {
 
   // Unsure why I need to user count... my entries id isn't "unique" according to my error log
   let dataTableItemCount = 0
-  const DataTableItems = entries.map((entry) => (<DataTableItem key={dataTableItemCount++} entry={entry} />));
+  let DataTableItems
+
+
+
+  DataTableItems = entries.map((entry) => (<DataTableItem key={dataTableItemCount++} entry={entry} />));  
+
+
+  //Currently we need at least two entries in the datatable to get it to show any data
+  if (DataTableItems.length <= 1){
+    return (
+    <Paper className={classes.paper}>
+      <div></div>
+    </Paper>)
+  }
+
 
   return (
     <Paper className={classes.paper}>

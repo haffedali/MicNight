@@ -6,7 +6,7 @@ import DataTableViewController from '../../components/DataTableViewController';
 import { withStyles } from '@material-ui/styles';
 
 //dummy dataload
-import { artistList, userList, eventList } from '../../dummyData'
+import { artistList, userList, dummyUsers, eventList } from '../../dummyData'
 
 
 class PatronDataTable extends React.Component {
@@ -38,7 +38,7 @@ class PatronDataTable extends React.Component {
                 this.entries = artistList;
                 break;
             case "Guest List":
-                this.entries = userList;
+                this.entries = dummyUsers;
                 break;
         }
 

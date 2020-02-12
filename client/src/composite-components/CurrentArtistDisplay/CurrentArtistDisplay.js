@@ -37,7 +37,7 @@ const CurrentArtistDisplay = ({ user }) => {
                     <ProfileCard user={user}></ProfileCard>
                 </Grid>
                 <Grid item xs={2}>
-                    <SocialLinks></SocialLinks>
+                    <SocialLinks socialLinks={user.socialLinks}/>
                 </Grid>
             </Grid>
         </Paper>

@@ -63,7 +63,7 @@ const DataTableItem = ({ entry }) => {
         <ListItemSecondaryAction className={classes.listSecondaryAction} style={{ height: '100%', width: '20%' }}>
           {/* Refractor into 'SocialLinks' component */}
 
-          <SocialLinks />
+          <SocialLinks socialLinks={entry.socialLinks}/>
 
 
           {/* Refractor into 'SocialLinks' component */}
