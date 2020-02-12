@@ -9,13 +9,14 @@ import AuthenticationContext from '../../components/AuthenticationContext';
 import { Typography } from '@material-ui/core';
 
 
+// Data importing
+// const {}
+
+
 
 const ProfilePage = (props) => {
 
   const useStyles = makeStyles({
-    dataTable: {
-
-    },
     avatar: {
       display: 'flex',
       justifyContent: 'center'

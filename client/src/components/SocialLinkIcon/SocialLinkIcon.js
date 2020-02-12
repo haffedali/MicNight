@@ -42,7 +42,7 @@ const SocialLinkIcon = ({ linkName, link }) => {
     }
 
     const redirect = ()=> {
-        console.log(link)
+        window.open(link)
     }
 
 
