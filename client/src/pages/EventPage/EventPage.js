@@ -11,7 +11,7 @@ import ViewSwitch from '../../components/ViewSwitch';
 
 
 //Dummy Data
-import { artistList, eventList, userList } from '../../dummyData';
+import { artistList, eventList, userList, dummyUsers } from '../../dummyData';
 
 
 const EventPage = () => {

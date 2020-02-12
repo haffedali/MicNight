@@ -8,8 +8,12 @@ import RedditIcon from '@material-ui/icons/Reddit';
 import { makeStyles } from '@material-ui/styles'
 
 
+// This component may end up going to the `composite-components` folder
+import SocialLinkIcon from '../SocialLinkIcon'
 
-const SocialLinks = () => {
+
+
+const SocialLinks = ({ socialLinks }) => {
     const useStyles = makeStyles({
         container: {
             height: '85%',
@@ -24,10 +28,31 @@ const SocialLinks = () => {
         }
     });
 
+    const redirect = () =>{
+        console.log(socialLinks)
+    }
+
+
+    const populateSocialLinks = (link) => {
+        switch(link){
+            case "facebook":
+                return <FacebookIcon />
+                break;
+            case "instagram":
+                return <InstagramIcon />
+                break;
+            case "twitter":
+                return <TwitterIcon />
+                break;
+            case "soundcloud":
+                return <RedditIcon />
+                break;
+        }
+    }
+
     const classes = useStyles();
-
     return (
-
+        
         <Grid
             container
             justify='space-around'
@@ -35,26 +60,40 @@ const SocialLinks = () => {
             className={classes.gridContainer}
             py={2}
         >
-            <Grid item xs={6}>
-                <IconButton  classes={{root: classes.socialIcon}} aria-label="delete">
+
+            {Object.entries(socialLinks).map((linkInfo, index)=>{
+                let linkName = linkInfo[0];
+                let link=linkInfo[1]
+                return(
+                <Grid item xs={6}>
+                    <SocialLinkIcon linkName={linkName} link={link} />
+                </Grid>
+                )
+            })}
+
+
+
+
+            {/* <Grid item xs={6}>
+                <IconButton type={"button"} onClick={redirect} classes={{root: classes.socialIcon}} aria-label="delete">
                     <FacebookIcon  />
                 </IconButton>
             </Grid>
             <Grid item xs={6}>
-                <IconButton  classes={{root: classes.socialIcon}} aria-label="delete">
+                <IconButton type={"button"} onClick={redirect}  classes={{root: classes.socialIcon}} aria-label="delete">
                     <TwitterIcon  />
                 </IconButton>
             </Grid>
             <Grid item xs={6}>
-                <IconButton  classes={{root: classes.socialIcon}} aria-label="delete">
+                <IconButton type={"button"} onClick={redirect}  classes={{root: classes.socialIcon}} aria-label="delete">
                     <InstagramIcon  />
                 </IconButton>
             </Grid>
             <Grid item xs={6}>
-                <IconButton  classes={{root: classes.socialIcon}} aria-label="delete">
+                <IconButton type={"button"} onClick={redirect}  classes={{root: classes.socialIcon}} aria-label="delete">
                     <RedditIcon  />
                 </IconButton>
-            </Grid>
+            </Grid> */}
         </Grid>
 
     )

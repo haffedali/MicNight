@@ -63,12 +63,12 @@ class App extends Component {
         firstName: name[0],
         lastName: name[1],
         socialLinks: {
-          facebook: null,
-          google: null,
-          twitter: null,
-          tumblr: null,
-          instagram: null,
-          soundcloud: null
+          facebook: "test",
+          google: "test",
+          twitter: "test",
+          tumblr: "test",
+          instagram: "test",
+          soundcloud: "test"
         },
         email: user.email,
         photoURL: user.photoURL,

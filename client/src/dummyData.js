@@ -27,37 +27,85 @@ export const artistList = [
         name: "Haffed Ali",
         tagLine: "Maker Mover",
         photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Haffed.svg',
-        uid: 1234
+        uid: 1234,
+        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        }
     },
     {
         name: "Anthony Baker",
         tagLine: "Rapper",
         photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Anthony.svg',
-        uid: 1235
+        uid: 1235,
+        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        }
     },
     {
         name: "Martin Gerardo",
         tagLine: "Singer/Songwriter",
         photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Martin.svg',
-        uid: 1236
+        uid: 1236,
+        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        }
     },
     {
         name: "Sarah Debagon",
         tagLine: "Painter",
         photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Sarah.svg',
-        uid: 1237
+        uid: 1237,
+        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        }
     },
     {
         name: "Freaky Fresh",
         tagLine: "Comic",
         photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Freaky.svg',
-        uid: 1238
+        uid: 1238,
+        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        }
     },
     {
         name: "Rebecca Huang",
         tagLine: "Palm Reader",
         photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Rebecca.svg',
-        uid: 1239
+        uid: 1239,
+        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        }
     },
 ]
 
@@ -109,8 +157,18 @@ export const eventList = [
 export const userList = [{
     name: "Vivian Tran",
     tagLine: 'Boss bitch',
-    uid: 55462
-}]
+    uid: 55462,
+    socialLinks: {
+        facebook: "test",
+
+        twitter: "test",
+
+        instagram: "test",
+        soundcloud: "test"
+    }
+},
+
+]
 
 
 
@@ -120,39 +178,276 @@ export const userList = [{
 
 
 export const dummyUsers = [
-    {firstName:"Josi",lastName:"Mapplebeck",email:"jmapplebeck0@bbc.co.uk",gender:"Female",photoURL:"https://robohash.org/earumcommodifugit.jpg?size=50x50&set=set1"},
-    {firstName:"Toby",lastName:"Fesby",email:"tfesby1@vimeo.com",gender:"Male",photoURL:"https://robohash.org/nemoautemullam.bmp?size=50x50&set=set1"},
-    {firstName:"Arney",lastName:"Tarney",email:"atarney2@nasa.gov",gender:"Male",photoURL:"https://robohash.org/consequaturconsequatursapiente.jpg?size=50x50&set=set1"},
-    {firstName:"Earvin",lastName:"Dael",email:"edael3@npr.org",gender:"Male",photoURL:"https://robohash.org/dolorescorporisnemo.jpg?size=50x50&set=set1"},
-    {firstName:"Bank",lastName:"Ricardet",email:"bricardet4@wufoo.com",gender:"Male",photoURL:"https://robohash.org/nisinullavoluptas.jpg?size=50x50&set=set1"},
-    {firstName:"Anselma",lastName:"Ghiotto",email:"aghiotto5@auda.org.au",gender:"Female",photoURL:"https://robohash.org/ipsaquifugit.jpg?size=50x50&set=set1"},
-    {firstName:"Austin",lastName:"Berndsen",email:"aberndsen6@addthis.com",gender:"Female",photoURL:"https://robohash.org/velitaspernaturducimus.png?size=50x50&set=set1"},
-    {firstName:"Kelci",lastName:"Torrecilla",email:"ktorrecilla7@myspace.com",gender:"Female",photoURL:"https://robohash.org/sitrepellateligendi.png?size=50x50&set=set1"},
-    {firstName:"Roanna",lastName:"Bufton",email:"rbufton8@wix.com",gender:"Female",photoURL:"https://robohash.org/quametaut.png?size=50x50&set=set1"},
-    {firstName:"Sylvia",lastName:"Antonikov",email:"santonikov9@wisc.edu",gender:"Female",photoURL:"https://robohash.org/minimaesterror.png?size=50x50&set=set1"},
-    {firstName:"Glynnis",lastName:"Moroney",email:"gmoroneya@imageshack.us",gender:"Female",photoURL:"https://robohash.org/quamdelectussed.jpg?size=50x50&set=set1"},
-    {firstName:"Dillon",lastName:"Sinnett",email:"dsinnettb@mashable.com",gender:"Male",photoURL:"https://robohash.org/consequaturasperioresfuga.png?size=50x50&set=set1"},
-    {firstName:"Bertha",lastName:"Gatecliffe",email:"bgatecliffec@archive.org",gender:"Female",photoURL:"https://robohash.org/sitdignissimosomnis.png?size=50x50&set=set1"},
-    {firstName:"Umeko",lastName:"Rembrandt",email:"urembrandtd@ca.gov",gender:"Female",photoURL:"https://robohash.org/isteeaquesint.png?size=50x50&set=set1"},
-    {firstName:"Bev",lastName:"Mulmuray",email:"bmulmuraye@irs.gov",gender:"Male",photoURL:"https://robohash.org/nequefacilisnihil.jpg?size=50x50&set=set1"},
-    {firstName:"Nicolle",lastName:"Romain",email:"nromainf@mtv.com",gender:"Female",photoURL:"https://robohash.org/accusantiumminimaet.png?size=50x50&set=set1"},
-    {firstName:"Leticia",lastName:"Juarez",email:"ljuarezg@google.com.br",gender:"Female",photoURL:"https://robohash.org/quodomnisut.png?size=50x50&set=set1"},
-    {firstName:"Elfie",lastName:"McIlwraith",email:"emcilwraithh@techcrunch.com",gender:"Female",photoURL:"https://robohash.org/autsintconsectetur.bmp?size=50x50&set=set1"},
-    {firstName:"Hana",lastName:"Cicculini",email:"hcicculinii@zimbio.com",gender:"Female",photoURL:"https://robohash.org/quoeaqueid.jpg?size=50x50&set=set1"},
-    {firstName:"Lazar",lastName:"Gabler",email:"lgablerj@ebay.com",gender:"Male",photoURL:"https://robohash.org/utconsequatursit.png?size=50x50&set=set1"},
-    {firstName:"Wayne",lastName:"Ching",email:"wchingk@comcast.net",gender:"Male",photoURL:"https://robohash.org/similiquecorporiscum.bmp?size=50x50&set=set1"},
-    {firstName:"Arleen",lastName:"Heugle",email:"aheuglel@google.com",gender:"Female",photoURL:"https://robohash.org/eiuscupiditatealiquam.png?size=50x50&set=set1"},
-    {firstName:"Zechariah",lastName:"McGinny",email:"zmcginnym@msu.edu",gender:"Male",photoURL:"https://robohash.org/velitetblanditiis.bmp?size=50x50&set=set1"},
-    {firstName:"Davine",lastName:"McGreary",email:"dmcgrearyn@loc.gov",gender:"Female",photoURL:"https://robohash.org/illoautquo.bmp?size=50x50&set=set1"},
-    {firstName:"Mort",lastName:"Goldsworthy",email:"mgoldsworthyo@t.co",gender:"Male",photoURL:"https://robohash.org/nostrumquidemtempora.jpg?size=50x50&set=set1"},
-    {firstName:"Ainsley",lastName:"Paulillo",email:"apaulillop@washingtonpost.com",gender:"Female",photoURL:"https://robohash.org/autprovidentdoloremque.jpg?size=50x50&set=set1"},
-    {firstName:"Alexia",lastName:"Tutchings",email:"atutchingsq@sakura.ne.jp",gender:"Female",photoURL:"https://robohash.org/quisquamincumque.bmp?size=50x50&set=set1"},
-    {firstName:"Heath",lastName:"Clutterbuck",email:"hclutterbuckr@walmart.com",gender:"Female",photoURL:"https://robohash.org/esteligendienim.jpg?size=50x50&set=set1"},
-    {firstName:"Malory",lastName:"Sperski",email:"msperskis@si.edu",gender:"Female",photoURL:"https://robohash.org/veritatisdolorevoluptatum.png?size=50x50&set=set1"},
-    {firstName:"Ali",lastName:"Bettington",email:"abettingtont@elpais.com",gender:"Male",photoURL:"https://robohash.org/repellendusvelunde.jpg?size=50x50&set=set1"},
-    {firstName:"Cobby",lastName:"Sidon",email:"csidonu@so-net.ne.jp",gender:"Male",photoURL:"https://robohash.org/solutaaea.bmp?size=50x50&set=set1"},
-    {firstName:"Travus",lastName:"Hedgeley",email:"thedgeleyv@thetimes.co.uk",gender:"Male",photoURL:"https://robohash.org/deseruntsimiliquenumquam.png?size=50x50&set=set1"},
-    {firstName:"Robyn",lastName:"Alecock",email:"ralecockw@cam.ac.uk",gender:"Female",photoURL:"https://robohash.org/asperioresvoluptasest.png?size=50x50&set=set1"},
-    {firstName:"Connor",lastName:"Leah",email:"cleahx@homestead.com",gender:"Male",photoURL:"https://robohash.org/isteblanditiisaccusamus.jpg?size=50x50&set=set1"},
-    ]
-    
+    { firstName: "Josi", lastName: "Mapplebeck", email: "jmapplebeck0@bbc.co.uk", gender: "Female", photoURL: "https://robohash.org/earumcommodifugit.jpg?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Toby", lastName: "Fesby", email: "tfesby1@vimeo.com", gender: "Male", photoURL: "https://robohash.org/nemoautemullam.bmp?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Arney", lastName: "Tarney", email: "atarney2@nasa.gov", gender: "Male", photoURL: "https://robohash.org/consequaturconsequatursapiente.jpg?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Earvin", lastName: "Dael", email: "edael3@npr.org", gender: "Male", photoURL: "https://robohash.org/dolorescorporisnemo.jpg?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Bank", lastName: "Ricardet", email: "bricardet4@wufoo.com", gender: "Male", photoURL: "https://robohash.org/nisinullavoluptas.jpg?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Anselma", lastName: "Ghiotto", email: "aghiotto5@auda.org.au", gender: "Female", photoURL: "https://robohash.org/ipsaquifugit.jpg?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Austin", lastName: "Berndsen", email: "aberndsen6@addthis.com", gender: "Female", photoURL: "https://robohash.org/velitaspernaturducimus.png?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Kelci", lastName: "Torrecilla", email: "ktorrecilla7@myspace.com", gender: "Female", photoURL: "https://robohash.org/sitrepellateligendi.png?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Roanna", lastName: "Bufton", email: "rbufton8@wix.com", gender: "Female", photoURL: "https://robohash.org/quametaut.png?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Sylvia", lastName: "Antonikov", email: "santonikov9@wisc.edu", gender: "Female", photoURL: "https://robohash.org/minimaesterror.png?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Glynnis", lastName: "Moroney", email: "gmoroneya@imageshack.us", gender: "Female", photoURL: "https://robohash.org/quamdelectussed.jpg?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Dillon", lastName: "Sinnett", email: "dsinnettb@mashable.com", gender: "Male", photoURL: "https://robohash.org/consequaturasperioresfuga.png?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Bertha", lastName: "Gatecliffe", email: "bgatecliffec@archive.org", gender: "Female", photoURL: "https://robohash.org/sitdignissimosomnis.png?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Umeko", lastName: "Rembrandt", email: "urembrandtd@ca.gov", gender: "Female", photoURL: "https://robohash.org/isteeaquesint.png?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Bev", lastName: "Mulmuray", email: "bmulmuraye@irs.gov", gender: "Male", photoURL: "https://robohash.org/nequefacilisnihil.jpg?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Nicolle", lastName: "Romain", email: "nromainf@mtv.com", gender: "Female", photoURL: "https://robohash.org/accusantiumminimaet.png?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Leticia", lastName: "Juarez", email: "ljuarezg@google.com.br", gender: "Female", photoURL: "https://robohash.org/quodomnisut.png?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Elfie", lastName: "McIlwraith", email: "emcilwraithh@techcrunch.com", gender: "Female", photoURL: "https://robohash.org/autsintconsectetur.bmp?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Hana", lastName: "Cicculini", email: "hcicculinii@zimbio.com", gender: "Female", photoURL: "https://robohash.org/quoeaqueid.jpg?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Lazar", lastName: "Gabler", email: "lgablerj@ebay.com", gender: "Male", photoURL: "https://robohash.org/utconsequatursit.png?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Wayne", lastName: "Ching", email: "wchingk@comcast.net", gender: "Male", photoURL: "https://robohash.org/similiquecorporiscum.bmp?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Arleen", lastName: "Heugle", email: "aheuglel@google.com", gender: "Female", photoURL: "https://robohash.org/eiuscupiditatealiquam.png?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Zechariah", lastName: "McGinny", email: "zmcginnym@msu.edu", gender: "Male", photoURL: "https://robohash.org/velitetblanditiis.bmp?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Davine", lastName: "McGreary", email: "dmcgrearyn@loc.gov", gender: "Female", photoURL: "https://robohash.org/illoautquo.bmp?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Mort", lastName: "Goldsworthy", email: "mgoldsworthyo@t.co", gender: "Male", photoURL: "https://robohash.org/nostrumquidemtempora.jpg?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Ainsley", lastName: "Paulillo", email: "apaulillop@washingtonpost.com", gender: "Female", photoURL: "https://robohash.org/autprovidentdoloremque.jpg?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Alexia", lastName: "Tutchings", email: "atutchingsq@sakura.ne.jp", gender: "Female", photoURL: "https://robohash.org/quisquamincumque.bmp?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Heath", lastName: "Clutterbuck", email: "hclutterbuckr@walmart.com", gender: "Female", photoURL: "https://robohash.org/esteligendienim.jpg?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Malory", lastName: "Sperski", email: "msperskis@si.edu", gender: "Female", photoURL: "https://robohash.org/veritatisdolorevoluptatum.png?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Ali", lastName: "Bettington", email: "abettingtont@elpais.com", gender: "Male", photoURL: "https://robohash.org/repellendusvelunde.jpg?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Cobby", lastName: "Sidon", email: "csidonu@so-net.ne.jp", gender: "Male", photoURL: "https://robohash.org/solutaaea.bmp?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Travus", lastName: "Hedgeley", email: "thedgeleyv@thetimes.co.uk", gender: "Male", photoURL: "https://robohash.org/deseruntsimiliquenumquam.png?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Robyn", lastName: "Alecock", email: "ralecockw@cam.ac.uk", gender: "Female", photoURL: "https://robohash.org/asperioresvoluptasest.png?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+    { firstName: "Connor", lastName: "Leah", email: "cleahx@homestead.com", gender: "Male", photoURL: "https://robohash.org/isteblanditiisaccusamus.jpg?size=50x50&set=set1",        socialLinks: {
+            facebook: "test",
+
+            twitter: "test",
+
+            instagram: "test",
+            soundcloud: "test"
+        } },
+]
