@@ -2,9 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import ProfileDataTable from '../src/composite-components/ProfileDataTable';
-import PatronDataTable from '../src/composite-components/PatronDataTable';
+import EventDataTable from '../src/composite-components/EventDataTable';
 
-import { artistList, eventList, userList } from './ProfileAvatar.stories';
+import { artistList, eventList, userList } from '../src/dummyData.js';
 
 
 
@@ -12,4 +12,4 @@ import { artistList, eventList, userList } from './ProfileAvatar.stories';
 storiesOf('Data Table with Controller', module)
     .addDecorator(story => <div style={{ padding: '3rem' }}>{story()}</div>)
     .add('ProfileDataTable', ()=> <ProfileDataTable entries={artistList} />)
-    .add('PatronDataTable', ()=> <PatronDataTable entries={artistList}/>)
+    .add('EventDataTable', ()=> <EventDataTable entries={artistList}/>)
