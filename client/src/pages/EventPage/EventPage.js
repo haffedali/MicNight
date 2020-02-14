@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box'
 
 
 import CurrentArtistDisplay from '../../composite-components/CurrentArtistDisplay';
-import PatronDataTable from '../../composite-components/PatronDataTable';
+import EventDataTable from '../../composite-components/EventDataTable';
 import ProfileDataTable from '../../composite-components/ProfileDataTable';
 import ViewSwitch from '../../components/ViewSwitch';
 
@@ -91,10 +91,10 @@ const EventPage = () => {
 
       <Grid  item container direction='row'>
         {/* <Grid style={{height:'100%'}} item xs={12}>
-            <PatronDataTable />
+            <EventDataTable />
           </Grid> */}
         <Box mb={1} className={classes.dataTableAndChat} >
-          <PatronDataTable />
+          <EventDataTable />
         </Box>
       </Grid>
 

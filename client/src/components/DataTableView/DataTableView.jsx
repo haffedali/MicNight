@@ -10,18 +10,16 @@ const DataTableView = ({ entries }) => {
   const useStyles = makeStyles({
     root: {},
     entry: {
-      outlineStyle: 'solid',
-      outlineColor: 'pink',
       backgroundColor: '#d7ded9',
     },
     container: {
 
     },
     list: {
-      maxHeight: '50vh',
+      maxHeight: '99%',
       overflow: 'auto',
-
     },
+    
     paper: {
       height: '88%',
       maxHeight: '88%',
@@ -52,13 +50,9 @@ const DataTableView = ({ entries }) => {
 
   return (
     <Paper className={classes.paper}>
-
-
       <List className={classes.list}>
         {DataTableItems}
       </List>
-
-
     </Paper>
 
   );

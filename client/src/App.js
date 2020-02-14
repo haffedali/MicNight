@@ -94,11 +94,17 @@ class App extends Component {
       })
     }
 
+    // DEV MODE - 
+    //
+    // isAuthenticated: true  || isAuthenicated: false
+    // userInfo: user || userInfo: null
+    //
+    //
     this.state = {
-      isAuthenticated: false,
+      isAuthenticated: true,
       authenticateUser: this.authenticateUser,
       deAuthenticateUser: this.deAuthenticateUser,
-      userInfo: null,
+      userInfo: user,
       firebase: firebase,
       test: null
     }
