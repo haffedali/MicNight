@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import ProfilePage from '../src/pages/ProfilePage';
 
+
 import { artistList, eventList, userList } from './ProfileAvatar.stories';
 
 
