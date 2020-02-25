@@ -25,12 +25,16 @@ const useStyles = makeStyles(theme => ({
     maxWidth: '100%',
     maxHeight: '100%',
   },
-  grid2: {
+  greenBorder: {
       outline: 'dotted',
       outlineColor: 'green'
   },
-  grid3: {
-    outline: 'solid',
+  blueBorder: {
+    outline: 'dotted',
+    outlineColor: 'blue'
+},
+  redBorder: {
+    outline: 'dotted',
     outlineColor: 'red'
 }
 }));
@@ -41,14 +45,14 @@ export default function ComplexGrid() {
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <Grid container spacing={2}>
-          <Grid item>
+        <Grid className={classes.greenBorder} container spacing={2}>
+          {/* <Grid item>
             <ButtonBase className={classes.image}>
               <img className={classes.img} alt="complex" src="/static/images/grid/complex.jpg" />
             </ButtonBase>
-          </Grid>
-          <Grid className={classes.grid2} item xs={12} sm container>
-            <Grid className={classes.grid3} item xs container direction="column" spacing={2}>
+          </Grid> */}
+          <Grid className={classes.blueBorder} item xs={12} sm container>
+            <Grid className={classes.redBorder} item xs container direction="column" spacing={2}>
               <Grid item xs>
                 <Typography gutterBottom variant="subtitle1">
                   Standard license

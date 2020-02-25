@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid } from '@material-ui/core';
-import Box from '@material-ui/core/Box'
+import { Container, Grid, Box } from '@material-ui/core';
 
 
 import CurrentArtistDisplay from '../../composite-components/CurrentArtistDisplay';

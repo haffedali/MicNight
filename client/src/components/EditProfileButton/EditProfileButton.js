@@ -4,8 +4,8 @@ import SettingsIcon from '@material-ui/icons/Settings';
 
 
 
-const EditProfileButton = () => {
-    return (<IconButton type={'button'}>
+const EditProfileButton = ({clickEffect, status}) => {
+    return (<IconButton onClick={()=> !status ? clickEffect(true) : clickEffect(false)}type={'button'}>
         <SettingsIcon />
     </IconButton>)
 }
