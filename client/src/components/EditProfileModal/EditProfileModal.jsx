@@ -5,7 +5,16 @@ import MainProfileAvatar from '../../components/MainProfileAvatar';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
+// API UTILS
+import users from '../../utils/users';
+
 const EditProfileModal = ({ userInfo }) => {
+
+    const [editUserInfo, setEditUserInfo] = useState({
+        displayName: userInfo.displayName,
+        tagLine: userInfo.tagLine,
+        photoURL: userInfo.photoURL
+    })
 
     const useStyles = makeStyles({
         container: {
@@ -47,28 +56,43 @@ const EditProfileModal = ({ userInfo }) => {
 
     const classes = useStyles();
 
+    const handleTextFieldChanges = (e) => {
+        // console.log(e.target)
+        const { name, value} = e.target;
+        console.log(name, value)
+        setEditUserInfo({...editUserInfo, [name]: value})
+    }
+    const handleSubmitChanges = () => {
+        console.log(userInfo.uid, editUserInfo)
+        users.updateUserInfo(userInfo.uid, editUserInfo)
+    }
+
     return (
         <form className={classes.container} noValidate autoComplete="off">
             <div className={classes.avatar}>
-                <MainProfileAvatar photoUrl={userInfo.photoUrl} />
+                <MainProfileAvatar photoURL={userInfo.photoURL} />
             </div>
             <div className={classes.formGroup}>
                 <div className={classes.formEntry}>
                     <TextField
                         id="standard-helperText"
-                        defaultValue={userInfo.name}
+                        name="displayName"
+                        defaultValue={userInfo.displayName}
+                        onChange={(e) => handleTextFieldChanges(e)}
                         helperText="Change up the name on em"
                     />
                 </div>
                 <div className={classes.formEntry}>
                     <TextField
                         id="standard-helperText"
-                        defaultValue={userInfo.name}
-                        helperText="Change up the name on em"
+                        name="tagLine"
+                        defaultValue={userInfo.tagLine}
+                        onChange={(e) => handleTextFieldChanges(e)}
+                        helperText="What are ya all about?"
                     />
                 </div>
                 <div className={classes.submitButton}>
-                    <Button variant="contained" color="primary">
+                    <Button onClick={() => handleSubmitChanges()}variant="contained" color="primary">
                         Submit Changes
                     </Button>
                 </div>

@@ -26,6 +26,7 @@ const EventPage = () => {
       backgroundColor: '#f1f7f3'
     },
 
+
     appContainer: {
       outline: 'solid',
       outlineColor: 'blue',

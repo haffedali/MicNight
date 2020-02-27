@@ -25,13 +25,12 @@ import { dummyUsers } from './dummyData';
 
 //dummy data for testing (must pass down to props where we would
 // Simulate a logged in user w/ relevant data
-const user = {
-  name: "Haffed Ali",
-  tagLine: "Maker Mover Producer",
-  photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Haffed.svg',
-  uid: '1234'
-}
-
+// const user = {
+//   name: "Haffed Ali",
+//   tagLine: "Maker Mover Producer",
+//   photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Haffed.svg',
+//   uid: '1234'
+// }
 
 
 
@@ -39,23 +38,22 @@ class App extends Component {
   constructor(props) {
     super(props)
 
-    this.authenticateUser = () => {
-      let user = firebase.auth().currentUser.providerData[0];
-      let name = user.displayName.split(' ');
-      user.firstName = name[0];
-      user.lastname = name[1];
+    this.authenticateUser = async () => {
+      let userData = firebase.auth().currentUser.providerData[0];
+      let user = await users.get(userData.uid)
 
 
       this.setState({
         isAuthenticated: true,
-        userInfo: user
+        userInfo: {...user, uid: userData.uid}
       });
 
       // CREATE USER IN FIRESTORE HERE IF NOT ALREADY CREATED
       this.createUser(user);
     }
 
-    this.createUser = (user) => {
+    this.createUser = () => {
+      const user = this.state.userInfo
       const userRef = firebase.firestore().collection('users').doc(user.uid)
       let name = user.displayName.split(' ');
 
@@ -79,8 +77,10 @@ class App extends Component {
       userRef.get()
         .then(function (docSnapshot) {
           if (docSnapshot.exists) {
+
             // do nothing
           } else {
+            console.log("User has been created!")
             userRef.set({ ...userObj })
           }
         })
@@ -101,10 +101,10 @@ class App extends Component {
     //
     //
     this.state = {
-      isAuthenticated: true,
+      isAuthenticated: false,
       authenticateUser: this.authenticateUser,
       deAuthenticateUser: this.deAuthenticateUser,
-      userInfo: user,
+      userInfo: null,
       firebase: firebase,
       test: null
     }
@@ -116,23 +116,27 @@ class App extends Component {
 
   //Literally here just for seeding the db
   componentDidMount() {
+    let user;
 
-    //SEEDING DB
+    // const getUser = async () => {
+    //   user = await users.get("1234")
+    //   console.log(user)
+    //   this.setState({
+    //     userInfo: user
+    //   })  
+    // }
+
+    // getUser();
+
+
+
+    // SEEDING DB
     // setTimeout(() => {
     //   for (let i = 0; i < dummyUsers.length; i++) {
     //     users.create(dummyUsers[i])
     //   }
     // }, 5000)
 
-
-    
-    //FOLLOW USER
-    //User ref should show up in haffed ali's relationships/micMates
-    // setTimeout(()=> {
-    //   let followArtistRef = firebase.firestore().collection('users').doc('3221dBKExAN8dbaponez');
-
-    //   users.followUser('106258930564522942122', followArtistRef)
-    // },5000)
   }
 
 
@@ -144,12 +148,12 @@ class App extends Component {
           <CssBaseline />
           <Router>
             {this.state.isAuthenticated ?
-              <EventPage path='/' user={user} />
+              <EventPage path='/' user={this.state.userInfo} />
               :
               <LandingPage path='/' firebase={firebase} />
             }
-            <ProfilePage path='/user' user={user} />
-            <DiscoverPage path='/discover' user={user} />
+            <ProfilePage path='/user' user={this.state.user} />
+            <DiscoverPage path='/discover' user={this.state.user} />
 
           </Router>
           <FooterNavigation />

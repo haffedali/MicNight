@@ -59,7 +59,7 @@ const ProfilePage = (props) => {
             <Grid item container direction='row' xs={12} justify='center'>
               <Grid item>
                 <Box m={5} className={classes.avatar}>
-                  <MainProfileAvatar photoUrl={userInfo.photoURL} />
+                  <MainProfileAvatar photoURL={userInfo.photoURL} />
                 </Box>
               </Grid>
             </Grid>
