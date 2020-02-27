@@ -38,23 +38,22 @@ class App extends Component {
   constructor(props) {
     super(props)
 
-    this.authenticateUser = () => {
-      let user = firebase.auth().currentUser.providerData[0];
-      let name = user.displayName.split(' ');
-      user.firstName = name[0];
-      user.lastname = name[1];
+    this.authenticateUser = async () => {
+      let userData = firebase.auth().currentUser.providerData[0];
+      let user = await users.get(userData.uid)
 
 
       this.setState({
         isAuthenticated: true,
-        userInfo: user
+        userInfo: {...user, uid: userData.uid}
       });
 
       // CREATE USER IN FIRESTORE HERE IF NOT ALREADY CREATED
       this.createUser(user);
     }
 
-    this.createUser = (user) => {
+    this.createUser = () => {
+      const user = this.state.userInfo
       const userRef = firebase.firestore().collection('users').doc(user.uid)
       let name = user.displayName.split(' ');
 
@@ -78,8 +77,10 @@ class App extends Component {
       userRef.get()
         .then(function (docSnapshot) {
           if (docSnapshot.exists) {
+
             // do nothing
           } else {
+            console.log("User has been created!")
             userRef.set({ ...userObj })
           }
         })

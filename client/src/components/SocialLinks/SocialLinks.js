@@ -29,7 +29,6 @@ const SocialLinks = ({ socialLinks }) => {
     });
 
     const redirect = () =>{
-        console.log(socialLinks)
     }
 
 
