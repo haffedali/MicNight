@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Grid, Box } from '@material-ui/core';
 
@@ -37,7 +37,6 @@ const EventPage = () => {
       height: '20vh',
       outline: 'solid',
       outlineColor: 'red',
-
     },
 
     dataTableAndChat: {

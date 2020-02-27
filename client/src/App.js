@@ -43,13 +43,14 @@ class App extends Component {
       let user = await users.get(userData.uid)
 
 
+      
       this.setState({
         isAuthenticated: true,
-        userInfo: {...user, uid: userData.uid}
+        userInfo: {...user, ...userData, uid: userData.uid}
       });
 
       // CREATE USER IN FIRESTORE HERE IF NOT ALREADY CREATED
-      this.createUser(user);
+      this.createUser();
     }
 
     this.createUser = () => {
