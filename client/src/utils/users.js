@@ -20,11 +20,18 @@ const users = {
       });
   },
 
-  get: (uid) => firebase.firestore().collection('users').doc(uid).get()
-    .then((doc) => doc.data())
-    .catch((error) => {
-      console.error('Error getting document:', error);
-    }),
+
+  get:  async (uid) => {
+     const payload = await firebase.firestore().collection('users').doc(uid).get()
+      .then((doc) => {
+        return doc.data();
+      })
+      .catch((error) => {
+        console.error('Error getting document:', error);
+      })
+
+      return payload;
+  },
 
   create: (userObj) => {
     const userRef = firebase.firestore().collection('users').doc();
@@ -32,6 +39,8 @@ const users = {
     userRef.set({
       firstName: userObj.firstName,
       lastName: userObj.lastName,
+      displayName: userObj.displayName || '',
+      tagLine: userObj.tagLine || '',
       socialLinks: {
         facebook: null,
         google: null,
@@ -54,11 +63,16 @@ const users = {
     });
   },
 
-  update: (uid, updateObj) => {
-    firebase.firestore().collection('users').doc(uid).update({
-      updateObj,
-    });
+  updateUserInfo: async (userUid, updateObj) => {
+    const  { displayName, photoURL, tagLine } = updateObj
+    await firebase.firestore().collection('users').doc(userUid).update({
+      displayName,
+      photoURL,
+      tagLine
+    })
   },
+
+
 
   delete: (uid) => {
     firebase.firestore().collection('users').doc(uid).delete()

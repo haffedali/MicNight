@@ -15,7 +15,7 @@ const testArtistUid = '4g6MNKxifacKB6quFjXo';
 const testArtistUid2 = 'xXDragnoSlayyerXx'
 const testEventUid = 'XLhTCLyg9mNB6maPMt3v';
 const testOrganizerUid = '106258930564522942122';
-
+const haffedUid = '106258930564522942122';
 
 
 
@@ -107,6 +107,13 @@ const testOrganizerUid = '106258930564522942122';
 // })
 
 
-test('kick up test environment', async () => {
-    await events.goLiveTEST(testEventUid);
+// test('kick up test environment', async () => {
+//     await events.goLiveTEST(testEventUid);
+// })
+
+test('grabs single user', async()=> {
+    let user = await users.get(haffedUid);
+    console.log(user)
+    //await expect(user.firstName).toEqual("Haffed Ali")
+
 })

@@ -24,7 +24,7 @@ const testUser = {}
 
 export const artistList = [
     {
-        name: "Haffed Ali",
+        displayName: "Haffed Ali",
         tagLine: "Maker Mover",
         photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Haffed.svg',
         uid: 1234,
@@ -36,7 +36,7 @@ export const artistList = [
         }
     },
     {
-        name: "Anthony Baker",
+        displayName: "Anthony Baker",
         tagLine: "Rapper",
         photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Anthony.svg',
         uid: 1235,
@@ -48,7 +48,7 @@ export const artistList = [
         }
     },
     {
-        name: "Martin Gerardo",
+        displayName: "Martin Gerardo",
         tagLine: "Singer/Songwriter",
         photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Martin.svg',
         uid: 1236,
@@ -60,7 +60,7 @@ export const artistList = [
         }
     },
     {
-        name: "Sarah Debagon",
+        displayName: "Sarah Debagon",
         tagLine: "Painter",
         photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Sarah.svg',
         uid: 1237,
@@ -72,7 +72,7 @@ export const artistList = [
         }
     },
     {
-        name: "Freaky Fresh",
+        displayName: "Freaky Fresh",
         tagLine: "Comic",
         photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Freaky.svg',
         uid: 1238,
@@ -84,7 +84,7 @@ export const artistList = [
         }
     },
     {
-        name: "Rebecca Huang",
+        displayName: "Rebecca Huang",
         tagLine: "Palm Reader",
         photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Rebecca.svg',
         uid: 1239,
@@ -99,7 +99,7 @@ export const artistList = [
 
 export const eventList = [
     {
-        name: 'Empresso shouts',
+        displayName: 'Empresso shouts',
         tagLine: 'Impress @ Empresso',
         photoUrl: 'https://static.wixstatic.com/media/3dd772_5579c26fb6f745ba88fda4540d2cf0ea~mv2.jpg/v1/fit/w_2500,h_1330,al_c/3dd772_5579c26fb6f745ba88fda4540d2cf0ea~mv2.jpg',
         uid: 1345,
@@ -111,7 +111,7 @@ export const eventList = [
         }
     },
     {
-        name: 'Pokemon Tournament',
+        displayName: 'Pokemon Tournament',
         tagLine: 'Be the very best',
         photoUrl: 'https://www.serebii.net/vgc/vgcs.png',
         uid: 1346,
@@ -123,7 +123,7 @@ export const eventList = [
         }
     },
     {
-        name: 'Iron Lungs',
+        displayName: 'Iron Lungs',
         tagLine: 'Screamers Welcome',
         photoUrl: 'https://assets3.thrillist.com/v1/image/2778568/size/tmg-article_default_mobile.jpg',
         uid: 1347,
@@ -135,7 +135,7 @@ export const eventList = [
         }
     },
     {
-        name: 'Rodeo',
+        displayName: 'Rodeo',
         tagLine: 'Ride the bull',
         photoUrl: 'https://d38trduahtodj3.cloudfront.net/images.ashx?t=ig&rid=StPaulRodeo&i=sb_tyler_corrington_87_on_korkow_rodeos_paint_chip_resized(2).jpg&w=330&h=330&cropbox=1&cropboxhpos=center&stf=1',
         uid: 1348,
@@ -147,7 +147,7 @@ export const eventList = [
         }
     },
     {
-        name: 'Netflix Chillin',
+        displayName: 'Netflix Chillin',
         tagLine: "It's cold out",
         photoUrl: 'https://www.sayitwithacondom.com//media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/n/e/netflix-and-chill-condom-foil_2.jpg',
         uid: 1339,
@@ -159,7 +159,7 @@ export const eventList = [
         }
     },
     {
-        name: 'FunHouse',
+        displayName: 'FunHouse',
         tagLine: 'Mirrors all around',
         photoUrl: '',
         uid: 1411,
@@ -171,7 +171,7 @@ export const eventList = [
         }
     },
     {
-        name: 'Pickle Club',
+        displayName: 'Pickle Club',
         tagLine: 'Bring your pickles',
         photoUrl: '',
         uid: 2000,
@@ -207,7 +207,7 @@ export const userList = [{
 
 export const dummyUsers = [
     {
-        name: "Josi Mapplebeck", tagLine: "jmapplebeck0@bbc.co.uk", gender: "Female", photoUrl: "https://robohash.org/earumcommodifugit.jpg?size=50x50&set=set1", socialLinks: {
+        displayName: "Josi Mapplebeck", tagLine: "jmapplebeck0@bbc.co.uk", gender: "Female", photoUrl: "https://robohash.org/earumcommodifugit.jpg?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -215,7 +215,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Toby Fesby", tagLine: "tfesby1@vimeo.com", gender: "Male", photoUrl: "https://robohash.org/nemoautemullam.bmp?size=50x50&set=set1", socialLinks: {
+        displayName: "Toby Fesby", tagLine: "tfesby1@vimeo.com", gender: "Male", photoUrl: "https://robohash.org/nemoautemullam.bmp?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -223,7 +223,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Arney Tarney", tagLine: "atarney2@nasa.gov", gender: "Male", photoUrl: "https://robohash.org/consequaturconsequatursapiente.jpg?size=50x50&set=set1", socialLinks: {
+        displayName: "Arney Tarney", tagLine: "atarney2@nasa.gov", gender: "Male", photoUrl: "https://robohash.org/consequaturconsequatursapiente.jpg?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -231,7 +231,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Earvin Dael", tagLine: "edael3@npr.org", gender: "Male", photoUrl: "https://robohash.org/dolorescorporisnemo.jpg?size=50x50&set=set1", socialLinks: {
+        displayName: "Earvin Dael", tagLine: "edael3@npr.org", gender: "Male", photoUrl: "https://robohash.org/dolorescorporisnemo.jpg?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -239,7 +239,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Bank Ricardet", tagLine: "bricardet4@wufoo.com", gender: "Male", photoUrl: "https://robohash.org/nisinullavoluptas.jpg?size=50x50&set=set1", socialLinks: {
+        displayName: "Bank Ricardet", tagLine: "bricardet4@wufoo.com", gender: "Male", photoUrl: "https://robohash.org/nisinullavoluptas.jpg?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -247,7 +247,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Anselma Ghiotto", tagLine: "aghiotto5@auda.org.au", gender: "Female", photoUrl: "https://robohash.org/ipsaquifugit.jpg?size=50x50&set=set1", socialLinks: {
+        displayName: "Anselma Ghiotto", tagLine: "aghiotto5@auda.org.au", gender: "Female", photoUrl: "https://robohash.org/ipsaquifugit.jpg?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -255,7 +255,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Austin Berndsen", tagLine: "aberndsen6@addthis.com", gender: "Female", photoUrl: "https://robohash.org/velitaspernaturducimus.png?size=50x50&set=set1", socialLinks: {
+        displayName: "Austin Berndsen", tagLine: "aberndsen6@addthis.com", gender: "Female", photoUrl: "https://robohash.org/velitaspernaturducimus.png?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -263,7 +263,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Kelci Torrecilla", tagLine: "ktorrecilla7@myspace.com", gender: "Female", photoUrl: "https://robohash.org/sitrepellateligendi.png?size=50x50&set=set1", socialLinks: {
+        displayName: "Kelci Torrecilla", tagLine: "ktorrecilla7@myspace.com", gender: "Female", photoUrl: "https://robohash.org/sitrepellateligendi.png?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -271,7 +271,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Roanna Bufton", tagLine: "rbufton8@wix.com", gender: "Female", photoUrl: "https://robohash.org/quametaut.png?size=50x50&set=set1", socialLinks: {
+        displayName: "Roanna Bufton", tagLine: "rbufton8@wix.com", gender: "Female", photoUrl: "https://robohash.org/quametaut.png?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -279,7 +279,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Sylvia Antonikov", tagLine: "santonikov9@wisc.edu", gender: "Female", photoUrl: "https://robohash.org/minimaesterror.png?size=50x50&set=set1", socialLinks: {
+        displayName: "Sylvia Antonikov", tagLine: "santonikov9@wisc.edu", gender: "Female", photoUrl: "https://robohash.org/minimaesterror.png?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -287,7 +287,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Glynnis Moroney", tagLine: "gmoroneya@imageshack.us", gender: "Female", photoUrl: "https://robohash.org/quamdelectussed.jpg?size=50x50&set=set1", socialLinks: {
+        displayName: "Glynnis Moroney", tagLine: "gmoroneya@imageshack.us", gender: "Female", photoUrl: "https://robohash.org/quamdelectussed.jpg?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -295,7 +295,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Dillon Sinnett", tagLine: "dsinnettb@mashable.com", gender: "Male", photoUrl: "https://robohash.org/consequaturasperioresfuga.png?size=50x50&set=set1", socialLinks: {
+        displayName: "Dillon Sinnett", tagLine: "dsinnettb@mashable.com", gender: "Male", photoUrl: "https://robohash.org/consequaturasperioresfuga.png?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -303,7 +303,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Bertha Gatecliffe", tagLine: "bgatecliffec@archive.org", gender: "Female", photoUrl: "https://robohash.org/sitdignissimosomnis.png?size=50x50&set=set1", socialLinks: {
+        displayName: "Bertha Gatecliffe", tagLine: "bgatecliffec@archive.org", gender: "Female", photoUrl: "https://robohash.org/sitdignissimosomnis.png?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -311,7 +311,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Umeko Rembrandt", tagLine: "urembrandtd@ca.gov", gender: "Female", photoUrl: "https://robohash.org/isteeaquesint.png?size=50x50&set=set1", socialLinks: {
+        displayName: "Umeko Rembrandt", tagLine: "urembrandtd@ca.gov", gender: "Female", photoUrl: "https://robohash.org/isteeaquesint.png?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -319,7 +319,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Bev Mulmuray", tagLine: "bmulmuraye@irs.gov", gender: "Male", photoUrl: "https://robohash.org/nequefacilisnihil.jpg?size=50x50&set=set1", socialLinks: {
+        displayName: "Bev Mulmuray", tagLine: "bmulmuraye@irs.gov", gender: "Male", photoUrl: "https://robohash.org/nequefacilisnihil.jpg?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -327,7 +327,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Nicolle Romain", tagLine: "nromainf@mtv.com", gender: "Female", photoUrl: "https://robohash.org/accusantiumminimaet.png?size=50x50&set=set1", socialLinks: {
+        displayName: "Nicolle Romain", tagLine: "nromainf@mtv.com", gender: "Female", photoUrl: "https://robohash.org/accusantiumminimaet.png?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -335,7 +335,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Leticia Juarez", tagLine: "ljuarezg@google.com.br", gender: "Female", photoUrl: "https://robohash.org/quodomnisut.png?size=50x50&set=set1", socialLinks: {
+        displayName: "Leticia Juarez", tagLine: "ljuarezg@google.com.br", gender: "Female", photoUrl: "https://robohash.org/quodomnisut.png?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -343,7 +343,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Elfie McIlwraith", tagLine: "emcilwraithh@techcrunch.com", gender: "Female", photoUrl: "https://robohash.org/autsintconsectetur.bmp?size=50x50&set=set1", socialLinks: {
+        displayName: "Elfie McIlwraith", tagLine: "emcilwraithh@techcrunch.com", gender: "Female", photoUrl: "https://robohash.org/autsintconsectetur.bmp?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -351,7 +351,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Hana Cicculini", tagLine: "hcicculinii@zimbio.com", gender: "Female", photoUrl: "https://robohash.org/quoeaqueid.jpg?size=50x50&set=set1", socialLinks: {
+        displayName: "Hana Cicculini", tagLine: "hcicculinii@zimbio.com", gender: "Female", photoUrl: "https://robohash.org/quoeaqueid.jpg?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -359,7 +359,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Lazar Gabler", tagLine: "lgablerj@ebay.com", gender: "Male", photoUrl: "https://robohash.org/utconsequatursit.png?size=50x50&set=set1", socialLinks: {
+        displayName: "Lazar Gabler", tagLine: "lgablerj@ebay.com", gender: "Male", photoUrl: "https://robohash.org/utconsequatursit.png?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -367,7 +367,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Wayne Ching", tagLine: "wchingk@comcast.net", gender: "Male", photoUrl: "https://robohash.org/similiquecorporiscum.bmp?size=50x50&set=set1", socialLinks: {
+        displayName: "Wayne Ching", tagLine: "wchingk@comcast.net", gender: "Male", photoUrl: "https://robohash.org/similiquecorporiscum.bmp?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -375,7 +375,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Arleen Heugle", tagLine: "aheuglel@google.com", gender: "Female", photoUrl: "https://robohash.org/eiuscupiditatealiquam.png?size=50x50&set=set1", socialLinks: {
+        displayName: "Arleen Heugle", tagLine: "aheuglel@google.com", gender: "Female", photoUrl: "https://robohash.org/eiuscupiditatealiquam.png?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -383,7 +383,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Zechariah McGinny", tagLine: "zmcginnym@msu.edu", gender: "Male", photoUrl: "https://robohash.org/velitetblanditiis.bmp?size=50x50&set=set1", socialLinks: {
+        displayName: "Zechariah McGinny", tagLine: "zmcginnym@msu.edu", gender: "Male", photoUrl: "https://robohash.org/velitetblanditiis.bmp?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -391,7 +391,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Davine McGreary", tagLine: "dmcgrearyn@loc.gov", gender: "Female", photoUrl: "https://robohash.org/illoautquo.bmp?size=50x50&set=set1", socialLinks: {
+        displayName: "Davine McGreary", tagLine: "dmcgrearyn@loc.gov", gender: "Female", photoUrl: "https://robohash.org/illoautquo.bmp?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -399,7 +399,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Mort Goldsworthy", tagLine: "mgoldsworthyo@t.co", gender: "Male", photoUrl: "https://robohash.org/nostrumquidemtempora.jpg?size=50x50&set=set1", socialLinks: {
+        displayName: "Mort Goldsworthy", tagLine: "mgoldsworthyo@t.co", gender: "Male", photoUrl: "https://robohash.org/nostrumquidemtempora.jpg?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -407,7 +407,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Ainsley Paulillo", tagLine: "apaulillop@washingtonpost.com", gender: "Female", photoUrl: "https://robohash.org/autprovidentdoloremque.jpg?size=50x50&set=set1", socialLinks: {
+        displayName: "Ainsley Paulillo", tagLine: "apaulillop@washingtonpost.com", gender: "Female", photoUrl: "https://robohash.org/autprovidentdoloremque.jpg?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -415,7 +415,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Alexia Tutchings", tagLine: "atutchingsq@sakura.ne.jp", gender: "Female", photoUrl: "https://robohash.org/quisquamincumque.bmp?size=50x50&set=set1", socialLinks: {
+        displayName: "Alexia Tutchings", tagLine: "atutchingsq@sakura.ne.jp", gender: "Female", photoUrl: "https://robohash.org/quisquamincumque.bmp?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -423,7 +423,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Heath Clutterbuck", tagLine: "hclutterbuckr@walmart.com", gender: "Female", photoUrl: "https://robohash.org/esteligendienim.jpg?size=50x50&set=set1", socialLinks: {
+        displayName: "Heath Clutterbuck", tagLine: "hclutterbuckr@walmart.com", gender: "Female", photoUrl: "https://robohash.org/esteligendienim.jpg?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -431,7 +431,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Malory Sperski", tagLine: "msperskis@si.edu", gender: "Female", photoUrl: "https://robohash.org/veritatisdolorevoluptatum.png?size=50x50&set=set1", socialLinks: {
+        displayName: "Malory Sperski", tagLine: "msperskis@si.edu", gender: "Female", photoUrl: "https://robohash.org/veritatisdolorevoluptatum.png?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -439,7 +439,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Ali Bettington", tagLine: "abettingtont@elpais.com", gender: "Male", photoUrl: "https://robohash.org/repellendusvelunde.jpg?size=50x50&set=set1", socialLinks: {
+        displayName: "Ali Bettington", tagLine: "abettingtont@elpais.com", gender: "Male", photoUrl: "https://robohash.org/repellendusvelunde.jpg?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -447,7 +447,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Cobby Sidon", tagLine: "csidonu@so-net.ne.jp", gender: "Male", photoUrl: "https://robohash.org/solutaaea.bmp?size=50x50&set=set1", socialLinks: {
+        displayName: "Cobby Sidon", tagLine: "csidonu@so-net.ne.jp", gender: "Male", photoUrl: "https://robohash.org/solutaaea.bmp?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -455,7 +455,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Travus Hedgeley", tagLine: "thedgeleyv@thetimes.co.uk", gender: "Male", photoUrl: "https://robohash.org/deseruntsimiliquenumquam.png?size=50x50&set=set1", socialLinks: {
+        displayName: "Travus Hedgeley", tagLine: "thedgeleyv@thetimes.co.uk", gender: "Male", photoUrl: "https://robohash.org/deseruntsimiliquenumquam.png?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -463,7 +463,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Robyn Alecock", tagLine: "ralecockw@cam.ac.uk", gender: "Female", photoUrl: "https://robohash.org/asperioresvoluptasest.png?size=50x50&set=set1", socialLinks: {
+        displayName: "Robyn Alecock", tagLine: "ralecockw@cam.ac.uk", gender: "Female", photoUrl: "https://robohash.org/asperioresvoluptasest.png?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
@@ -471,7 +471,7 @@ export const dummyUsers = [
         }
     },
     {
-        name: "Connor Leah", tagLine: "cleahx@homestead.com", gender: "Male", photoUrl: "https://robohash.org/isteblanditiisaccusamus.jpg?size=50x50&set=set1", socialLinks: {
+        displayName: "Connor Leah", tagLine: "cleahx@homestead.com", gender: "Male", photoUrl: "https://robohash.org/isteblanditiisaccusamus.jpg?size=50x50&set=set1", socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
             twitter: "https://twitter.com/HaffedAli",
             instagram: "https://www.instagram.com/haffedaliyeaitsjustmynamesueme/?hl=en",
