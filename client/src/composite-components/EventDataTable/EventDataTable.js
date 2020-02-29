@@ -12,19 +12,21 @@ import { artistList, userList, dummyUsers, eventList } from '../../dummyData'
 class EventDataTable extends React.Component {
     constructor(props) {
         super(props)
-
-
         //Weird conditional here just to help me set up storybook
-        if (props.entries) {
-            this.entries = props.entries
-        } else {
-            this.entries = [{}];
-        }
+        // if (props.entries) {
+        //     this.entries = props.entries
+        // } else {
+        //     this.entries = [{}];
+        // }
+
+        this.entries = [{}];
 
         this.handleFocusChange = this.handleFocusChange.bind(this)
 
         this.state = {
-            focus: 'Upcoming'
+            focus: 'Upcoming',
+            entries: props,
+            viewableEntries: []
         }
 
     }
@@ -36,9 +38,11 @@ class EventDataTable extends React.Component {
         switch (text) {
             case "Upcoming":
                 this.entries = artistList;
+                this.setState({viewableEntries:this.state.entries.artists})
                 break;
             case "Guest List":
                 this.entries = dummyUsers;
+                this.setState({viewableEntries:this.state.entries.micMates})
                 break;
         }
 
@@ -60,8 +64,6 @@ class EventDataTable extends React.Component {
                 <DataTableView entries={this.entries} focus={this.state.focus}  />
             </Box>
             </Container>
-
-
         )
     }
 }

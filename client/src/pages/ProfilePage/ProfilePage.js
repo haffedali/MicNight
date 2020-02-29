@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ReactDome from 'react-dom';
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
@@ -6,11 +6,18 @@ import Box from '@material-ui/core/Box'
 import ProfileDataTable from '../../composite-components/ProfileDataTable';
 import MainProfileAvatar from '../../components/MainProfileAvatar';
 import { makeStyles } from '@material-ui/styles';
-import AuthenticationContext from '../../components/AuthenticationContext';
 import EditProfileButton from '../../components/EditProfileButton';
 import ModalParent from '../../composite-components/ModalParent';
 import EditProfileModal from '../../components/EditProfileModal';
 import { Typography } from '@material-ui/core';
+
+
+//UTILS
+import users from '../../utils/users';
+import events from '../../utils/events'
+
+//CONTEXT
+import AuthenticationContext from '../../components/AuthenticationContext';
 
 
 // Data importing
@@ -19,7 +26,13 @@ import { Typography } from '@material-ui/core';
 
 
 const ProfilePage = (props) => {
+  const [isLoaded, setIsLoaded] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [favoriteArtists, setFavoriteArtists] = useState([]);
+  const [favoriteEvents, setFavoriteEvents] = useState([]);
+  const [micMates, setMicMates] = useState([]);
+  const { userInfo, isAuthenticated } = useContext(AuthenticationContext)
+
 
 
   const useStyles = makeStyles({
@@ -47,9 +60,43 @@ const ProfilePage = (props) => {
 
   const classes = useStyles()
 
+
+  useEffect(() => {
+      async function fetchUserFavorites(){
+        const favorites = await users.getFavorites(userInfo.uid)
+        // console.log(favorites)
+        favorites.artists.forEach(async (artistUid)=>{
+          if (artistUid.length > 1){
+            const artistData = await users.get(artistUid)
+            setFavoriteArtists(favoriteArtists => [...favoriteArtists, artistData ])
+          }
+        })
+        favorites.events.forEach(async (eventUid)=>{
+          if (eventUid.length > 1){
+            const eventData = await users.get(eventUid)
+            setFavoriteEvents(favoriteEvents => [...favoriteEvents, eventData])
+          }
+        })
+        favorites.micMates.forEach(async (micMateUid)=>{
+          if (micMateUid.length > 1){
+            const micMateData = await users.get(micMateUid)
+            setMicMates(micMates => [...micMates, micMateData]);
+          }
+        })
+  
+        setIsLoaded(true);
+      }  
+      fetchUserFavorites();
+    },[])
+
+
+
+
+
+
+
+
   return (
-    <AuthenticationContext.Consumer>
-      {({ isAuthenticated, userInfo }) => (
         <ModalParent.ModalProvider>
         <Paper square className={classes.container}>
           <Grid container direction ='row' justify='flex-end'>
@@ -64,9 +111,16 @@ const ProfilePage = (props) => {
               </Grid>
             </Grid>
           </Grid>
+          {
+            isLoaded ?
             <Box mb={3} className={classes.dataTable} >
-              <ProfileDataTable entries={props.entries} />
+              <ProfileDataTable micMates={micMates} artists={favoriteArtists} event={favoriteEvents} />
             </Box>
+            :
+            <div></div>
+
+          }
+
         </Paper>
         {isModalOpen && (
           <ModalParent.Modal onClose={() => setIsModalOpen(false)}>
@@ -74,8 +128,6 @@ const ProfilePage = (props) => {
           </ModalParent.Modal>
         )}
         </ModalParent.ModalProvider>
-      )}
-    </AuthenticationContext.Consumer>
   );
 };
 

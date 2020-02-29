@@ -1,7 +1,6 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
 import DataTableView from '../../components/DataTableView';
 import DataTableViewController from '../../components/DataTableViewController';
 import { withStyles } from '@material-ui/styles';
@@ -21,7 +20,6 @@ const styles = theme => ({
 
 class ProfileDataTable extends React.Component {
     constructor(props) {
-        super(props)
 
 
         //Weird conditional here just to help me set up storybook
@@ -34,7 +32,10 @@ class ProfileDataTable extends React.Component {
         this.handleFocusChange = this.handleFocusChange.bind(this)
 
         this.state = {
-            focus: 'Artists'
+            focus: 'Artists',
+            artists: props.artists,
+            events: props.events,
+            micMates: props.micMates
         }
 
     }
@@ -65,12 +66,11 @@ class ProfileDataTable extends React.Component {
     }
 
     render() {
-        const { classes } = this.props;
         return (
             <Container>
                 <Box border={2} borderRadius={16} borderColor='#90a4ae' display='flex' flexDirection='column' style={{ maxHeight: "60vh", height: "60vh", backgroundColor: 'pink', padding: '1vw' }}>
                         <DataTableViewController buttons={['Events','Artists','MicMates']} handleFocusChange={this.handleFocusChange} />
-                        <DataTableView entries={this.entries} focus={this.state.focus} style={{ maxHeight: '50vh' }} />
+                        <DataTableView entries={this.props.entries} focus={this.state.focus} style={{ maxHeight: '50vh' }} />
                 </Box>
             </Container>
 
@@ -80,3 +80,7 @@ class ProfileDataTable extends React.Component {
 }
 
 export default withStyles(styles)(ProfileDataTable);
+
+
+
+

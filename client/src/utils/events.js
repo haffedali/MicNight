@@ -21,6 +21,14 @@ const events = {
             });
     },
 
+    getLiveData: (eventUid) => {
+        return firebase.firestore().collection('events').doc(eventUid).collection('liveData').get()
+        .then((doc)=> {
+            return doc.data();
+        })
+        .catch((err)=>console.log(err))
+    },
+
     update: (uid, updateObj) => {
         return firebase.firestore().collection('events').doc(uid)
             .update({

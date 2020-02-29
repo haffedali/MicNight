@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import List from '@material-ui/core/List';
 
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import DataTableItem from '../DataTableItem';
+
 
 
 const DataTableView = ({ entries }) => {
@@ -34,13 +35,23 @@ const DataTableView = ({ entries }) => {
   let dataTableItemCount = 0
   let DataTableItems
 
+  // useEffect(()=> {
+  //   async function fetchEntries(entries){
+  //     entries.artists.forEach((entry)=>console.log(entry))
+  //   }
 
+  //   fetchEntries();
+  // })
 
-  DataTableItems = entries.map((entry) => (<DataTableItem key={dataTableItemCount++} entry={entry} />));  
+  if (entries){
+    DataTableItems = entries.map((entry) => (<DataTableItem key={dataTableItemCount++} entry={entry} />));  
+  }else {
+    DataTableItems = [];
+  }
 
 
   //Currently we need at least two entries in the datatable to get it to show any data
-  if (DataTableItems.length <= 1){
+  if (DataTableItems.length < 1){
     return (
     <Paper className={classes.paper}>
       <div></div>

@@ -21,8 +21,8 @@ const users = {
   },
 
 
-  get:  async (uid) => {
-     const payload = await firebase.firestore().collection('users').doc(uid).get()
+  get: (uid) => {
+     const payload =  firebase.firestore().collection('users').doc(uid).get()
       .then((doc) => {
         return doc.data();
       })
@@ -170,7 +170,15 @@ const users = {
   getOrganizerOfEvent: async (eventUid) => firebase.firestore().collection('events').doc(eventUid).get()
     .then((doc) => doc.data().organizer),
 
+  getFavorites: async(userUid) => {
+    return firebase.firestore().collection('users').doc(userUid).collection('relationships').doc("favorites").get()
+    .then( (doc) => {
+      return doc.data()
+    })
+    .catch((err)=>console.log(err))
 
+    
+  }
 };
 
 

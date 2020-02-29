@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Router } from '@reach/router';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from "@material-ui/core/CssBaseline";
-import AuthenticationContext from './components/AuthenticationContext'
 import "./App.css";
 
 
@@ -16,8 +15,14 @@ import DiscoverPage from './pages/DiscoverPage';
 import FooterNavigation from './components/FooterNavigation';
 import firebase from './components/firebase';
 
+
 //Util functions
 import users from './utils/users';
+
+
+//CONTEXT
+import AuthenticationContext from './components/AuthenticationContext'
+import EventContext from './components/EventContext';
 
 // Dummy data
 import { dummyUsers } from './dummyData';
@@ -43,10 +48,11 @@ class App extends Component {
       let user = await users.get(userData.uid)
 
 
-      
+
       this.setState({
         isAuthenticated: true,
-        userInfo: {...user, ...userData, uid: userData.uid}
+        userInfo: { ...user, ...userData, uid: userData.uid },
+        eventUid: user.attending
       });
 
       // CREATE USER IN FIRESTORE HERE IF NOT ALREADY CREATED
@@ -63,9 +69,7 @@ class App extends Component {
         lastName: name[1],
         socialLinks: {
           facebook: "test",
-          google: "test",
           twitter: "test",
-          tumblr: "test",
           instagram: "test",
           soundcloud: "test"
         },
@@ -107,7 +111,8 @@ class App extends Component {
       deAuthenticateUser: this.deAuthenticateUser,
       userInfo: null,
       firebase: firebase,
-      test: null
+      test: null,
+      eventUid: ''
     }
 
     this.theme = createMuiTheme();
@@ -145,20 +150,22 @@ class App extends Component {
   render() {
     return (
       <AuthenticationContext.Provider value={this.state}>
-        <MuiThemeProvider theme={this.theme}>
-          <CssBaseline />
-          <Router>
-            {this.state.isAuthenticated ?
-              <EventPage path='/' user={this.state.userInfo} />
-              :
-              <LandingPage path='/' firebase={firebase} />
-            }
-            <ProfilePage path='/user' user={this.state.user} />
-            <DiscoverPage path='/discover' user={this.state.user} />
+        <EventContext.Provider value={this.state.eventUid}>
+          <MuiThemeProvider theme={this.theme}>
+            <CssBaseline />
+            <Router>
+              {this.state.isAuthenticated ?
+                <EventPage path='/' user={this.state.userInfo} />
+                :
+                <LandingPage path='/' firebase={firebase} />
+              }
+              <ProfilePage path='/user' user={this.state.user} />
+              <DiscoverPage path='/discover' user={this.state.user} />
 
-          </Router>
-          <FooterNavigation />
-        </MuiThemeProvider>
+            </Router>
+            <FooterNavigation />
+          </MuiThemeProvider>
+        </EventContext.Provider>
       </AuthenticationContext.Provider>
     )
   }

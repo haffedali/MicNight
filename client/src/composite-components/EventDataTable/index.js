@@ -1,2 +1,2 @@
-import EventDataTable from './EventDataTable';
+import EventDataTable from './EventDataTableFunctional';
 export default EventDataTable;
