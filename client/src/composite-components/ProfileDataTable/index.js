@@ -1,2 +1,2 @@
-import ProfileDataTable from './ProfileDataTable';
+import ProfileDataTable from './ProfileDataTableFunctional';
 export default ProfileDataTable;

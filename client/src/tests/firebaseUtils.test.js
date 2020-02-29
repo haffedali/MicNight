@@ -111,9 +111,14 @@ const haffedUid = '106258930564522942122';
 //     await events.goLiveTEST(testEventUid);
 // })
 
-test('grabs single user', async()=> {
-    let user = await users.get(haffedUid);
-    console.log(user)
-    //await expect(user.firstName).toEqual("Haffed Ali")
+// test('grabs single user', async()=> {
+//     let user = await users.get(haffedUid);
+//     console.log(user)
+//     //await expect(user.firstName).toEqual("Haffed Ali")
 
+// })
+
+test('Grabs users favorites', async()=>{
+    let list = await users.getFavorites(haffedUid)
+    console.log(list);
 })

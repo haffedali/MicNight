@@ -19,24 +19,21 @@ const SocialLinkIcon = ({ linkName, link }) => {
 
 
     const returnSocialIcon = (linkName) => {
-        console.log(`${linkName} what the fuck`)
-        console.log(`${link} this should just say test`)
+
         switch(linkName){
             case "facebook":
-                console.log('returning icon')
                 return <FacebookIcon />
                 break;
             case "instagram":
-                console.log('returning icon')
                 return <InstagramIcon />
                 break;
             case "twitter":
-                console.log('returning icon')
                 return <TwitterIcon />
                 break;
             case "soundcloud":
-                console.log('returning icon')
                 return <RedditIcon />
+                break;
+            default:
                 break;
         }
     }

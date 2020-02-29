@@ -47,15 +47,24 @@ const DataTableItem = ({ entry }) => {
 
   const classes = useStyles();
 
+  const setPhotoURL = () => {
+    let firstName = entry.displayName.split(' ')[0]
+      entry.photoURL = `https://avatars.dicebear.com/v2/avataaars/${firstName}.svg`
+  }
+
+  if (!entry.photoURL){
+    setPhotoURL();
+  }
+
   return (
     <Paper className={classes.root}>
       <ListItem mb={1} disableGutters divider className={classes.listItem} key={`ListItem: ${entry.uid}`}>
         <ListItemAvatar className={classes.avatar}>
-          <ProfileAvatar photoUrl={entry.photoUrl} />
+          <ProfileAvatar photoUrl={entry.photoURL} />
         </ListItemAvatar>
         <Box className={classes.detailBox}>
           <ListItemText
-            primary={entry.name}
+            primary={entry.displayName}
             secondary={entry.tagLine}
           />
         </Box>
