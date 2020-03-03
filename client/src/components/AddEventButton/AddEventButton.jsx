@@ -1,14 +1,14 @@
 import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
-import SettingsIcon from '@material-ui/icons/Settings';
+import AddIcon from '@material-ui/icons/Add';
 
 
 
-const EditProfileButton = ({clickEffect, status}) => {
+const AddEventButton = ({clickEffect, status}) => {
     return (
     <IconButton onClick={()=> !status ? clickEffect(true) : clickEffect(false)}type={'button'}>
-        <SettingsIcon />
+        <AddIcon fontSize="medium" style={{color: 'white'}} />
     </IconButton>)
 }
 
-export default EditProfileButton;
+export default AddEventButton;

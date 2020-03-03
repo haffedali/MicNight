@@ -8,6 +8,7 @@
     "@material-ui/styles": "^4.5.2",
     "@material-ui/system": "^4.5.2",
     "@reach/router": "^1.2.1",
+    "date-fns": "^2.10.0",
     "firebase": "^7.2.1",
     "firebaseui": "^4.2.0",
     "jest": "^24.9.0",

@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Grid } from '@material-ui/core';
 import MapBox from '../../components/MapBox'
 
+//Components
+import DiscoverPageAppBar from '../../components/DiscoverPageAppBar';
+import AddEventButton from '../../components/AddEventButton';
+import AddEventModal from '../../components/AddEventModal';
+
+
 const DiscoverPage = (props) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const useStyles = makeStyles({
     container: {
@@ -19,7 +26,8 @@ const DiscoverPage = (props) => {
   const classes = useStyles();
   return (
     <Container className={classes.container}>
-      <MapBox />
+      {/* <MapBox /> */}
+      <DiscoverPageAppBar clickEffect={setIsModalOpen}/>
     </Container>
   )
 };
