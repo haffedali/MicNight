@@ -4,11 +4,12 @@ import firebase from 'firebase';
 const events = {
     create: (eventObj) => {
         firebase.firestore().collection('events').add({
-            geodcode: eventObj.geocode,
             location: eventObj.location,
             name: eventObj.name,
-            recurring: eventObj.recurring,
-            time: eventObj.time
+            date: eventObj.date,
+            photoUrl: eventObj.photoURL,
+            tagLine: eventObj.tagLine,
+            organizer: eventObj.organizer
         })
     },
 

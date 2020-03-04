@@ -8,7 +8,7 @@ import AuthenticationContext from '../AuthenticationContext';
 
 
 
-const ProfileAvatar = ({ photoUrl }) => {
+const ProfileAvatar = ({ photoURL }) => {
     const useStyles = makeStyles({
         avatar: {
             width: '35vw',

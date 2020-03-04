@@ -12,12 +12,6 @@ import { artistList, userList, dummyUsers, eventList } from '../../dummyData'
 class EventDataTable extends React.Component {
     constructor(props) {
         super(props)
-        //Weird conditional here just to help me set up storybook
-        // if (props.entries) {
-        //     this.entries = props.entries
-        // } else {
-        //     this.entries = [{}];
-        // }
 
         this.entries = [{}];
 

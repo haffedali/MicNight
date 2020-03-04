@@ -9,7 +9,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import AddEventButton from '../../components/AddEventButton'
 
 
-const DiscoverPageAppBar = () => {
+const DiscoverPageAppBar = ({ clickEffect, status }) => {
     const useStyles = makeStyles(theme => ({
         root: {
           flexGrow: 1,
@@ -90,10 +90,11 @@ const DiscoverPageAppBar = () => {
                 inputProps={{ 'aria-label': 'search' }}
               />
             </div>
-            <AddEventButton />
+            <AddEventButton status={status} clickEffect={clickEffect} />
           </Toolbar>
         </AppBar>
       </div>
+
     );
   }
 

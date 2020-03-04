@@ -6,10 +6,12 @@ import Box from '@material-ui/core/Box'
 import ProfileDataTable from '../../composite-components/ProfileDataTable';
 import MainProfileAvatar from '../../components/MainProfileAvatar';
 import { makeStyles } from '@material-ui/styles';
+import { Typography } from '@material-ui/core';
+
+//COMPONENTS
 import EditProfileButton from '../../components/EditProfileButton';
 import ModalParent from '../../composite-components/ModalParent';
 import EditProfileModal from '../../components/EditProfileModal';
-import { Typography } from '@material-ui/core';
 
 
 //UTILS
