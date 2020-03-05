@@ -3,7 +3,7 @@ import MuiAvatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase'
 
-const ProfileAvatar = ({ photoUrl, height, width }) => {
+const ProfileAvatar = ({ photoURL, height, width }) => {
     
     
     if (!height && !width){
@@ -25,9 +25,9 @@ const ProfileAvatar = ({ photoUrl, height, width }) => {
             <MuiAvatar
                 className={classes.avatar}
                 src={
-                    !photoUrl
+                    !photoURL
                         ? `https://avatars.dicebear.com/v2/bottts/bot.svg`
-                        : photoUrl
+                        : photoURL
                 }
             />
         </ButtonBase>

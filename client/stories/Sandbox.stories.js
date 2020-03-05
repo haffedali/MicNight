@@ -5,6 +5,12 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
+import Switch from '@material-ui/core/Switch';
+import Collapse from '@material-ui/core/Collapse';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+
+
+import ProfileAvatar from "../src/components/ProfileAvatar";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -39,7 +45,7 @@ const useStyles = makeStyles(theme => ({
 }
 }));
 
-export default function ComplexGrid() {
+export function ComplexGrid() {
   const classes = useStyles();
 
   return (
@@ -80,6 +86,87 @@ export default function ComplexGrid() {
   );
 }
 
+const useStylesCollapse = makeStyles(theme => ({
+  root: {
+    height: 180,
+  },
+  container: {
+    display: 'flex',
+  },
+  paper: {
+    margin: theme.spacing(1),
+  },
+  svg: {
+    width: 100,
+    height: 100,
+  },
+  polygon: {
+    fill: theme.palette.common.white,
+    stroke: theme.palette.divider,
+    strokeWidth: 1,
+  },
+}));
+
+export function SimpleCollapse() {
+  const classes = useStylesCollapse();
+  const [checked, setChecked] = React.useState(false);
+
+  const handleChange = () => {
+    setChecked(prev => !prev);
+  };
+
+  return (
+    <div className={classes.root}>
+      <FormControlLabel
+        control={<Switch checked={checked} onChange={handleChange} />}
+        label="Show"
+      />
+      <div className={classes.container}>
+        <Collapse in={checked} collapsedHeight={'10vw'}>
+          <Paper elevation={4} className={classes.paper}>
+            <ProfileAvatar height={'30vw'} width={'30vw'} photoURL="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTbfjfo00ygCTK-Oqa9PCbrjei3vyolH9JQQWx8u9O46LoXTFC3" />
+          </Paper>
+        </Collapse>
+      </div>
+    </div>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 storiesOf('Sandbox', module)
     .addDecorator(story => <div style={{ padding: '3rem' }}>{story()}</div>)
     .add('ComplexGrid', () => <ComplexGrid />)
+    .add('Collapse transition', ()=> <SimpleCollapse />)
