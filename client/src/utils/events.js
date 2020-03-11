@@ -2,13 +2,25 @@ import firebase from 'firebase';
 
 
 const events = {
+    getAll: () => {
+        const payload = []
+        firebase.firestore().collection('events').get()
+          .then((snapshot) => {
+            snapshot.forEach((doc) => {
+              payload.push(doc.data());
+            });
+          });
+        return payload
+      },
+
     create: (eventObj) => {
         firebase.firestore().collection('events').add({
-            geodcode: eventObj.geocode,
             location: eventObj.location,
             name: eventObj.name,
-            recurring: eventObj.recurring,
-            time: eventObj.time
+            date: eventObj.date,
+            photoUrl: eventObj.photoURL,
+            tagLine: eventObj.tagLine,
+            organizer: eventObj.organizer
         })
     },
 
@@ -67,9 +79,9 @@ const events = {
     goLiveTEST: async (eventUid) => {
         await firebase.firestore().collection('events').doc(eventUid)
             .collection('liveData').doc('live').set({
-                artists: ['4g6MNKxifacKB6quFjXo', 'xXDragnoSlayyerXx'],
+                artists: ['artist2@gmail.com', 'artist2@gmail.com'],
                 chat: [],
-                guests: ['ImjustHereTolistenNVibe']
+                guests: ['superduperemail@gmail.com','106258930564522942122']
             })
 
         await firebase.firestore().collection('events').doc(eventUid)
