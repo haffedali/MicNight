@@ -1,9 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Grid } from '@material-ui/core';
-import MapBox from '../../components/MapBox'
+
+
+//Components
+import ModalParent from '../../composite-components/ModalParent'
+import DiscoverPageAppBar from '../../components/DiscoverPageAppBar';
+import AddEventModal from '../../components/AddEventModal';
+
+//CONTEXT
+import AuthenticationContext from '../../components/AuthenticationContext';
+import DiscoverSearchTable from '../../components/DiscoverSearchTable';
+//UTILS
+import events from '../../utils/events'
+
+//TEST UTILS
+import { eventList } from '../../dummyData';
+
 
 const DiscoverPage = (props) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { userInfo, isAuthenticated } = useContext(AuthenticationContext)
+
 
   const useStyles = makeStyles({
     container: {
@@ -18,9 +36,21 @@ const DiscoverPage = (props) => {
 
   const classes = useStyles();
   return (
-    <Container className={classes.container}>
-      <MapBox />
-    </Container>
+    <ModalParent.ModalProvider>
+      <Container className={classes.container}>
+        {
+          isModalOpen && (
+            <ModalParent.Modal onClose={() => setIsModalOpen(false)}>
+              <AddEventModal userInfo={userInfo} />
+            </ModalParent.Modal>
+          )
+        }
+
+        <DiscoverPageAppBar status={isModalOpen} clickEffect={setIsModalOpen} />
+        <DiscoverSearchTable entries={eventList}/>
+      </Container>
+
+    </ModalParent.ModalProvider>
   )
 };
 

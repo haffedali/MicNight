@@ -101,7 +101,7 @@ export const eventList = [
     {
         displayName: 'Empresso shouts',
         tagLine: 'Impress @ Empresso',
-        photoUrl: 'https://static.wixstatic.com/media/3dd772_5579c26fb6f745ba88fda4540d2cf0ea~mv2.jpg/v1/fit/w_2500,h_1330,al_c/3dd772_5579c26fb6f745ba88fda4540d2cf0ea~mv2.jpg',
+        photoURL: 'https://static.wixstatic.com/media/3dd772_5579c26fb6f745ba88fda4540d2cf0ea~mv2.jpg/v1/fit/w_2500,h_1330,al_c/3dd772_5579c26fb6f745ba88fda4540d2cf0ea~mv2.jpg',
         uid: 1345,
         socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
@@ -113,7 +113,7 @@ export const eventList = [
     {
         displayName: 'Pokemon Tournament',
         tagLine: 'Be the very best',
-        photoUrl: 'https://www.serebii.net/vgc/vgcs.png',
+        photoURL: 'https://www.serebii.net/vgc/vgcs.png',
         uid: 1346,
         socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
@@ -125,7 +125,7 @@ export const eventList = [
     {
         displayName: 'Iron Lungs',
         tagLine: 'Screamers Welcome',
-        photoUrl: 'https://assets3.thrillist.com/v1/image/2778568/size/tmg-article_default_mobile.jpg',
+        photoURL: 'https://assets3.thrillist.com/v1/image/2778568/size/tmg-article_default_mobile.jpg',
         uid: 1347,
         socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
@@ -137,7 +137,7 @@ export const eventList = [
     {
         displayName: 'Rodeo',
         tagLine: 'Ride the bull',
-        photoUrl: 'https://d38trduahtodj3.cloudfront.net/images.ashx?t=ig&rid=StPaulRodeo&i=sb_tyler_corrington_87_on_korkow_rodeos_paint_chip_resized(2).jpg&w=330&h=330&cropbox=1&cropboxhpos=center&stf=1',
+        photoURL: 'https://d38trduahtodj3.cloudfront.net/images.ashx?t=ig&rid=StPaulRodeo&i=sb_tyler_corrington_87_on_korkow_rodeos_paint_chip_resized(2).jpg&w=330&h=330&cropbox=1&cropboxhpos=center&stf=1',
         uid: 1348,
         socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
@@ -149,7 +149,7 @@ export const eventList = [
     {
         displayName: 'Netflix Chillin',
         tagLine: "It's cold out",
-        photoUrl: 'https://www.sayitwithacondom.com//media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/n/e/netflix-and-chill-condom-foil_2.jpg',
+        photoURL: 'https://www.sayitwithacondom.com//media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/n/e/netflix-and-chill-condom-foil_2.jpg',
         uid: 1339,
         socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
@@ -161,7 +161,7 @@ export const eventList = [
     {
         displayName: 'FunHouse',
         tagLine: 'Mirrors all around',
-        photoUrl: '',
+        photoURL: '',
         uid: 1411,
         socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
@@ -173,7 +173,7 @@ export const eventList = [
     {
         displayName: 'Pickle Club',
         tagLine: 'Bring your pickles',
-        photoUrl: '',
+        photoURL: '',
         uid: 2000,
         socialLinks: {
             facebook: "https://www.facebook.com/haffed.ali.9",
