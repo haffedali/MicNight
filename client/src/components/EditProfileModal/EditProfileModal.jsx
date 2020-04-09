@@ -59,11 +59,9 @@ const EditProfileModal = ({ userInfo }) => {
     const handleTextFieldChanges = (e) => {
         // console.log(e.target)
         const { name, value} = e.target;
-        console.log(name, value)
         setEditUserInfo({...editUserInfo, [name]: value})
     }
     const handleSubmitChanges = () => {
-        console.log(userInfo.uid, editUserInfo)
         users.updateUserInfo(userInfo.uid, editUserInfo)
     }
 

@@ -9,7 +9,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import AddEventButton from '../../components/AddEventButton'
 
 
-const DiscoverPageAppBar = ({ clickEffect, status, setSearchTerm }) => {
+const DiscoverPageAppBar = ({ clickEffect, status, setSearchTerm, search }) => {
     const useStyles = makeStyles(theme => ({
         root: {
           flexGrow: 1,
@@ -72,8 +72,13 @@ const DiscoverPageAppBar = ({ clickEffect, status, setSearchTerm }) => {
 
     const handleKeyPress = (e) => {
       if (e.key === "Enter"){
-        console.log("Shit")
+        search()
       }
+    }
+
+    const handleInputChange = (e) => {
+      const { value } = e.target;
+      setSearchTerm(value)
     }
 
     const inputProps = {
@@ -100,6 +105,7 @@ const DiscoverPageAppBar = ({ clickEffect, status, setSearchTerm }) => {
                   root: classes.inputRoot,
                   input: classes.inputInput,
                 }}
+                onChange={(e) => handleInputChange(e)}
                 inputProps={
                   inputProps
                 }

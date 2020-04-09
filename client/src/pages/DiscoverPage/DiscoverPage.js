@@ -11,6 +11,7 @@ import AddEventModal from '../../components/AddEventModal';
 //CONTEXT
 import AuthenticationContext from '../../components/AuthenticationContext';
 import DiscoverSearchTable from '../../components/DiscoverSearchTable';
+
 //UTILS
 import events from '../../utils/events'
 
@@ -20,6 +21,7 @@ import { eventList } from '../../dummyData';
 
 const DiscoverPage = (props) => {
   const [searchTerm, setSearchTerm] = useState("")
+  const [searchResponse, setSearchResponse] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { userInfo, isAuthenticated } = useContext(AuthenticationContext)
 
@@ -34,6 +36,11 @@ const DiscoverPage = (props) => {
     }
   });
 
+  const handleSearch = async () => {
+   const searchedEvents = await events.fetchEventsByCity(searchTerm)
+   setSearchResponse(searchedEvents)
+  }
+
   const classes = useStyles();
   return (
     <ModalParent.ModalProvider>
@@ -46,8 +53,8 @@ const DiscoverPage = (props) => {
           )
         }
 
-        <DiscoverPageAppBar setSearchTerm={setSearchTerm} status={isModalOpen} clickEffect={setIsModalOpen} />
-        <DiscoverSearchTable entries={eventList}/>
+        <DiscoverPageAppBar search={handleSearch} setSearchTerm={setSearchTerm} status={isModalOpen} clickEffect={setIsModalOpen} />
+        <DiscoverSearchTable entries={searchResponse}/>
       </Container>
 
     </ModalParent.ModalProvider>

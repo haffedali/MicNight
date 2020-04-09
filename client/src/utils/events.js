@@ -130,6 +130,23 @@ const events = {
                 console.log(err)
             })
     },
+
+    fetchEventsByCity: async (searchTerm) => {
+        const payLoad = [];
+        await firebase.firestore().collection('events')
+            .where("city", "==", searchTerm)
+            .get()
+            .then((snapshot)=>{
+                snapshot.forEach((doc)=>{
+                    console.log(doc.data())
+                    payLoad.push(doc.data())
+                })
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        return payLoad
+    }
 }
 
 export default events
