@@ -19,9 +19,9 @@ import { eventList } from '../../dummyData';
 
 
 const DiscoverPage = (props) => {
+  const [searchTerm, setSearchTerm] = useState("")
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { userInfo, isAuthenticated } = useContext(AuthenticationContext)
-
 
   const useStyles = makeStyles({
     container: {
@@ -46,7 +46,7 @@ const DiscoverPage = (props) => {
           )
         }
 
-        <DiscoverPageAppBar status={isModalOpen} clickEffect={setIsModalOpen} />
+        <DiscoverPageAppBar setSearchTerm={setSearchTerm} status={isModalOpen} clickEffect={setIsModalOpen} />
         <DiscoverSearchTable entries={eventList}/>
       </Container>
 
