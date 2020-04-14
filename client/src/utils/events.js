@@ -15,10 +15,10 @@ const events = {
 
     create: (eventObj) => {
         firebase.firestore().collection('events').add({
-            location: eventObj.location,
+            city: eventObj.location,
             name: eventObj.name,
             date: eventObj.date,
-            photoUrl: eventObj.photoURL,
+            photoURL: eventObj.photoURL,
             tagLine: eventObj.tagLine,
             organizer: eventObj.organizer
         })

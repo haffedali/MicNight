@@ -24,7 +24,7 @@ const DiscoverDataTableItem = ({ entry }) => {
     const useStyles = makeStyles({
         root: {
             paddingLeft: '3vw',
-            margin: '.5vw',
+            margin: '.5vw'
         },
         buttonBox: {
             height: '12%',
@@ -35,11 +35,12 @@ const DiscoverDataTableItem = ({ entry }) => {
             margin: '.1vw',
         },
         listItem: {
-            height: '40vw',
+            height: '45vw',
             display: 'flex',
             alignItems: 'stretch',
             flexDirection: 'column',
-            justify: 'space-between'
+            justify: 'space-between',
+            textAlign: 'center'
         },
         avatar: {
             margin: '2%',
@@ -55,6 +56,9 @@ const DiscoverDataTableItem = ({ entry }) => {
             // flexDirection: 'column',
             // justifyContent: 'flex-end',
             height: "100%"
+        },
+        addEventButton: {
+            margin: '2vw'
         }
     });
 
@@ -87,7 +91,7 @@ const DiscoverDataTableItem = ({ entry }) => {
                         <Grid item xs={6}>
                             <Box className={classes.detailBox}>
                                 <ListItemText
-                                    primary={entry.displayName}
+                                    primary={entry.name}
                                     secondary={entry.tagLine}
                                 />
                             </Box>
@@ -103,7 +107,7 @@ const DiscoverDataTableItem = ({ entry }) => {
                         </Grid>
                     </Grid>
                     {/* beneath collapse */}
-                    <Grid item>
+                    <Grid item className={classes.addEventButton}>
                         <Button variant="contained">Add to my events</Button>
                     </Grid>
                     <Grid item className={classes.collapsePortion} container direction='row' alignItems="flex-end" justify="space-between">
