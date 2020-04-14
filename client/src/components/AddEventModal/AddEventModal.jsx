@@ -134,7 +134,7 @@ const AddEventModal = ({ userInfo }) => {
                         name="location"
                         defaultValue={eventInfo.tagLine}
                         onChange={(e) => handleTextFieldChanges(e)}
-                        helperText="Where can we find you?"
+                        helperText="What city is your event in?"
                     />
                 </div>
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>

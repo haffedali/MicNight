@@ -1,0 +1,2 @@
+import DataTableItemChoiceContainer from './DataTableItemChoiceContainer';
+export default DataTableItemChoiceContainer;
