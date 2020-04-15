@@ -11,9 +11,9 @@ import dummyUsers from '../dummyData';
 
 // test uids
 const testGuidUid = 'ImjustHereTolistenNVibe';
-const testArtistUid = '4g6MNKxifacKB6quFjXo';
+const testArtistUid = 'artist1@gmail.com';
 const testArtistUid2 = 'xXDragnoSlayyerXx'
-const testEventUid = 'XLhTCLyg9mNB6maPMt3v';
+const testEventUid = 'ay9AgPGwWLRbQsN4GQyh';
 const testOrganizerUid = '106258930564522942122';
 const haffedUid = '106258930564522942122';
 
@@ -118,7 +118,12 @@ const haffedUid = '106258930564522942122';
 
 // })
 
-test('Grabs users favorites', async()=>{
-    let list = await users.getFavorites(haffedUid)
-    console.log(list);
-})
+// test('Grabs users favorites', async()=>{
+//     let list = await users.getFavorites(haffedUid)
+//     console.log(list);
+// })
+
+// test("grabs live data", async() => {
+//     let list = await events.moveArtistUpOne(testEventUid, testArtistUid);
+//     console.log(list);
+// })

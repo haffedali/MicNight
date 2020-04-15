@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import tools from "./tools"
 
 
 const events = {
@@ -146,7 +147,44 @@ const events = {
                 console.log(err)
             })
         return payLoad
+    },
+
+    moveArtistUpOne: async (eventUid, artistUid) => {
+        const performanceArray = await firebase.firestore().collection('events').doc(eventUid)
+            .collection('liveData').doc('live')
+            .get()
+            .then((doc) => {
+                return doc.data().artists
+            })
+        tools.moveArrayElementfUpOne(performanceArray, artistUid)
+        return firebase.firestore().collection('events').doc(eventUid)
+            .collection('liveData').doc('live')
+            .update({
+                "artists": performanceArray
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    },
+    
+    moveArtistDownOne: async (eventUid, artistUid) => {
+        const performanceArray = await firebase.firestore().collection('events').doc(eventUid)
+            .collection('liveData').doc('live')
+            .get()
+            .then((doc) => {
+                return doc.data().artists
+            })
+        tools.moveArrayElementDownOne(performanceArray, artistUid)
+        return firebase.firestore().collection('events').doc(eventUid)
+            .collection('liveData').doc('live')
+            .update({
+                "artists": performanceArray
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }
+
 }
 
 export default events
