@@ -74,8 +74,13 @@ storiesOf('DataTableItemButtons', module)
             {acceptItemList}
         </List>)
     })
-    .add('Both lists in OrganizerDataTableView' , () => {
+    .add('OrganizerDataTableView Artist Order' , () => {
         return(
-            <OrganizerDataTableView artistOrder={orderItemList} artistRequests={acceptItemList}/>
+            <OrganizerDataTableView name= 'artistOrder'  artists={orderItemList}/>
+        )
+    })
+    .add('OrganizerDataTableView Artist Requests' , () => {
+        return(
+            <OrganizerDataTableView name= 'artistRequests'  artists={acceptItemList}/>
         )
     })
