@@ -1,2 +1,3 @@
-import AddEventModal from "./AddEventModal";
+import AddEventModal from './AddEventModal';
+
 export default AddEventModal;
