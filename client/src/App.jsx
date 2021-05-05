@@ -21,7 +21,7 @@ import AuthenticationContext from './components/AuthenticationContext';
 import EventContext from './components/EventContext';
 
 // Dummy data
-import { dummyUsers } from './dummyData';
+// import { dummyUsers } from './dummyData';
 
 // dummy data for testing (must pass down to props where we would
 // Simulate a logged in user w/ relevant data
@@ -50,8 +50,8 @@ class App extends Component {
       this.createUser();
     };
 
-    this.createUser = () => {
-      const user = this.state.userInfo;
+    this.createUser = ({ userInfo }) => {
+      const user = userInfo;
       const userRef = firebase.firestore().collection('users').doc(user.uid);
       const name = user.displayName.split(' ');
 
@@ -98,11 +98,6 @@ class App extends Component {
     //
     this.state = {
       isAuthenticated: false,
-      authenticateUser: this.authenticateUser,
-      deAuthenticateUser: this.deAuthenticateUser,
-      userInfo: null,
-      firebase,
-      test: null,
       eventUid: '',
     };
 
@@ -111,7 +106,6 @@ class App extends Component {
 
   // Literally here just for seeding the db
   componentDidMount() {
-    let user;
 
     // const getUser = async () => {
     //   user = await users.get("1234")
@@ -132,17 +126,23 @@ class App extends Component {
   }
 
   render() {
+    const {
+      isAuthenticated, user, userInfo, eventUid,
+    } = this.state;
     return (
       <AuthenticationContext.Provider value={this.state}>
-        <EventContext.Provider value={this.state.eventUid}>
+        <EventContext.Provider value={eventUid}>
           <MuiThemeProvider theme={this.theme}>
             <CssBaseline />
             <Router>
-              {this.state.isAuthenticated
-                ? <EventPage path="/" user={this.state.userInfo} />
-                : <LandingPage path="/" firebase={firebase} />}
-              <ProfilePage path="/user" user={this.state.user} />
-              <DiscoverPage path="/discover" user={this.state.user} />
+              {
+
+              isAuthenticated
+                ? <EventPage path="/" user={userInfo} />
+                : <LandingPage path="/" firebase={firebase} />
+}
+              <ProfilePage path="/user" user={user} />
+              <DiscoverPage path="/discover" user={user} />
 
             </Router>
             <FooterNavigation />
