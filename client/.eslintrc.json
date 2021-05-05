@@ -8,6 +8,7 @@
         "no-console": [
             0,
             {"allow": ["warn, error"]}
-        ]
+        ],
+        "linebreak-style": 0
      }
 }

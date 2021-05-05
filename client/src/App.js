@@ -2,10 +2,8 @@
 import React, { Component } from 'react';
 import { Router } from '@reach/router';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import CssBaseline from "@material-ui/core/CssBaseline";
-import "./App.css";
-
-
+import CssBaseline from '@material-ui/core/CssBaseline';
+import './App.css';
 
 // Components
 import LandingPage from './pages/LandingPage';
@@ -15,20 +13,17 @@ import DiscoverPage from './pages/DiscoverPage';
 import FooterNavigation from './components/FooterNavigation';
 import firebase from './components/firebase';
 
-
-//Util functions
+// Util functions
 import users from './utils/users';
 
-
-//CONTEXT
-import AuthenticationContext from './components/AuthenticationContext'
+// CONTEXT
+import AuthenticationContext from './components/AuthenticationContext';
 import EventContext from './components/EventContext';
 
 // Dummy data
 import { dummyUsers } from './dummyData';
 
-
-//dummy data for testing (must pass down to props where we would
+// dummy data for testing (must pass down to props where we would
 // Simulate a logged in user w/ relevant data
 // const user = {
 //   name: "Haffed Ali",
@@ -37,69 +32,65 @@ import { dummyUsers } from './dummyData';
 //   uid: '1234'
 // }
 
-
-
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.authenticateUser = async () => {
-      let userData = firebase.auth().currentUser.providerData[0];
-      let user = await users.get(userData.uid)
-
-
+      const userData = firebase.auth().currentUser.providerData[0];
+      const user = await users.get(userData.uid);
 
       this.setState({
         isAuthenticated: true,
         userInfo: { ...user, ...userData, uid: userData.uid },
-        eventUid: user.attending
+        eventUid: user.attending,
       });
 
       // CREATE USER IN FIRESTORE HERE IF NOT ALREADY CREATED
       this.createUser();
-    }
+    };
 
     this.createUser = () => {
-      const user = this.state.userInfo
-      const userRef = firebase.firestore().collection('users').doc(user.uid)
-      let name = user.displayName.split(' ');
+      const user = this.state.userInfo;
+      const userRef = firebase.firestore().collection('users').doc(user.uid);
+      const name = user.displayName.split(' ');
 
       const userObj = {
         firstName: name[0],
         lastName: name[1],
         socialLinks: {
-          facebook: "test",
-          twitter: "test",
-          instagram: "test",
-          soundcloud: "test"
+          facebook: 'test',
+          twitter: 'test',
+          instagram: 'test',
+          soundcloud: 'test',
         },
         email: user.email,
         photoURL: user.photoURL,
         isArtist: false,
-        isOrganizer: false
-      }
+        isOrganizer: false,
+      };
 
       userRef.get()
-        .then(function (docSnapshot) {
+        .then((docSnapshot) => {
           if (docSnapshot.exists) {
 
             // do nothing
           } else {
-            console.log("User has been created!")
-            userRef.set({ ...userObj })
+            console.log('User has been created!');
+            userRef.set({ ...userObj });
           }
-        })
-    }
+        });
+    };
 
     this.deAuthenticateUser = () => {
-      firebase.auth().signOut()
+      firebase.auth().signOut();
       this.setState({
         isAuthenticated: false,
-        userInfo: null
-      })
-    }
+        userInfo: null,
+      });
+    };
 
-    // DEV MODE - 
+    // DEV MODE -
     //
     // isAuthenticated: true  || isAuthenicated: false
     // userInfo: user || userInfo: null
@@ -110,17 +101,15 @@ class App extends Component {
       authenticateUser: this.authenticateUser,
       deAuthenticateUser: this.deAuthenticateUser,
       userInfo: null,
-      firebase: firebase,
+      firebase,
       test: null,
-      eventUid: ''
-    }
+      eventUid: '',
+    };
 
     this.theme = createMuiTheme();
   }
 
-
-
-  //Literally here just for seeding the db
+  // Literally here just for seeding the db
   componentDidMount() {
     let user;
 
@@ -129,12 +118,10 @@ class App extends Component {
     //   console.log(user)
     //   this.setState({
     //     userInfo: user
-    //   })  
+    //   })
     // }
 
     // getUser();
-
-
 
     // SEEDING DB
     // setTimeout(() => {
@@ -142,10 +129,7 @@ class App extends Component {
     //     users.create(dummyUsers[i])
     //   }
     // }, 5000)
-
   }
-
-
 
   render() {
     return (
@@ -154,20 +138,18 @@ class App extends Component {
           <MuiThemeProvider theme={this.theme}>
             <CssBaseline />
             <Router>
-              {this.state.isAuthenticated ?
-                <EventPage path='/' user={this.state.userInfo} />
-                :
-                <LandingPage path='/' firebase={firebase} />
-              }
-              <ProfilePage path='/user' user={this.state.user} />
-              <DiscoverPage path='/discover' user={this.state.user} />
+              {this.state.isAuthenticated
+                ? <EventPage path="/" user={this.state.userInfo} />
+                : <LandingPage path="/" firebase={firebase} />}
+              <ProfilePage path="/user" user={this.state.user} />
+              <DiscoverPage path="/discover" user={this.state.user} />
 
             </Router>
             <FooterNavigation />
           </MuiThemeProvider>
         </EventContext.Provider>
       </AuthenticationContext.Provider>
-    )
+    );
   }
 }
 
