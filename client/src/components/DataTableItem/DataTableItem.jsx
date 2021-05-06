@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
+// import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
@@ -8,11 +7,10 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/styles';
-
+import entryType from '../../props/entryType';
 
 import ProfileAvatar from '../ProfileAvatar';
 import SocialLinks from '../SocialLinks';
-
 
 const DataTableItem = ({ entry }) => {
   const useStyles = makeStyles({
@@ -48,11 +46,12 @@ const DataTableItem = ({ entry }) => {
   const classes = useStyles();
 
   const setPhotoURL = () => {
-    let firstName = entry.displayName.split(' ')[0]
-      entry.photoURL = `https://avatars.dicebear.com/v2/avataaars/${firstName}.svg`
-  }
+    const firstName = entry.displayName.split(' ')[0];
+    // eslint-disable-next-line no-param-reassign
+    entry.photoURL = `https://avatars.dicebear.com/v2/avataaars/${firstName}.svg`;
+  };
 
-  if (!entry.photoURL){
+  if (!entry.photoURL) {
     setPhotoURL();
   }
 
@@ -72,8 +71,7 @@ const DataTableItem = ({ entry }) => {
         <ListItemSecondaryAction className={classes.listSecondaryAction} style={{ height: '100%', width: '20%' }}>
           {/* Refractor into 'SocialLinks' component */}
 
-          <SocialLinks socialLinks={entry.socialLinks}/>
-
+          <SocialLinks socialLinks={entry.socialLinks} />
 
           {/* Refractor into 'SocialLinks' component */}
 
@@ -86,21 +84,11 @@ const DataTableItem = ({ entry }) => {
 };
 
 DataTableItem.propTypes = {
-  entry: PropTypes.shape({
-    uid: PropTypes.number,
-    photoUrl: PropTypes.string,
-    name: PropTypes.string,
-    tagLine: PropTypes.string,
-  }),
+  entry: entryType,
 };
 
 DataTableItem.defaultProps = {
-  entry: {
-    uid: 1234,
-    photoUrl: 'https://avatars.dicebear.com/v2/avataaars/Haffed.svg',
-    name: 'Haffed Ali',
-    tagLine: 'Maker Mover',
-  },
+  ...entryType,
 };
 
 export default DataTableItem;
