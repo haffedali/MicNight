@@ -80,7 +80,7 @@ const DiscoverDataTableItem = ({ entry }) => {
     <Collapse in={checked} collapsedHeight="15vw">
       <Paper className={classes.root}>
         <ListItem classes={{ root: classes.listItem }} mb={1} disableGutters divider className={classes.listItem} key={`ListItem: ${entry.uid}`}>
-          <Grid container direction="row" direction="flex-start" justify="space-between">
+          <Grid container direction="row flex-start" justify="space-between">
             <Grid item xs={3}>
               <ListItemAvatar className={classes.avatar}>
                 <ProfileAvatar photoUrl={entry.photoURL} />
