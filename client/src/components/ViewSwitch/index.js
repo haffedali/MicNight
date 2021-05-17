@@ -1,2 +1,3 @@
 import ViewSwitch from './ViewSwitch';
-export default ViewSwitch
+
+export default ViewSwitch;
