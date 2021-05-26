@@ -43,7 +43,6 @@ const DataTableViewController = ({ buttons, handleFocusChange }) => {
           </Button>
         ))}
       </ButtonGroup>
-
     </Container>
   );
 };

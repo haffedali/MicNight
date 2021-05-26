@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
@@ -21,5 +23,15 @@ const OrderChangeButtons = ({ clickEffectOne, clickEffectTwo }) => (
     </Grid>
   </Container>
 );
+
+OrderChangeButtons.propTypes = {
+  clickEffectOne: PropTypes.func,
+  clickEffectTwo: PropTypes.func,
+};
+
+OrderChangeButtons.defaultProps = {
+  clickEffectOne: () => {},
+  clickEffectTwo: () => {},
+};
 
 export default OrderChangeButtons;

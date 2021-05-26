@@ -1,8 +1,14 @@
-import React, { useRef, useContext, useState, useEffect } from "react";
-import ReactDOM from "react-dom";
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/prop-types */
+/* eslint-disable import/no-extraneous-dependencies */
+import React, {
+  useRef, useContext, useState, useEffect,
+} from 'react';
+import ReactDOM from 'react-dom';
 // import Container from '@material-ui/core/Container';
 
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const Context = React.createContext();
 
@@ -22,8 +28,6 @@ export function ModalProvider({ children }) {
       <div ref={modalRef} />
     </Container>
   );
-
-  
 }
 
 export function Modal({ onClose, children, ...props }) {
@@ -31,14 +35,14 @@ export function Modal({ onClose, children, ...props }) {
 
   return modalNode
     ? ReactDOM.createPortal(
-        <Overlay>
-          <Dialog {...props}>
-            {children}
-            <button onClick={onClose}>Close</button>
-          </Dialog>
-        </Overlay>,
-        modalNode
-      )
+      <Overlay>
+        <Dialog {...props}>
+          {children}
+          <button onClick={onClose}>Close</button>
+        </Dialog>
+      </Overlay>,
+      modalNode,
+    )
     : null;
 }
 
