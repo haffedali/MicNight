@@ -1,7 +1,7 @@
-import {createContext} from 'react';
+import { createContext } from 'react';
 
 const EventContext = createContext({
-    eventUid: ''
-})
+  eventUid: '',
+});
 
 export default EventContext;
